@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -103,7 +104,7 @@ class MainActivity : AppCompatActivity() {
         events_recycler_view.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
         events_recycler_view.adapter = fastAdapter
 
-        val workManager = WorkQueueManager(getSharedPref(), resources.getColor(R.color.colorAccent), Color.WHITE, Color.LTGRAY)
+        val workManager = WorkQueueManager(getSharedPref(), ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
 
         fastAdapter.withOnClickListener(EventItemClickListener(workManager, subscribeFilter))
 
