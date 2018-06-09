@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AGDQScheduleNotifier</string>
+    <string name="search">Search</string>
+    <string name="only_show_subscribed">Filter subscribed</string>
 </resources>
