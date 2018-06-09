@@ -9,14 +9,13 @@ x - Make sure WorkManager is accurate enough
 X - prevent starting notification timer for already pasted event
 make event_item layout align text better
 button to bring you to the twitch page from in app
-donate button
+donate button, as fab?
 expandable view to show casters / runners
-
+notification button doesnt change back to gray after event has passed
 
 
 X - and possibly a filter to show only selected schedule and disable the ability to turn on/off while in that filter
+X - change color of selected / colors in general
+X - might just put a colored bell icon up in the top left or something, having the accent color when going to be notified, just grey when its not
 maybe split the days in tabs or whatever it's called on android
-so you can just see your schedule
-might just put a colored bell icon up in the top left or something, having the accent color when going to be notified, just grey when its not
-dynamically update schedule due to stretch goals and whatnot
-change color of selected / colors in general
+so you can just see your schedule, dynamically update schedule due to stretch goals and whatnot

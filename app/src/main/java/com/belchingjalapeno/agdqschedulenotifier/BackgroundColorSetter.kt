@@ -10,9 +10,9 @@ class BackgroundColorSetter {
         if (timeCalculator.getTimeDiff(System.currentTimeMillis(), timeCalculator.fromStringStartTimeToLong(event.startTime)) <= 0) {
             v?.setBackgroundColor(queueManager.oldEventColor)
         } else if (queueManager.isQueued(event)) {
-            v?.setBackgroundColor(queueManager.queuedColor)
+//            v?.setBackgroundColor(queueManager.queuedColor)
         } else {
-            v?.setBackgroundColor(queueManager.nonQueuedColor)
+//            v?.setBackgroundColor(queueManager.nonQueuedColor)
         }
     }
 
