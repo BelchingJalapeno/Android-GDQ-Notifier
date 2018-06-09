@@ -4,11 +4,15 @@ import android.view.View
 import com.mikepenz.fastadapter.IAdapter
 import com.mikepenz.fastadapter.listeners.OnClickListener
 
-class EventItemClickListener(private val queueManager: WorkQueueManager) : OnClickListener<EventItem> {
+class EventItemClickListener(private val queueManager: WorkQueueManager, private val subscribedFilter: SubscribedFilter) : OnClickListener<EventItem> {
     private val timeCalculator = TimeCalculator()
     private val backgroundColorSetter = BackgroundColorSetter()
 
     override fun onClick(v: View?, adapter: IAdapter<EventItem>?, item: EventItem, position: Int): Boolean {
+        //don't allow subscribing / unsubscribing if the filter is enabled
+        if(subscribedFilter.enabled){
+            return true
+        }
         val event = item.event
         val isQueued = queueManager.isQueued(event)
 

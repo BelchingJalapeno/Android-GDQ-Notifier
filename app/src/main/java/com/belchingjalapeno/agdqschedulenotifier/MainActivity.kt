@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity() {
     //create the managing FastAdapter, by passing in the itemAdapter
     private val fastAdapter = FastAdapter.with<EventItem, ItemAdapter<EventItem>>(itemAdapter)
 
-    private var onlyShowSubscribed = false
     private lateinit var workQueueManager: WorkQueueManager
     private lateinit var searchView: SearchView
+    private val subscribeFilter = SubscribedFilter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
         R.id.app_bar_subscribed -> {
             item.isChecked = !item.isChecked
-            onlyShowSubscribed = item.isChecked
+            subscribeFilter.enabled = item.isChecked
             //add space for filter not getting called work around
             itemAdapter.filter(" " + searchView.query)
             true
@@ -105,7 +105,7 @@ class MainActivity : AppCompatActivity() {
 
         val workManager = WorkQueueManager(getSharedPref(), resources.getColor(R.color.colorAccent), Color.WHITE, Color.LTGRAY)
 
-        fastAdapter.withOnClickListener(EventItemClickListener(workManager))
+        fastAdapter.withOnClickListener(EventItemClickListener(workManager, subscribeFilter))
 
         //set the items to your ItemAdapter
         itemAdapter.add(events.map { EventItem(it, workManager) })
@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
             //remove space that is added at the start for filter work around
             val trimmedConstraint = constraint?.substring(1)
             item.event.game.contains(trimmedConstraint.toString(), ignoreCase = true) &&
-                    if (onlyShowSubscribed) {
+                    if (subscribeFilter.enabled) {
                         isSubscribed(item.event)
                     } else {
                         true
