@@ -1,0 +1,22 @@
+X - Clicking event in list makes the notification queue up or remove from queue
+X - need way to know what is queued
+X - add search bar to filter
+X - change color of searchview from light to dark icons and text
+X - Make sure events are queued up to the right time
+x - rework notification text
+X - change time until text to show minutes / seconds when its closer to the right time
+x - Make sure WorkManager is accurate enough
+X - prevent starting notification timer for already pasted event
+make event_item layout align text better
+button to bring you to the twitch page from in app
+donate button
+expandable view to show casters / runners
+
+
+
+maybe split the days in tabs or whatever it's called on android
+and possibly a filter to show only selected schedule and disable the ability to turn on/off while in that filter
+so you can just see your schedule
+might just put a colored bell icon up in the top left or something, having the accent color when going to be notified, just grey when its not
+dynamically update schedule due to stretch goals and whatnot
+change color of selected / colors in general
