@@ -6,7 +6,6 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
-import android.net.Uri
 import android.os.Build
 import android.support.v4.app.NotificationCompat
 import android.support.v4.app.NotificationManagerCompat
@@ -38,7 +37,7 @@ class NotificationWorker : Worker() {
         val formattedEstimatedTime = timeCalculator.getFormattedTime(timeCalculator.fromStringExpectedLengthToLong(event.runLength), true, true, true)
         val contentText = "Est time $formattedEstimatedTime\n"
         val mBuilder = NotificationCompat.Builder(this.applicationContext, CHANNEL_ID)
-                .setSmallIcon(R.drawable.notification_icon_background)
+                .setSmallIcon(R.drawable.glitch_icon_white_128px)
                 .setContentTitle("${event.game}(${event.category}) starting soon")
                 .setContentText(contentText)
                 .setStyle(NotificationCompat.BigTextStyle()
@@ -59,9 +58,7 @@ class NotificationWorker : Worker() {
     }
 
     private fun createTwitchIntent(): PendingIntent {
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.twitch.tv/gamesdonequick"))
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        return PendingIntent.getActivity(this.applicationContext, 0, intent, 0)
+        return TwitchIntentBuilder.getTwitchPendingIntent(applicationContext)
     }
 
     @SuppressLint("InlinedApi")

@@ -15,4 +15,9 @@
         android:checkable="true"
         android:title="@string/only_show_subscribed"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/app_bar_twitch"
+        android:icon="@drawable/glitch_icon_white_128px"
+        android:title="@string/twitch"
+        app:showAsAction="ifRoom" />
 </menu>

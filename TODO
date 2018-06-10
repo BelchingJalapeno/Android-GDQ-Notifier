@@ -7,8 +7,8 @@ x - rework notification text
 X - change time until text to show minutes / seconds when its closer to the right time
 x - Make sure WorkManager is accurate enough
 X - prevent starting notification timer for already pasted event
+X - button to bring you to the twitch page from in app
 make event_item layout align text better
-button to bring you to the twitch page from in app
 donate button, as fab?
 expandable view to show casters / runners
 notification button doesnt change back to gray after event has passed
