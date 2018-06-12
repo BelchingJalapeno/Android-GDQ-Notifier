@@ -14,37 +14,34 @@ class EventItemViewSetter(private val workQueueManager: WorkQueueManager) {
         val runnersTextView = parentView.findViewById<TextView>(R.id.runnersTextView)
         val castersTextView = parentView.findViewById<TextView>(R.id.castersTextView)
 
-        parentView.requestLayout()
-        parentView.invalidate()
-
         val notificationEnabled = workQueueManager.isQueued(speedRunEvent)
 
         setNotificationIconState(notificationToggleView, notificationEnabled)
 
         if (notificationEnabled) {
+            if (runnersView.visibility == View.VISIBLE) {
+                return
+            }
             setViewVisibility(runnersView, View.VISIBLE, animate)
             setViewVisibility(castersView, View.VISIBLE, animate)
             setViewVisibility(runnersTextView, View.VISIBLE, animate)
             setViewVisibility(castersTextView, View.VISIBLE, animate)
 
             if (animate) {
-                if(runnersView.measuredHeight + castersView.measuredHeight != 0){
-                    animateViewExpand(parentView.measuredHeight, parentView.measuredHeight + runnersView.measuredHeight + castersView.measuredHeight, parentView)
-                }else{
-//                    animateViewExpand(parentView.measuredHeight, parentView.measuredHeight + runnersTextView.measuredHeight + castersTextView.measuredHeight, parentView)
-                }
+                animateViewExpand(parentView.measuredHeightAndState, parentView.measuredHeightAndState + runnersView.measuredHeightAndState + castersView.measuredHeightAndState, parentView)
             }
         } else {
+            if (runnersView.visibility == View.GONE) {
+                return
+            }
             setViewVisibility(runnersView, View.GONE, animate)
             setViewVisibility(castersView, View.GONE, animate)
             setViewVisibility(runnersTextView, View.GONE, animate)
             setViewVisibility(castersTextView, View.GONE, animate)
             if (animate) {
-                animateViewExpand(parentView.measuredHeight, parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight), parentView)
+                animateViewExpand(parentView.measuredHeightAndState, parentView.measuredHeightAndState - (runnersView.measuredHeightAndState + castersView.measuredHeightAndState), parentView)
             }
         }
-        parentView.requestLayout()
-        parentView.invalidate()
     }
 
     private fun animateViewExpand(startingHeight: Int, endingHeight: Int, parentView: View) {
