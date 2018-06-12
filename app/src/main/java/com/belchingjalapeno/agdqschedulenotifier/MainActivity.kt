@@ -13,6 +13,7 @@ import android.view.Menu
 import android.view.MenuItem
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.adapters.ItemAdapter
+import com.mikepenz.fastadapter.expandable.ExpandableExtension
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -44,7 +45,6 @@ class MainActivity : AppCompatActivity() {
         val mutableListOf = mutableListOf<SpeedRunEvent>()
         mutableListOf.addAll(events)
         val time = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.getDefault()).format(Date(System.currentTimeMillis() + (1000 * 60)))
-        println("time : " + time)
         mutableListOf.add(0, SpeedRunEvent(time, "test", "test", "0:01:00", "test", "test", "0:01:00"))
         events = mutableListOf.toTypedArray()
 
@@ -113,6 +113,8 @@ class MainActivity : AppCompatActivity() {
         val workManager = WorkQueueManager(getSharedPref(), ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
 
         fastAdapter.withOnClickListener(EventItemClickListener(workManager, subscribeFilter))
+
+        fastAdapter.addExtension(ExpandableExtension<EventItem>())
 
         //set the items to your ItemAdapter
         itemAdapter.add(events.map { EventItem(it, workManager) })
