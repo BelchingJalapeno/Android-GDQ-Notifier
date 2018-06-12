@@ -1,6 +1,7 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
 import android.view.View
+import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
 import com.mikepenz.fastadapter.FastAdapter
@@ -66,10 +67,17 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
 
             backgroundColorSetter.setColor(itemView, item.event, item.workQueueManager)
 
-            EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
+            castersTextView.visibility = View.VISIBLE
+            castersView.visibility = View.VISIBLE
+            runnersView.visibility = View.VISIBLE
+            runnersTextView.visibility = View.VISIBLE
 
-            itemView.requestLayout()
-            itemView.invalidate()
+            itemView.viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
+                override fun onGlobalLayout() {
+                    itemView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                    EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
+                }
+            })
         }
 
         override fun unbindView(item: EventItem) {

@@ -28,7 +28,7 @@ class EventItemViewSetter(private val workQueueManager: WorkQueueManager) {
             setViewVisibility(castersTextView, View.VISIBLE, animate)
 
             if (animate) {
-                animateViewExpand(parentView.measuredHeightAndState, parentView.measuredHeightAndState + runnersView.measuredHeightAndState + castersView.measuredHeightAndState, parentView)
+                animateViewExpand(parentView.measuredHeightAndState, parentView.measuredHeightAndState + runnersView.measuredHeight + castersView.measuredHeight, parentView)
             }
         } else {
             if (runnersView.visibility == View.GONE) {
