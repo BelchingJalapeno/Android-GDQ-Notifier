@@ -1,6 +1,5 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
-import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -30,6 +29,8 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
         private val runnersView: TextView = itemView.findViewById(R.id.runnersView)
         private val categoryView: TextView = itemView.findViewById(R.id.categoryView)
         private val notificationToggleView: ImageView = itemView.findViewById(R.id.notification_toggle_button)
+        private val runnersTextView: TextView = itemView.findViewById(R.id.runnersTextView)
+        private val castersTextView: TextView = itemView.findViewById(R.id.castersTextView)
 
         private val timeCalculator = TimeCalculator()
         private val backgroundColorSetter = BackgroundColorSetter()
@@ -65,16 +66,10 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
 
             backgroundColorSetter.setColor(itemView, item.event, item.workQueueManager)
 
-            val context = notificationToggleView.context
-            if (item.workQueueManager.isQueued(item.event)) {
-                notificationToggleView.setImageResource(R.drawable.ic_notifications_active_white_24dp)
-                notificationToggleView.setColorFilter(ContextCompat.getColor(context, R.color.colorAccent))
-                notificationToggleView.imageAlpha = 255
-            } else {
-                notificationToggleView.setImageResource(R.drawable.ic_notifications_off_black_24dp)
-                notificationToggleView.setColorFilter(0xFFFFFF)
-                notificationToggleView.imageAlpha = (0.54f * 255).toInt()
-            }
+            EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
+
+            itemView.requestLayout()
+            itemView.invalidate()
         }
 
         override fun unbindView(item: EventItem) {

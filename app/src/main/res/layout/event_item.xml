@@ -13,7 +13,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="The Legend of Zelda: Majora's Mask 3D"
+        tools:text="The Legend of Zelda: Majora's Mask 3D"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="25 days"
+        tools:text="25 days"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintBottom_toBottomOf="@+id/textView10"
         app:layout_constraintStart_toEndOf="@+id/textView10"
@@ -36,7 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:text="45 mins"
+        tools:text="45 mins"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintBottom_toBottomOf="@+id/textView11"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,13 +48,13 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
-        android:text="gymnast86"
+        tools:text="gymnast86"
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        app:layout_constraintBottom_toBottomOf="@+id/runnersTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
+        app:layout_constraintStart_toEndOf="@+id/runnersTextView"
+        app:layout_constraintTop_toTopOf="@+id/runnersTextView" />
 
     <TextView
         android:id="@+id/categoryView"
@@ -63,7 +63,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Any%"
+        tools:text="Any%"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@+id/gameNameView"
         app:layout_constraintStart_toStartOf="@+id/gameNameView"
@@ -73,15 +73,15 @@
         android:id="@+id/castersView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
-        android:text="musical_dardevil"
+        android:layout_marginEnd="16dp"
+        android:paddingBottom="8dp"
+        tools:text="musical_dardevil"
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView8"
-        app:layout_constraintTop_toTopOf="@+id/textView8" />
+        app:layout_constraintStart_toEndOf="@+id/castersTextView"
+        app:layout_constraintTop_toTopOf="@+id/castersTextView" />
 
     <TextView
         android:id="@+id/setupTimeView"
@@ -97,19 +97,17 @@
         app:layout_constraintTop_toBottomOf="@+id/categoryView" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/castersTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
+        android:paddingBottom="8dp"
         android:text="Casters"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="@+id/runnersTextView"
+        app:layout_constraintTop_toBottomOf="@+id/runnersTextView" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/runnersTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -143,7 +141,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toTopOf="@+id/textView11"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_notifications_off_black_24dp" />

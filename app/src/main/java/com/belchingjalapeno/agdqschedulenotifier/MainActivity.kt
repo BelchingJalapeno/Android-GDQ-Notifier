@@ -112,9 +112,7 @@ class MainActivity : AppCompatActivity() {
 
         val workManager = WorkQueueManager(getSharedPref(), ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
 
-        fastAdapter.withOnClickListener(EventItemClickListener(workManager, subscribeFilter))
-
-        fastAdapter.addExtension(ExpandableExtension<EventItem>())
+        fastAdapter.withOnClickListener(EventItemClickListener(workManager, subscribeFilter, EventItemViewSetter(workQueueManager)))
 
         //set the items to your ItemAdapter
         itemAdapter.add(events.map { EventItem(it, workManager) })

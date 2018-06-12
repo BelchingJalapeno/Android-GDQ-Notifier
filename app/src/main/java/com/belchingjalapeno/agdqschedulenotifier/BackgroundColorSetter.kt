@@ -12,7 +12,7 @@ class BackgroundColorSetter {
         } else if (queueManager.isQueued(event)) {
 //            v?.setBackgroundColor(queueManager.queuedColor)
         } else {
-//            v?.setBackgroundColor(queueManager.nonQueuedColor)
+            v?.setBackgroundColor(queueManager.nonQueuedColor)
         }
     }
 
