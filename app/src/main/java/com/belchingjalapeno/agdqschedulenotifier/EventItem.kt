@@ -67,17 +67,25 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
 
             backgroundColorSetter.setColor(itemView, item.event, item.workQueueManager)
 
-            castersTextView.visibility = View.VISIBLE
-            castersView.visibility = View.VISIBLE
-            runnersView.visibility = View.VISIBLE
-            runnersTextView.visibility = View.VISIBLE
+//            castersTextView.visibility = View.VISIBLE
+//            castersView.visibility = View.VISIBLE
+//            runnersView.visibility = View.VISIBLE
+//            runnersTextView.visibility = View.VISIBLE
+//            EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
 
-            itemView.viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
-                override fun onGlobalLayout() {
-                    itemView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+            itemView.viewTreeObserver.addOnPreDrawListener(object: ViewTreeObserver.OnPreDrawListener{
+                override fun onPreDraw(): Boolean {
+                    itemView.viewTreeObserver.removeOnPreDrawListener(this)
                     EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
+                    return true
                 }
             })
+//            itemView.viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
+//                override fun onGlobalLayout() {
+//                    itemView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+//                    EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
+//                }
+//            })
         }
 
         override fun unbindView(item: EventItem) {

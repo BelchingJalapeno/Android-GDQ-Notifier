@@ -50,6 +50,11 @@ class MainActivity : AppCompatActivity() {
 
         setupRecyclerView(events)
         setSupportActionBar(main_toolbar)
+        setupDonateFab()
+    }
+
+    private fun setupDonateFab() {
+        donate_fab.setOnClickListener { startActivity(TwitchIntentBuilder.getDonateIntent()) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

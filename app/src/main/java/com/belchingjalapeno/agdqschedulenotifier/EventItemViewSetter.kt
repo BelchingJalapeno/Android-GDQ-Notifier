@@ -26,25 +26,36 @@ class EventItemViewSetter(private val workQueueManager: WorkQueueManager) {
             setViewVisibility(castersView, View.VISIBLE, animate)
             setViewVisibility(runnersTextView, View.VISIBLE, animate)
             setViewVisibility(castersTextView, View.VISIBLE, animate)
-
-            if (animate) {
-                animateViewExpand(parentView.measuredHeightAndState, parentView.measuredHeightAndState + runnersView.measuredHeight + castersView.measuredHeight, parentView)
-            }
+            if(animate)
+            animateViewExpand(parentView.measuredHeight, parentView.measuredHeight + runnersView.measuredHeight + castersView.measuredHeight, parentView, animate)
         } else {
-            if (runnersView.visibility == View.GONE) {
+            if (runnersView.visibility == View.INVISIBLE) {
                 return
             }
-            setViewVisibility(runnersView, View.GONE, animate)
-            setViewVisibility(castersView, View.GONE, animate)
-            setViewVisibility(runnersTextView, View.GONE, animate)
-            setViewVisibility(castersTextView, View.GONE, animate)
-            if (animate) {
-                animateViewExpand(parentView.measuredHeightAndState, parentView.measuredHeightAndState - (runnersView.measuredHeightAndState + castersView.measuredHeightAndState), parentView)
+            setViewVisibility(runnersView, View.INVISIBLE, animate)
+            setViewVisibility(castersView, View.INVISIBLE, animate)
+            setViewVisibility(runnersTextView, View.INVISIBLE, animate)
+            setViewVisibility(castersTextView, View.INVISIBLE, animate)
+            if(animate)
+            animateViewExpand(parentView.measuredHeight, parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight), parentView, animate)
+            else{
+                val layoutParams = parentView.layoutParams
+                layoutParams.height = parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight)
+                parentView.layoutParams = layoutParams
+                parentView.requestLayout()
+                parentView.invalidate()
             }
         }
     }
 
-    private fun animateViewExpand(startingHeight: Int, endingHeight: Int, parentView: View) {
+    private fun animateViewExpand(startingHeight: Int, endingHeight: Int, parentView: View, animate: Boolean) {
+        if (!animate) {
+            val layoutParams = parentView.layoutParams
+            layoutParams.height = endingHeight
+            parentView.layoutParams = layoutParams
+            parentView.requestLayout()
+            return
+        }
         val anim = ValueAnimator.ofInt(startingHeight, endingHeight)
         anim.addUpdateListener { valueAnimator ->
             val `val` = valueAnimator.animatedValue as Int

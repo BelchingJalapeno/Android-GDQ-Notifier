@@ -8,10 +8,10 @@ X - change time until text to show minutes / seconds when its closer to the righ
 x - Make sure WorkManager is accurate enough
 X - prevent starting notification timer for already pasted event
 X - button to bring you to the twitch page from in app
-make event_item layout align text better
-donate button, as fab?
-expandable view to show casters / runners
-notification button doesnt change back to gray after event has passed
+X - donate button, as fab?
+X - notification button doesnt change back to gray after event has passed
+X - make event_item layout align text better
+X - expandable view to show casters / runners
 
 
 X - and possibly a filter to show only selected schedule and disable the ability to turn on/off while in that filter

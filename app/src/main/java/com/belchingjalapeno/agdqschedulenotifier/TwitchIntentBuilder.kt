@@ -17,5 +17,9 @@ class TwitchIntentBuilder {
         fun getTwitchIntent(): Intent {
             return Intent(Intent.ACTION_VIEW, Uri.parse("https://www.twitch.tv/gamesdonequick"))
         }
+
+        fun getDonateIntent(): Intent {
+            return Intent(Intent.ACTION_VIEW, Uri.parse("https://gamesdonequick.com/tracker/donate/sgdq2018"))
+        }
     }
 }
