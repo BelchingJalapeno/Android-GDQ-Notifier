@@ -2,18 +2,15 @@ package com.belchingjalapeno.agdqschedulenotifier
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.SearchView
+import android.util.SparseArray
 import android.view.Menu
 import android.view.MenuItem
-import com.mikepenz.fastadapter.FastAdapter
-import com.mikepenz.fastadapter.adapters.ItemAdapter
-import com.mikepenz.fastadapter.expandable.ExpandableExtension
+import android.view.ViewGroup
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -23,14 +20,10 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    //create the ItemAdapter holding your Items
-    private val itemAdapter = ItemAdapter.items<EventItem>()
-    //create the managing FastAdapter, by passing in the itemAdapter
-    private val fastAdapter = FastAdapter.with<EventItem, ItemAdapter<EventItem>>(itemAdapter)
-
-    private lateinit var workQueueManager: WorkQueueManager
+    lateinit var workQueueManager: WorkQueueManager
     private lateinit var searchView: SearchView
-    private val subscribeFilter = SubscribedFilter()
+    val subscribeFilter = SubscribedFilter()
+    private val map = SparseArray<Fragment>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,9 +41,51 @@ class MainActivity : AppCompatActivity() {
         mutableListOf.add(0, SpeedRunEvent(time, "test", "test", "0:01:00", "test", "test", "0:01:00"))
         events = mutableListOf.toTypedArray()
 
-        setupRecyclerView(events)
+        setupTabs(events)
         setSupportActionBar(main_toolbar)
         setupDonateFab()
+    }
+
+    private fun setupTabs(events: Array<SpeedRunEvent>) {
+        val eventsByDay = getEventsByDay(events)
+        tab_layout.setupWithViewPager(speedrun_viewpager)
+        speedrun_viewpager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
+
+            override fun getItem(p0: Int): Fragment {
+                return SpeedrunEventsFragment.newInstance(eventsByDay[p0])
+            }
+
+            override fun instantiateItem(container: ViewGroup, position: Int): Any {
+                val instantiateItem = super.instantiateItem(container, position) as Fragment
+                map.put(position, instantiateItem)
+                return instantiateItem
+            }
+
+            override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
+                map.remove(position)
+                super.destroyItem(container, position, `object`)
+            }
+
+            override fun getCount(): Int {
+                return eventsByDay.size
+            }
+
+            override fun getPageTitle(position: Int): CharSequence? {
+                val fromStringStartTimeToLong = TimeCalculator().fromStringStartTimeToLong(eventsByDay[position][0].startTime)
+                return SimpleDateFormat.getDateInstance().format(Date(fromStringStartTimeToLong))
+            }
+        }
+    }
+
+    private fun getEventsByDay(events: Array<SpeedRunEvent>): Array<Array<SpeedRunEvent>> {
+        val calc = TimeCalculator()
+        events.sortBy { calc.fromStringStartTimeToLong(it.startTime) }
+        val groupBy = events.groupBy({
+            val date = Date(calc.fromStringStartTimeToLong(it.startTime))
+            SimpleDateFormat.getDateInstance().format(date)
+        })
+        val v = groupBy.values.map { it.toTypedArray() }
+        return v.toTypedArray()
     }
 
     private fun setupDonateFab() {
@@ -83,7 +118,7 @@ class MainActivity : AppCompatActivity() {
             item.isChecked = !item.isChecked
             subscribeFilter.enabled = item.isChecked
             //add space for filter not getting called work around
-            itemAdapter.filter(" " + searchView.query)
+            getCurrentFragment()?.itemAdapter?.filter(" " + searchView.query)
             true
         }
 
@@ -92,53 +127,37 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun getCurrentFragment(): SpeedrunEventsFragment? {
+        val currentItem = speedrun_viewpager.currentItem
+        println("currentItem:$currentItem")
+        if (map.size() == 0 || currentItem >= map.size()) {
+            return null
+        } else {
+            return map.get(currentItem) as SpeedrunEventsFragment
+        }
+    }
+
     private fun setupSearchView(searchView: SearchView) {
         //add space for before query, trimmed off durring the filter
         //used for a work around with the filter not getting called when the string is empty
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                itemAdapter.filter(" " + query)
+                getCurrentFragment()?.itemAdapter?.filter(" " + query)
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                itemAdapter.filter(" " + newText)
+                getCurrentFragment()?.itemAdapter?.filter(" " + newText)
                 return false
             }
         })
     }
 
-    private fun setupRecyclerView(events: Array<SpeedRunEvent>) {
-
-        //set our adapters to the RecyclerView
-        events_recycler_view.layoutManager = LinearLayoutManager(this)
-        events_recycler_view.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        events_recycler_view.adapter = fastAdapter
-
-        val workManager = WorkQueueManager(getSharedPref(), ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
-
-        fastAdapter.withOnClickListener(EventItemClickListener(workManager, subscribeFilter, EventItemViewSetter(workQueueManager)))
-
-        //set the items to your ItemAdapter
-        itemAdapter.add(events.map { EventItem(it, workManager) })
-
-        itemAdapter.itemFilter.withFilterPredicate({ item, constraint ->
-            //remove space that is added at the start for filter work around
-            val trimmedConstraint = constraint?.substring(1)
-            item.event.game.contains(trimmedConstraint.toString(), ignoreCase = true) &&
-                    if (subscribeFilter.enabled) {
-                        isSubscribed(item.event)
-                    } else {
-                        true
-                    }
-        })
-    }
-
-    private fun isSubscribed(event: SpeedRunEvent): Boolean {
+    fun isSubscribed(event: SpeedRunEvent): Boolean {
         return workQueueManager.isQueued(event)
     }
 
-    private fun getSharedPref(): SharedPreferences {
+    fun getSharedPref(): SharedPreferences {
         return getSharedPreferences("enqueued", Context.MODE_PRIVATE)
     }
 }

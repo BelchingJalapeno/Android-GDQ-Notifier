@@ -33,3 +33,8 @@ fun getEvents(reader: Reader): Array<SpeedRunEvent> {
     val gson = GsonBuilder().create()
     return gson.fromJson<Array<SpeedRunEvent>>(reader, Array<SpeedRunEvent>::class.java)
 }
+
+fun getEvents(reader: String): Array<SpeedRunEvent> {
+    val gson = GsonBuilder().create()
+    return gson.fromJson<Array<SpeedRunEvent>>(reader, Array<SpeedRunEvent>::class.java)
+}
