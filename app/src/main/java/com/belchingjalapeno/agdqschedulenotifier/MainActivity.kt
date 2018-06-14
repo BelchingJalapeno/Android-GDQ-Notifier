@@ -5,11 +5,11 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
 import android.view.Menu
 import android.view.MenuItem
-import android.view.ViewGroup
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var workQueueManager: WorkQueueManager
     private var searchView: SearchView? = null
     val subscribeFilter = SubscribedFilter()
-    private var currentFragment: SpeedRunEventsFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,17 +53,6 @@ class MainActivity : AppCompatActivity() {
                 return SpeedRunEventsFragment.newInstance(eventsByDay[p0])
             }
 
-            override fun setPrimaryItem(container: ViewGroup, position: Int, `object`: Any) {
-                super.setPrimaryItem(container, position, `object`)
-                currentFragment = `object` as SpeedRunEventsFragment
-                if (searchView != null) {
-                    val query = searchView?.query
-                    if (query != null) {
-                        filter(query)
-                    }
-                }
-            }
-
             override fun getCount(): Int {
                 return eventsByDay.size
             }
@@ -74,6 +62,20 @@ class MainActivity : AppCompatActivity() {
                 return SimpleDateFormat("MMMM d", Locale.getDefault()).format(Date(fromStringStartTimeToLong))
             }
         }
+        speedrun_viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrollStateChanged(p0: Int) {
+                val query = searchView?.query
+                if (query != null) {
+                    filter(query)
+                }
+            }
+
+            override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
+            }
+
+            override fun onPageSelected(p0: Int) {
+            }
+        })
     }
 
     private fun getEventsByDay(events: Array<SpeedRunEvent>): Array<Array<SpeedRunEvent>> {

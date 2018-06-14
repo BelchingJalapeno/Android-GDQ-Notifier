@@ -67,6 +67,9 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
 
             backgroundColorSetter.setColor(itemView, item.event, item.workQueueManager)
 
+            itemView.requestLayout()
+            itemView.invalidate()
+
 //            castersTextView.visibility = View.VISIBLE
 //            castersView.visibility = View.VISIBLE
 //            runnersView.visibility = View.VISIBLE

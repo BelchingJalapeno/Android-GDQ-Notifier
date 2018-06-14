@@ -47,14 +47,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="8dp"
-        tools:text="gymnast86"
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintBottom_toBottomOf="@+id/runnersTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/runnersTextView"
-        app:layout_constraintTop_toTopOf="@+id/runnersTextView" />
+        app:layout_constraintTop_toTopOf="@+id/runnersTextView"
+        tools:text="gymnast86" />
 
     <TextView
         android:id="@+id/categoryView"
@@ -73,15 +71,13 @@
         android:id="@+id/castersView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:paddingBottom="8dp"
-        tools:text="musical_dardevil"
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/castersTextView"
-        app:layout_constraintTop_toTopOf="@+id/castersTextView" />
+        app:layout_constraintTop_toTopOf="@+id/castersTextView"
+        tools:text="musical_dardevil" />
 
     <TextView
         android:id="@+id/setupTimeView"
@@ -100,10 +96,11 @@
         android:id="@+id/castersTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:paddingBottom="8dp"
         android:text="Casters"
-        app:layout_constraintStart_toStartOf="@+id/runnersTextView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/runnersTextView" />
 
     <TextView
@@ -140,9 +137,9 @@
         android:id="@+id/notification_toggle_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView11"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/runLengthView"
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_notifications_off_black_24dp" />
 

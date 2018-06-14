@@ -26,8 +26,9 @@ class EventItemViewSetter(private val workQueueManager: WorkQueueManager) {
             setViewVisibility(castersView, View.VISIBLE, animate)
             setViewVisibility(runnersTextView, View.VISIBLE, animate)
             setViewVisibility(castersTextView, View.VISIBLE, animate)
-            if(animate)
-            animateViewExpand(parentView.measuredHeight, parentView.measuredHeight + runnersView.measuredHeight + castersView.measuredHeight, parentView, animate)
+            if (animate) {
+                animateViewExpand(parentView.measuredHeight, parentView.measuredHeight + runnersView.measuredHeight + castersView.measuredHeight, parentView, animate)
+            }
         } else {
             if (runnersView.visibility == View.INVISIBLE) {
                 return
@@ -36,9 +37,9 @@ class EventItemViewSetter(private val workQueueManager: WorkQueueManager) {
             setViewVisibility(castersView, View.INVISIBLE, animate)
             setViewVisibility(runnersTextView, View.INVISIBLE, animate)
             setViewVisibility(castersTextView, View.INVISIBLE, animate)
-            if(animate)
-            animateViewExpand(parentView.measuredHeight, parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight), parentView, animate)
-            else{
+            if (animate) {
+                animateViewExpand(parentView.measuredHeight, parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight), parentView, animate)
+            } else {
                 val layoutParams = parentView.layoutParams
                 layoutParams.height = parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight)
                 parentView.layoutParams = layoutParams
@@ -54,6 +55,7 @@ class EventItemViewSetter(private val workQueueManager: WorkQueueManager) {
             layoutParams.height = endingHeight
             parentView.layoutParams = layoutParams
             parentView.requestLayout()
+            parentView.invalidate()
             return
         }
         val anim = ValueAnimator.ofInt(startingHeight, endingHeight)
