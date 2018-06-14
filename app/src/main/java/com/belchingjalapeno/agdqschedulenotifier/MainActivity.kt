@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var workQueueManager: WorkQueueManager
     private var searchView: SearchView? = null
     val subscribeFilter = SubscribedFilter()
-    private var currentFragment: SpeedrunEventsFragment? = null
+    private var currentFragment: SpeedRunEventsFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,13 +51,13 @@ class MainActivity : AppCompatActivity() {
         speedrun_viewpager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
 
             override fun getItem(p0: Int): Fragment {
-                return SpeedrunEventsFragment.newInstance(eventsByDay[p0])
+                return SpeedRunEventsFragment.newInstance(eventsByDay[p0])
             }
 
             override fun setPrimaryItem(container: ViewGroup, position: Int, `object`: Any) {
                 super.setPrimaryItem(container, position, `object`)
-                currentFragment = `object` as SpeedrunEventsFragment
-                if(searchView != null){
+                currentFragment = `object` as SpeedRunEventsFragment
+                if (searchView != null) {
                     getCurrentFragment()?.itemAdapter?.filter(" " + searchView?.query)
                 }
             }
@@ -114,7 +114,10 @@ class MainActivity : AppCompatActivity() {
             item.isChecked = !item.isChecked
             subscribeFilter.enabled = item.isChecked
             //add space for filter not getting called work around
-            getCurrentFragment()?.itemAdapter?.filter(" " + searchView?.query)
+            val query = searchView?.query
+            if (query != null) {
+                filter(query)
+            }
             true
         }
 
@@ -123,8 +126,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun getCurrentFragment(): SpeedrunEventsFragment? {
+    private fun getCurrentFragment(): SpeedRunEventsFragment? {
         return currentFragment
+    }
+
+    private fun filter(query: CharSequence) {
+        supportFragmentManager.fragments
+                .filter { it is SpeedRunEventsFragment }
+                .map { it as SpeedRunEventsFragment }
+                .forEach { it.itemAdapter.filter(" " + query) }
     }
 
     private fun setupSearchView(searchView: SearchView) {
@@ -132,12 +142,16 @@ class MainActivity : AppCompatActivity() {
         //used for a work around with the filter not getting called when the string is empty
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                getCurrentFragment()?.itemAdapter?.filter(" " + query)
+                if (query != null) {
+                    filter(query)
+                }
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                getCurrentFragment()?.itemAdapter?.filter(" " + newText)
+                if (newText != null) {
+                    filter(newText)
+                }
                 return false
             }
         })

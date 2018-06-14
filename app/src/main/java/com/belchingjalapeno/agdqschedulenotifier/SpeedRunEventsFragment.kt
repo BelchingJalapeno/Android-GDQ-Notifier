@@ -19,13 +19,13 @@ private const val ARG_EVENTS = "param1"
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
- * [SpeedrunEventsFragment.OnFragmentInteractionListener] interface
+ * [SpeedRunEventsFragment.OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [SpeedrunEventsFragment.newInstance] factory method to
+ * Use the [SpeedRunEventsFragment.newInstance] factory method to
  * create an instance of this fragment.
  *
  */
-class SpeedrunEventsFragment : Fragment() {
+class SpeedRunEventsFragment : Fragment() {
 
     //create the ItemAdapter holding your Items
     val itemAdapter = ItemAdapter.items<EventItem>()
@@ -84,11 +84,11 @@ class SpeedrunEventsFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment SpeedrunEventsFragment.
+         * @return A new instance of fragment SpeedRunEventsFragment.
          */
         @JvmStatic
         fun newInstance(events: Array<SpeedRunEvent>) =
-                SpeedrunEventsFragment().apply {
+                SpeedRunEventsFragment().apply {
                     arguments = Bundle().apply {
                         putString(ARG_EVENTS, Gson().toJson(events))
                     }
