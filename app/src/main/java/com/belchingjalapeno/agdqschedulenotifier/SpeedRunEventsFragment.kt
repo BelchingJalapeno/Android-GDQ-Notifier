@@ -1,9 +1,7 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -58,9 +56,8 @@ class SpeedRunEventsFragment : Fragment() {
         recyclerView.adapter = fastAdapter
 
         val mainActivity = activity as MainActivity
-        val workManager = WorkQueueManager(mainActivity.getSharedPref(), ContextCompat.getColor(mainActivity, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
-
-        fastAdapter.withOnClickListener(EventItemClickListener(mainActivity.subscribeFilter, EventItemViewSetter()))
+        val workManager = mainActivity.workQueueManager
+        fastAdapter.withOnClickListener(mainActivity.clickListener)
 
         //set the items to your ItemAdapter
         itemAdapter.add(events.map { EventItem(it, workManager) })

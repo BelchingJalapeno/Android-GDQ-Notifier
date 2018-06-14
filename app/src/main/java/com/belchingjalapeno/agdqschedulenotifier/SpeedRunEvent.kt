@@ -2,7 +2,6 @@ package com.belchingjalapeno.agdqschedulenotifier
 
 import androidx.work.Data
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName
 import java.io.Reader
 
@@ -19,8 +18,10 @@ data class SpeedRunEvent(
         val setupTime: String
 )
 
+private val gson = Gson()
+
 fun dataToEvent(data: Data): SpeedRunEvent {
-    return Gson().fromJson(data.getString("data", ""), SpeedRunEvent::class.java)
+    return gson.fromJson(data.getString("data", ""), SpeedRunEvent::class.java)
 }
 
 fun eventToData(event: SpeedRunEvent): Data {
@@ -30,11 +31,9 @@ fun eventToData(event: SpeedRunEvent): Data {
 }
 
 fun getEvents(reader: Reader): Array<SpeedRunEvent> {
-    val gson = GsonBuilder().create()
     return gson.fromJson<Array<SpeedRunEvent>>(reader, Array<SpeedRunEvent>::class.java)
 }
 
 fun getEvents(reader: String): Array<SpeedRunEvent> {
-    val gson = GsonBuilder().create()
     return gson.fromJson<Array<SpeedRunEvent>>(reader, Array<SpeedRunEvent>::class.java)
 }

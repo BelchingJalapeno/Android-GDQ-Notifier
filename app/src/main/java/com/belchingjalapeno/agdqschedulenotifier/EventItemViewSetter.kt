@@ -43,8 +43,8 @@ class EventItemViewSetter {
                 val layoutParams = parentView.layoutParams
                 layoutParams.height = parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight)
                 parentView.layoutParams = layoutParams
-                parentView.requestLayout()
-                parentView.invalidate()
+//                parentView.requestLayout()
+//                parentView.invalidate()
             }
         }
     }
@@ -54,8 +54,8 @@ class EventItemViewSetter {
             val layoutParams = parentView.layoutParams
             layoutParams.height = endingHeight
             parentView.layoutParams = layoutParams
-            parentView.requestLayout()
-            parentView.invalidate()
+//            parentView.requestLayout()
+//            parentView.invalidate()
             return
         }
         val anim = ValueAnimator.ofInt(startingHeight, endingHeight)

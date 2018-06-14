@@ -2,9 +2,11 @@ package com.belchingjalapeno.agdqschedulenotifier
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.content.ContextCompat
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
@@ -22,12 +24,13 @@ class MainActivity : AppCompatActivity() {
     lateinit var workQueueManager: WorkQueueManager
     private var searchView: SearchView? = null
     val subscribeFilter = SubscribedFilter()
+    val clickListener = EventItemClickListener(subscribeFilter, EventItemViewSetter())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        workQueueManager = WorkQueueManager(getSharedPref(), 0, 0, 0)
+        workQueueManager = WorkQueueManager(getSharedPref(), ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
 
         val resource = resources.openRawResource(R.raw.events)
         var events = getEvents(BufferedReader(InputStreamReader(resource)))
