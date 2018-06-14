@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun getPageTitle(position: Int): CharSequence? {
                 val fromStringStartTimeToLong = TimeCalculator().fromStringStartTimeToLong(eventsByDay[position][0].startTime)
-                return SimpleDateFormat.getDateInstance().format(Date(fromStringStartTimeToLong))
+                return SimpleDateFormat("MMMM d", Locale.getDefault()).format(Date(fromStringStartTimeToLong))
             }
         }
     }
