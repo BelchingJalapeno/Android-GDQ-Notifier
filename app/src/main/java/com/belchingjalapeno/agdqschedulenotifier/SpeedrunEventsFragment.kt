@@ -14,8 +14,6 @@ import com.google.gson.Gson
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.adapters.ItemAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_EVENTS = "param1"
 
 /**
@@ -54,7 +52,6 @@ class SpeedrunEventsFragment : Fragment() {
     }
 
     private fun setupRecyclerView(recyclerView: RecyclerView, events: Array<SpeedRunEvent>) {
-
         //set our adapters to the RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
@@ -89,7 +86,6 @@ class SpeedrunEventsFragment : Fragment() {
          * @param param2 Parameter 2.
          * @return A new instance of fragment SpeedrunEventsFragment.
          */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(events: Array<SpeedRunEvent>) =
                 SpeedrunEventsFragment().apply {
