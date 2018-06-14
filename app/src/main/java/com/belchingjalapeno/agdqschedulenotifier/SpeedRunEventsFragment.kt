@@ -60,7 +60,7 @@ class SpeedRunEventsFragment : Fragment() {
         val mainActivity = activity as MainActivity
         val workManager = WorkQueueManager(mainActivity.getSharedPref(), ContextCompat.getColor(mainActivity, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
 
-        fastAdapter.withOnClickListener(EventItemClickListener(workManager, mainActivity.subscribeFilter, EventItemViewSetter(mainActivity.workQueueManager)))
+        fastAdapter.withOnClickListener(EventItemClickListener(mainActivity.subscribeFilter, EventItemViewSetter()))
 
         //set the items to your ItemAdapter
         itemAdapter.add(events.map { EventItem(it, workManager) })

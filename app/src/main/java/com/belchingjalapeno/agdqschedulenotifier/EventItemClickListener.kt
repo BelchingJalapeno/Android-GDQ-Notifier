@@ -6,7 +6,6 @@ import com.mikepenz.fastadapter.listeners.OnClickListener
 
 
 class EventItemClickListener(
-        private val queueManager: WorkQueueManager,
         private val subscribedFilter: SubscribedFilter,
         private val eventStateSetter: EventItemViewSetter
 ) : OnClickListener<EventItem> {
@@ -19,6 +18,7 @@ class EventItemClickListener(
         if (subscribedFilter.enabled) {
             return true
         }
+        val queueManager = item.workQueueManager
         val event = item.event
         val isQueued = queueManager.isQueued(event)
 
@@ -35,7 +35,7 @@ class EventItemClickListener(
         backgroundColorSetter.setColor(v, item.event, queueManager)
 
         if (v != null) {
-            eventStateSetter.setViewState(v, item.event)
+            eventStateSetter.setViewState(queueManager, v, item.event)
         }
 
         return true

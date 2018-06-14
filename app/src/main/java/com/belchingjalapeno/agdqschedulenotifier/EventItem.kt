@@ -2,7 +2,6 @@ package com.belchingjalapeno.agdqschedulenotifier
 
 import android.view.View
 import android.view.ViewTreeObserver
-import android.widget.ImageView
 import android.widget.TextView
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.items.AbstractItem
@@ -29,12 +28,10 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
         private val castersView: TextView = itemView.findViewById(R.id.castersView)
         private val runnersView: TextView = itemView.findViewById(R.id.runnersView)
         private val categoryView: TextView = itemView.findViewById(R.id.categoryView)
-        private val notificationToggleView: ImageView = itemView.findViewById(R.id.notification_toggle_button)
-        private val runnersTextView: TextView = itemView.findViewById(R.id.runnersTextView)
-        private val castersTextView: TextView = itemView.findViewById(R.id.castersTextView)
 
         private val timeCalculator = TimeCalculator()
         private val backgroundColorSetter = BackgroundColorSetter()
+        private val eventItemViewSetter = EventItemViewSetter()
 
         override fun bindView(item: EventItem, payloads: MutableList<Any>?) {
             val currentTime = System.currentTimeMillis()
@@ -76,10 +73,10 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
 //            runnersTextView.visibility = View.VISIBLE
 //            EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
 
-            itemView.viewTreeObserver.addOnPreDrawListener(object: ViewTreeObserver.OnPreDrawListener{
+            itemView.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
                 override fun onPreDraw(): Boolean {
                     itemView.viewTreeObserver.removeOnPreDrawListener(this)
-                    EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
+                    eventItemViewSetter.setViewState(item.workQueueManager, itemView, item.event, false)
                     return true
                 }
             })

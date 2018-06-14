@@ -6,8 +6,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 
-class EventItemViewSetter(private val workQueueManager: WorkQueueManager) {
-    fun setViewState(parentView: View, speedRunEvent: SpeedRunEvent, animate: Boolean = true) {
+class EventItemViewSetter {
+    fun setViewState(workQueueManager: WorkQueueManager, parentView: View, speedRunEvent: SpeedRunEvent, animate: Boolean = true) {
         val notificationToggleView = parentView.findViewById<ImageView>(R.id.notification_toggle_button)!!
         val runnersView = parentView.findViewById<TextView>(R.id.runnersView)
         val castersView = parentView.findViewById<TextView>(R.id.castersView)
