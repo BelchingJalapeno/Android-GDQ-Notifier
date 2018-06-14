@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
-import android.util.SparseArray
 import android.view.Menu
 import android.view.MenuItem
 import android.view.ViewGroup
@@ -21,9 +20,9 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     lateinit var workQueueManager: WorkQueueManager
-    private lateinit var searchView: SearchView
+    private var searchView: SearchView? = null
     val subscribeFilter = SubscribedFilter()
-    private val map = SparseArray<Fragment>()
+    private var currentFragment: SpeedrunEventsFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,15 +54,12 @@ class MainActivity : AppCompatActivity() {
                 return SpeedrunEventsFragment.newInstance(eventsByDay[p0])
             }
 
-            override fun instantiateItem(container: ViewGroup, position: Int): Any {
-                val instantiateItem = super.instantiateItem(container, position) as Fragment
-                map.put(position, instantiateItem)
-                return instantiateItem
-            }
-
-            override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-                map.remove(position)
-                super.destroyItem(container, position, `object`)
+            override fun setPrimaryItem(container: ViewGroup, position: Int, `object`: Any) {
+                super.setPrimaryItem(container, position, `object`)
+                currentFragment = `object` as SpeedrunEventsFragment
+                if(searchView != null){
+                    getCurrentFragment()?.itemAdapter?.filter(" " + searchView?.query)
+                }
             }
 
             override fun getCount(): Int {
@@ -98,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         val searchItem = menu?.findItem(R.id.app_bar_search)
         searchView = searchItem?.actionView as SearchView
 
-        setupSearchView(searchView)
+        setupSearchView(searchView!!)
 
         return super.onCreateOptionsMenu(menu)
     }
@@ -118,7 +114,7 @@ class MainActivity : AppCompatActivity() {
             item.isChecked = !item.isChecked
             subscribeFilter.enabled = item.isChecked
             //add space for filter not getting called work around
-            getCurrentFragment()?.itemAdapter?.filter(" " + searchView.query)
+            getCurrentFragment()?.itemAdapter?.filter(" " + searchView?.query)
             true
         }
 
@@ -128,13 +124,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getCurrentFragment(): SpeedrunEventsFragment? {
-        val currentItem = speedrun_viewpager.currentItem
-        println("currentItem:$currentItem")
-        if (map.size() == 0 || currentItem >= map.size()) {
-            return null
-        } else {
-            return map.get(currentItem) as SpeedrunEventsFragment
-        }
+        return currentFragment
     }
 
     private fun setupSearchView(searchView: SearchView) {
