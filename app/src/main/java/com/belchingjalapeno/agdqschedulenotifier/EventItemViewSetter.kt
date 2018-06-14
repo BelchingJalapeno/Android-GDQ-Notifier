@@ -9,44 +9,40 @@ import android.widget.TextView
 class EventItemViewSetter {
     fun setViewState(workQueueManager: WorkQueueManager, parentView: View, speedRunEvent: SpeedRunEvent, animate: Boolean = true) {
         val notificationToggleView = parentView.findViewById<ImageView>(R.id.notification_toggle_button)!!
-        val runnersView = parentView.findViewById<TextView>(R.id.runnersView)
-        val castersView = parentView.findViewById<TextView>(R.id.castersView)
-        val runnersTextView = parentView.findViewById<TextView>(R.id.runnersTextView)
-        val castersTextView = parentView.findViewById<TextView>(R.id.castersTextView)
 
         val notificationEnabled = workQueueManager.isQueued(speedRunEvent)
 
         setNotificationIconState(notificationToggleView, notificationEnabled)
 
-        if (notificationEnabled) {
-            if (runnersView.visibility == View.VISIBLE) {
-                return
-            }
-            setViewVisibility(runnersView, View.VISIBLE, animate)
-            setViewVisibility(castersView, View.VISIBLE, animate)
-            setViewVisibility(runnersTextView, View.VISIBLE, animate)
-            setViewVisibility(castersTextView, View.VISIBLE, animate)
-            if (animate) {
-                animateViewExpand(parentView.measuredHeight, parentView.measuredHeight + runnersView.measuredHeight + castersView.measuredHeight, parentView, animate)
-            }
-        } else {
-            if (runnersView.visibility == View.INVISIBLE) {
-                return
-            }
-            setViewVisibility(runnersView, View.INVISIBLE, animate)
-            setViewVisibility(castersView, View.INVISIBLE, animate)
-            setViewVisibility(runnersTextView, View.INVISIBLE, animate)
-            setViewVisibility(castersTextView, View.INVISIBLE, animate)
-            if (animate) {
-                animateViewExpand(parentView.measuredHeight, parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight), parentView, animate)
-            } else {
-                val layoutParams = parentView.layoutParams
-                layoutParams.height = parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight)
-                parentView.layoutParams = layoutParams
-//                parentView.requestLayout()
-//                parentView.invalidate()
-            }
-        }
+//        if (notificationEnabled) {
+//            if (runnersView.visibility == View.VISIBLE) {
+//                return
+//            }
+//            setViewVisibility(runnersView, View.VISIBLE, animate)
+//            setViewVisibility(castersView, View.VISIBLE, animate)
+//            setViewVisibility(runnersTextView, View.VISIBLE, animate)
+//            setViewVisibility(castersTextView, View.VISIBLE, animate)
+//            if (animate) {
+//                animateViewExpand(parentView.measuredHeight, parentView.measuredHeight + runnersView.measuredHeight + castersView.measuredHeight, parentView, animate)
+//            }
+//        } else {
+//            if (runnersView.visibility == View.INVISIBLE) {
+//                return
+//            }
+//            setViewVisibility(runnersView, View.INVISIBLE, animate)
+//            setViewVisibility(castersView, View.INVISIBLE, animate)
+//            setViewVisibility(runnersTextView, View.INVISIBLE, animate)
+//            setViewVisibility(castersTextView, View.INVISIBLE, animate)
+//            if (animate) {
+//                animateViewExpand(parentView.measuredHeight, parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight), parentView, animate)
+//            } else {
+//                val layoutParams = parentView.layoutParams
+//                layoutParams.height = parentView.measuredHeight - (runnersView.measuredHeight + castersView.measuredHeight)
+//                parentView.layoutParams = layoutParams
+////                parentView.requestLayout()
+////                parentView.invalidate()
+//            }
+//        }
     }
 
     private fun animateViewExpand(startingHeight: Int, endingHeight: Int, parentView: View, animate: Boolean) {

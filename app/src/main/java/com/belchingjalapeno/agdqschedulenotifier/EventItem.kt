@@ -24,8 +24,6 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
         private val gameNameView: TextView = itemView.findViewById(R.id.gameNameView)
         private val startTimeView: TextView = itemView.findViewById(R.id.startTimeView)
         private val runLengthView: TextView = itemView.findViewById(R.id.runLengthView)
-        private val castersView: TextView = itemView.findViewById(R.id.castersView)
-        private val runnersView: TextView = itemView.findViewById(R.id.runnersView)
         private val categoryView: TextView = itemView.findViewById(R.id.categoryView)
 
         private val timeCalculator = TimeCalculator()
@@ -56,8 +54,6 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
 
 
             gameNameView.text = item.event.game
-            castersView.text = item.event.casters
-            runnersView.text = item.event.runners
 //            setupTimeView.text = item.event.setupTime
             categoryView.text = item.event.category
 
