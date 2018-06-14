@@ -3,4 +3,7 @@
     <string name="search">Search</string>
     <string name="only_show_subscribed">Filter subscribed</string>
     <string name="twitch">Twitch stream</string>
+    <string name="test">When 25 days\t\tLength 45 mins\n
+    Runners\t\t gymnast86\n
+    Casters\t\t musical_dardevil</string>
 </resources>

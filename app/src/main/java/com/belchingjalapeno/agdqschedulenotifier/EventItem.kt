@@ -23,7 +23,6 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
 
         private val gameNameView: TextView = itemView.findViewById(R.id.gameNameView)
         private val startTimeView: TextView = itemView.findViewById(R.id.startTimeView)
-        private val setupTimeView: TextView = itemView.findViewById(R.id.setupTimeView)
         private val runLengthView: TextView = itemView.findViewById(R.id.runLengthView)
         private val castersView: TextView = itemView.findViewById(R.id.castersView)
         private val runnersView: TextView = itemView.findViewById(R.id.runnersView)
@@ -48,18 +47,18 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
                 timeCalculator.getFormattedTime(timeDifference, showHours = true)
             }
 
-            startTimeView.text = time
+            startTimeView.text = "When   $time"
 
             val expectedLengthInMillis = timeCalculator.fromStringExpectedLengthToLong(item.event.runLength)
             val time2 = timeCalculator.getFormattedTime(expectedLengthInMillis, showHours = true, showMinutes = true, showSeconds = true)
 
-            runLengthView.text = time2
+            runLengthView.text = "Length   $time2"
 
 
             gameNameView.text = item.event.game
             castersView.text = item.event.casters
             runnersView.text = item.event.runners
-            setupTimeView.text = item.event.setupTime
+//            setupTimeView.text = item.event.setupTime
             categoryView.text = item.event.category
 
             backgroundColorSetter.setColor(itemView, item.event, item.workQueueManager)

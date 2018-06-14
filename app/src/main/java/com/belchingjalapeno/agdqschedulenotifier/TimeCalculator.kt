@@ -8,12 +8,17 @@ import java.util.*
  */
 class TimeCalculator {
 
+    private companion object {
+        private val simpleDateFormatLength = SimpleDateFormat("H:mm:ss", Locale.getDefault())
+        private val simpleDateFormatStartTime = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.getDefault())
+    }
+
     fun fromStringStartTimeToLong(startTime: String): Long {
-        return SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.getDefault()).parse(startTime).time
+        return simpleDateFormatStartTime.parse(startTime).time
     }
 
     fun fromStringExpectedLengthToLong(runLength: String): Long {
-        return SimpleDateFormat("H:mm:ss", Locale.getDefault()).parse(runLength).time
+        return simpleDateFormatLength.parse(runLength).time
     }
 
     fun getTimeDiff(currentTime: Long, targetTime: Long): Long {
