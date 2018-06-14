@@ -58,7 +58,10 @@ class MainActivity : AppCompatActivity() {
                 super.setPrimaryItem(container, position, `object`)
                 currentFragment = `object` as SpeedRunEventsFragment
                 if (searchView != null) {
-                    getCurrentFragment()?.itemAdapter?.filter(" " + searchView?.query)
+                    val query = searchView?.query
+                    if (query != null) {
+                        filter(query)
+                    }
                 }
             }
 
@@ -124,10 +127,6 @@ class MainActivity : AppCompatActivity() {
         else -> {
             super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun getCurrentFragment(): SpeedRunEventsFragment? {
-        return currentFragment
     }
 
     private fun filter(query: CharSequence) {
