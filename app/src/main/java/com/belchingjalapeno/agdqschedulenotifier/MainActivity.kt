@@ -7,7 +7,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.content.ContextCompat
-import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.SearchView
 import android.view.Menu
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var workQueueManager: WorkQueueManager
     private var searchView: SearchView? = null
-    val subscribeFilter = SubscribedFilter()
+    val subscribeFilter = EventFilter()
     val clickListener = EventItemClickListener(subscribeFilter, EventItemViewSetter())
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,20 +64,6 @@ class MainActivity : AppCompatActivity() {
                 return SimpleDateFormat("MMMM d", Locale.getDefault()).format(Date(fromStringStartTimeToLong))
             }
         }
-        speedrun_viewpager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-            override fun onPageScrollStateChanged(p0: Int) {
-                val query = searchView?.query
-                if (query != null) {
-                    filter(query)
-                }
-            }
-
-            override fun onPageScrolled(p0: Int, p1: Float, p2: Int) {
-            }
-
-            override fun onPageSelected(p0: Int) {
-            }
-        })
     }
 
     private fun getEventsByDay(events: Array<SpeedRunEvent>): Array<Array<SpeedRunEvent>> {
@@ -120,12 +105,15 @@ class MainActivity : AppCompatActivity() {
 
         R.id.app_bar_subscribed -> {
             item.isChecked = !item.isChecked
-            subscribeFilter.enabled = item.isChecked
             //add space for filter not getting called work around
-            val query = searchView?.query
-            if (query != null) {
-                filter(query)
+            val searchView1 = searchView
+            val query = if (searchView1 != null) {
+                " " + searchView1.query
+            } else {
+                " "
             }
+            subscribeFilter.changeFilter(item.isChecked, query)
+
             true
         }
 
@@ -134,29 +122,24 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun filter(query: CharSequence) {
-        supportFragmentManager.fragments
-                .filter { it is SpeedRunEventsFragment }
-                .map { it as SpeedRunEventsFragment }
-                .forEach { it.itemAdapter.filter(" " + query) }
-    }
-
     private fun setupSearchView(searchView: SearchView) {
         //add space for before query, trimmed off durring the filter
         //used for a work around with the filter not getting called when the string is empty
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                if (query != null) {
-                    filter(query)
-                }
+                query(query)
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                if (newText != null) {
-                    filter(newText)
-                }
+                query(newText)
                 return false
+            }
+
+            private fun query(query: String?) {
+                if (query != null) {
+                    subscribeFilter.changeFilter(query)
+                }
             }
         })
     }

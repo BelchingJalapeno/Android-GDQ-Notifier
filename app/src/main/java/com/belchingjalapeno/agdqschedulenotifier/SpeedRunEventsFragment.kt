@@ -26,9 +26,15 @@ private const val ARG_EVENTS = "param1"
 class SpeedRunEventsFragment : Fragment() {
 
     //create the ItemAdapter holding your Items
-    val itemAdapter = ItemAdapter.items<EventItem>()
+    val itemAdapter = ItemAdapter.items<EventItem>()!!
     //create the managing FastAdapter, by passing in the itemAdapter
     private val fastAdapter = FastAdapter.with<EventItem, ItemAdapter<EventItem>>(itemAdapter)
+
+    private val changeListener = object : FilterChangedListener {
+        override fun changed(notificationOnly: Boolean, query: String) {
+            itemAdapter.filter(query)
+        }
+    }
 
     private var events: Array<SpeedRunEvent> = arrayOf()
 
@@ -66,12 +72,25 @@ class SpeedRunEventsFragment : Fragment() {
             //remove space that is added at the start for filter work around
             val trimmedConstraint = constraint?.substring(1)
             item.event.game.contains(trimmedConstraint.toString(), ignoreCase = true) &&
-                    if (mainActivity.subscribeFilter.enabled) {
+                    if (mainActivity.subscribeFilter.notificationOnly) {
                         mainActivity.isSubscribed(item.event)
                     } else {
                         true
                     }
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val activity = activity as MainActivity
+        activity.subscribeFilter.addListener(changeListener)
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        val activity = activity as MainActivity
+        activity.subscribeFilter.removeListener(changeListener)
     }
 
     companion object {

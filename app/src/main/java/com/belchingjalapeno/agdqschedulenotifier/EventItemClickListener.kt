@@ -6,7 +6,7 @@ import com.mikepenz.fastadapter.listeners.OnClickListener
 
 
 class EventItemClickListener(
-        private val subscribedFilter: SubscribedFilter,
+        private val eventFilter: EventFilter,
         private val eventStateSetter: EventItemViewSetter
 ) : OnClickListener<EventItem> {
 
@@ -15,7 +15,7 @@ class EventItemClickListener(
 
     override fun onClick(v: View?, adapter: IAdapter<EventItem>?, item: EventItem, position: Int): Boolean {
         //don't allow subscribing / unsubscribing if the filter is enabled
-        if (subscribedFilter.enabled) {
+        if (eventFilter.notificationOnly) {
             return true
         }
         val queueManager = item.workQueueManager
