@@ -25,6 +25,9 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
         private val startTimeView: TextView = itemView.findViewById(R.id.startTimeView)
         private val runLengthView: TextView = itemView.findViewById(R.id.runLengthView)
         private val categoryView: TextView = itemView.findViewById(R.id.categoryView)
+        private val castersView: TextView = itemView.findViewById(R.id.castersView)
+        private val runnersView: TextView = itemView.findViewById(R.id.runnersView)
+        private val expandableView: ExpandableConstraintLayout = itemView as ExpandableConstraintLayout
 
         private val timeCalculator = TimeCalculator()
         private val backgroundColorSetter = BackgroundColorSetter()
@@ -56,7 +59,14 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
             gameNameView.text = item.event.game
 //            setupTimeView.text = item.event.setupTime
             categoryView.text = item.event.category
+            castersView.text = item.event.runners
+            runnersView.text = item.event.casters
 
+            if(item.workQueueManager.isQueued(item.event)){
+                expandableView.expand(0)
+            }else{
+                expandableView.collapse(0)
+            }
             backgroundColorSetter.setColor(itemView, item.event, item.workQueueManager)
 
 //            itemView.requestLayout()

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.belchingjalapeno.agdqschedulenotifier.ExpandableConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/event_item"
@@ -10,15 +10,15 @@
         android:id="@+id/gameNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        tools:text="The Legend of Zelda: Majora's Mask 3D"
+        android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="The Legend of Zelda: Majora's Mask 3D" />
 
     <TextView
         android:id="@+id/startTimeView"
@@ -58,14 +58,14 @@
         android:id="@+id/categoryView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        tools:text="Any%"
+        android:layout_marginEnd="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintEnd_toEndOf="@+id/gameNameView"
         app:layout_constraintStart_toStartOf="@+id/gameNameView"
-        app:layout_constraintTop_toBottomOf="@+id/gameNameView" />
+        app:layout_constraintTop_toBottomOf="@+id/gameNameView"
+        tools:text="Any%" />
 
     <TextView
         android:id="@+id/castersView"
@@ -110,4 +110,4 @@
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_notifications_off_black_24dp" />
 
-</android.support.constraint.ConstraintLayout>
+</com.belchingjalapeno.agdqschedulenotifier.ExpandableConstraintLayout>
