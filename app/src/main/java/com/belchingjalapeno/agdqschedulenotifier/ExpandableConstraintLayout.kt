@@ -67,7 +67,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             a.duration = animationTime
             startAnimation(a)
         }
-        val notificationIconView = findViewById<ImageView>(R.id.imageView)
+        val notificationIconView = findViewById<ImageView>(R.id.expandImageView)
         val startingColor = ContextCompat.getColor(context, R.color.colorAccent)
         val endingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
         addColorAnimation(notificationIconView, startingColor, endingColor)
@@ -113,7 +113,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             a.duration = animationTime
             startAnimation(a)
         }
-        val notificationIconView = findViewById<ImageView>(R.id.imageView)
+        val notificationIconView = findViewById<ImageView>(R.id.expandImageView)
         val startingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
         val endingColor = ContextCompat.getColor(context, R.color.colorAccent)
         addColorAnimation(notificationIconView, startingColor, endingColor)
