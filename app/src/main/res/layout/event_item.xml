@@ -5,22 +5,20 @@
     android:id="@+id/event_item"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:foreground="?attr/selectableItemBackground"
-    >
+    android:foreground="?attr/selectableItemBackground">
 
     <TextView
         android:id="@+id/gameNameView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="8dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="@+id/notification_toggle_button"
-        app:layout_constraintEnd_toStartOf="@id/notification_toggle_button"
+        app:layout_constraintEnd_toStartOf="@+id/notification_toggle_button"
         app:layout_constraintHeight_default="wrap"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="@+id/notification_toggle_button"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintWidth_default="wrap"
         tools:text="The Legend of Zelda: Majora's Mask 3D" />
 
@@ -113,8 +111,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/notification_bell"
-        android:padding="16dp"
-        app:layout_constraintRight_toRightOf="parent"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/gameNameView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_notifications_off_black_24dp" />
 
@@ -125,8 +125,11 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="8dp"
         android:contentDescription="@string/expand_icon_button"
-        android:padding="16dp"
+        android:padding="8dp"
         android:tint="@color/colorAccent"
+        app:layout_constraintEnd_toStartOf="@+id/gameNameView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_expand_more_black_24dp" />
