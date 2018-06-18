@@ -1,13 +1,16 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
 import android.content.Context
+import android.graphics.Color
 import android.support.constraint.ConstraintLayout
+import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.animation.Animation
 import android.view.animation.Transformation
+import android.widget.ImageView
 import android.widget.TextView
 
 class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
@@ -17,10 +20,15 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
     var expanded = true
         private set
 
-    override fun performClick(): Boolean {
-        if (!expanded) expand()
-        else collapse()
-        return super.performClick()
+    override fun onFinishInflate() {
+        super.onFinishInflate()
+        findViewById<ImageView>(R.id.imageView).setOnClickListener {
+            if (!expanded) {
+                expand()
+            } else {
+                collapse()
+            }
+        }
     }
 
     fun expand(animationTime: Long = 200) {
@@ -58,6 +66,12 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             a.duration = animationTime
             startAnimation(a)
         }
+        val notificationIconView = findViewById<ImageView>(R.id.imageView)
+        val startingColor = ContextCompat.getColor(context, R.color.colorAccent)
+        val endingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
+        addColorAnimation(notificationIconView, startingColor, endingColor)
+        notificationIconView.animate().rotation(-180.0f)
+        notificationIconView.animate().setDuration(animationTime).start()
     }
 
     fun collapse(animationTime: Long = 200) {
@@ -95,6 +109,12 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             a.duration = animationTime
             startAnimation(a)
         }
+        val notificationIconView = findViewById<ImageView>(R.id.imageView)
+        val startingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
+        val endingColor = ContextCompat.getColor(context, R.color.colorAccent)
+        addColorAnimation(notificationIconView, startingColor, endingColor)
+        notificationIconView.animate().rotation(0.0f)
+        notificationIconView.animate().setDuration(animationTime).start()
     }
 
     private fun doOnPreDraw(lambda: () -> Unit) {

@@ -1,10 +1,10 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
 import android.animation.ValueAnimator
+import android.graphics.Color
 import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
 
 class EventItemViewSetter {
     fun setViewState(workQueueManager: WorkQueueManager, parentView: View, speedRunEvent: SpeedRunEvent, animate: Boolean = true) {
@@ -67,13 +67,18 @@ class EventItemViewSetter {
 
     private fun setNotificationIconState(notificationIconView: ImageView, enabled: Boolean) {
         if (enabled) {
-            notificationIconView.setImageResource(R.drawable.ic_notifications_active_white_24dp)
-            notificationIconView.setColorFilter(ContextCompat.getColor(notificationIconView.context, R.color.colorAccent))
-            notificationIconView.imageAlpha = 255
-        } else {
+//            notificationIconView.setImageResource(R.drawable.ic_notifications_active_white_24dp)
+            val startingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
+            val endingColor = ContextCompat.getColor(notificationIconView.context, R.color.colorAccent)
             notificationIconView.setImageResource(R.drawable.ic_notifications_off_black_24dp)
-            notificationIconView.setColorFilter(0xFFFFFF)
-            notificationIconView.imageAlpha = (0.54f * 255).toInt()
+            addColorAnimation(notificationIconView, startingColor, endingColor)
+            notificationIconView.animate().setDuration(200).start()
+        } else {
+            val startingColor = ContextCompat.getColor(notificationIconView.context, R.color.colorAccent)
+            val endingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
+            notificationIconView.setImageResource(R.drawable.ic_notifications_off_black_24dp)
+            addColorAnimation(notificationIconView, startingColor, endingColor)
+            notificationIconView.animate().setDuration(200).start()
         }
     }
 
