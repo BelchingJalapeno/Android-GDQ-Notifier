@@ -63,9 +63,9 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
             runnersView.text = item.event.casters
 
             if(item.workQueueManager.isQueued(item.event)){
-                expandableView.expand(0)
+                expandableView.expand(1)
             }else{
-                expandableView.collapse(0)
+                expandableView.collapse(1)
             }
             backgroundColorSetter.setColor(itemView, item.event, item.workQueueManager)
 

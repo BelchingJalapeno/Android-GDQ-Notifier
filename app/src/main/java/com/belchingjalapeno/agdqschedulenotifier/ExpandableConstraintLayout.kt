@@ -31,6 +31,9 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         }
     }
 
+    /**
+     * animationTime must be > 0 to prevent color not getting set
+     */
     fun expand(animationTime: Long = 200) {
         doOnPreDraw {
             expanded = true
@@ -74,6 +77,9 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         notificationIconView.animate().setDuration(animationTime).start()
     }
 
+    /**
+     * animationTime must be > 0 to prevent color not getting set
+     */
     fun collapse(animationTime: Long = 200) {
         doOnPreDraw {
             expanded = false
