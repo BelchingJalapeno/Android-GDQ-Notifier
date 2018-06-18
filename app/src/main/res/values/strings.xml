@@ -6,4 +6,7 @@
     <string name="test">When 25 days\t\tLength 45 mins\n
     Runners\t\t gymnast86\n
     Casters\t\t musical_dardevil</string>
+    <string name="notification_bell">Notification Bell</string>
+    <string name="runners">Runners</string>
+    <string name="casters">Casters</string>
 </resources>
