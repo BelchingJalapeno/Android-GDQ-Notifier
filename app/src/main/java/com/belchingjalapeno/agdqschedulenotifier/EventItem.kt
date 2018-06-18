@@ -1,7 +1,6 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
 import android.view.View
-import android.view.ViewTreeObserver
 import android.widget.TextView
 import com.mikepenz.fastadapter.FastAdapter
 import com.mikepenz.fastadapter.items.AbstractItem
@@ -55,42 +54,19 @@ class EventItem(val event: SpeedRunEvent, val workQueueManager: WorkQueueManager
 
             runLengthView.text = "Length   $time2"
 
-
             gameNameView.text = item.event.game
-//            setupTimeView.text = item.event.setupTime
             categoryView.text = item.event.category
             castersView.text = item.event.runners
             runnersView.text = item.event.casters
 
-            if(item.workQueueManager.isQueued(item.event)){
+            if (item.workQueueManager.isQueued(item.event)) {
                 expandableView.expand(1)
-            }else{
+            } else {
                 expandableView.collapse(1)
             }
             backgroundColorSetter.setColor(itemView, item.event, item.workQueueManager)
 
-//            itemView.requestLayout()
-//            itemView.invalidate()
-
-//            castersTextView.visibility = View.VISIBLE
-//            castersView.visibility = View.VISIBLE
-//            runnersView.visibility = View.VISIBLE
-//            runnersTextView.visibility = View.VISIBLE
-//            EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
-
-            itemView.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
-                override fun onPreDraw(): Boolean {
-                    itemView.viewTreeObserver.removeOnPreDrawListener(this)
-                    eventItemViewSetter.setViewState(item.workQueueManager, itemView, item.event, false)
-                    return true
-                }
-            })
-//            itemView.viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
-//                override fun onGlobalLayout() {
-//                    itemView.viewTreeObserver.removeOnGlobalLayoutListener(this)
-//                    EventItemViewSetter(item.workQueueManager).setViewState(itemView, item.event, false)
-//                }
-//            })
+            eventItemViewSetter.setViewState(item.workQueueManager, itemView, item.event, 1)
         }
 
         override fun unbindView(item: EventItem) {
