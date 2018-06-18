@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var workQueueManager: WorkQueueManager
     private var searchView: SearchView? = null
     val subscribeFilter = EventFilter()
-    val clickListener = EventItemClickListener(subscribeFilter, EventItemViewSetter())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

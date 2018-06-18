@@ -63,10 +63,9 @@ class SpeedRunEventsFragment : Fragment() {
 
         val mainActivity = activity as MainActivity
         val workManager = mainActivity.workQueueManager
-        fastAdapter.withOnClickListener(mainActivity.clickListener)
 
         //set the items to your ItemAdapter
-        itemAdapter.set(events.map { EventItem(it, workManager) })
+        itemAdapter.set(events.map { EventItem(it, workManager, mainActivity.subscribeFilter) })
 
         itemAdapter.itemFilter.withFilterPredicate({ item, constraint ->
             //remove space that is added at the start for filter work around
