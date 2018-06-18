@@ -5,6 +5,7 @@ import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
+import android.view.ViewTreeObserver
 import android.view.animation.Animation
 import android.view.animation.Transformation
 import android.widget.TextView
@@ -13,7 +14,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
 
     //https://stackoverflow.com/questions/41464629/expand-collapse-animation-in-cardview
 
-    private var expanded = false
+    private var expanded = true
 
     override fun performClick(): Boolean {
         if (!expanded) expand()
@@ -27,70 +28,92 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
     }
 
     fun expand(animationTime: Long = 200) {
-        expanded = true
-        val initialHeight = height
-        Log.i("Expandable", "InitialHeight = $initialHeight")
+        doOnPreDraw {
+            if (expanded) {
+                return@doOnPreDraw
+            }
+            expanded = true
+            val initialHeight = height
+            Log.i("Expandable", "InitialHeight = $initialHeight")
 
-        measure(ConstraintLayout.LayoutParams.MATCH_CONSTRAINT, ConstraintLayout.LayoutParams.MATCH_CONSTRAINT)
-        val targetHeight = measuredHeight
+            measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
+            val targetHeight = measuredHeight
 
-        val distanceToExpand = targetHeight - initialHeight
+            val distanceToExpand = targetHeight - initialHeight
 
-        val a = object : Animation() {
-            override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
-                if (interpolatedTime == 1f) {
-                    // Do this after expanded
+            val a = object : Animation() {
+                override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
+                    if (interpolatedTime == 1f) {
+                        // Do this after expanded
+                    }
+
+                    layoutParams.height = (initialHeight + distanceToExpand * interpolatedTime).toInt()
+
+                    findViewById<TextView>(R.id.castersView).visibility = View.VISIBLE
+                    findViewById<TextView>(R.id.runnersView).visibility = View.VISIBLE
+                    findViewById<TextView>(R.id.castersTextView).visibility = View.VISIBLE
+                    findViewById<TextView>(R.id.runnersTextView).visibility = View.VISIBLE
+
+                    requestLayout()
                 }
 
-                layoutParams.height = (initialHeight + distanceToExpand * interpolatedTime).toInt()
-
-                findViewById<TextView>(R.id.castersView).visibility = View.VISIBLE
-                findViewById<TextView>(R.id.runnersView).visibility = View.VISIBLE
-                findViewById<TextView>(R.id.castersTextView).visibility = View.VISIBLE
-                findViewById<TextView>(R.id.runnersTextView).visibility = View.VISIBLE
-
-                requestLayout()
+                override fun willChangeBounds(): Boolean {
+                    return true
+                }
             }
 
-            override fun willChangeBounds(): Boolean {
-                return true
-            }
+            a.duration = animationTime
+            startAnimation(a)
         }
-
-        a.duration = animationTime
-        startAnimation(a)
     }
 
     fun collapse(animationTime: Long = 200) {
-        expanded = false
-        measure(ConstraintLayout.LayoutParams.MATCH_CONSTRAINT, ConstraintLayout.LayoutParams.MATCH_CONSTRAINT)
-        val initialHeight = measuredHeight
-        val collapsedHeight = initialHeight - (findViewById<TextView>(R.id.castersTextView).measuredHeight + findViewById<TextView>(R.id.runnersTextView).measuredHeight)
+        doOnPreDraw {
+            if (!expanded) {
+                return@doOnPreDraw
+            }
+            expanded = false
+            measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
+            val initialHeight = measuredHeight
+            val castersView = findViewById<TextView>(R.id.castersView)
+            val runnersView = findViewById<TextView>(R.id.runnersView)
+            val collapsedHeight = initialHeight - (castersView.measuredHeight + runnersView.measuredHeight)
 
-        val distanceToCollapse = initialHeight - collapsedHeight
+            val distanceToCollapse = initialHeight - collapsedHeight
 
-        val a = object : Animation() {
-            override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
-                if (interpolatedTime == 1f) {
-                    // Do this after collapsed
-                    findViewById<TextView>(R.id.castersView).visibility = View.INVISIBLE
-                    findViewById<TextView>(R.id.runnersView).visibility = View.INVISIBLE
-                    findViewById<TextView>(R.id.castersTextView).visibility = View.INVISIBLE
-                    findViewById<TextView>(R.id.runnersTextView).visibility = View.INVISIBLE
+            val a = object : Animation() {
+                override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
+                    if (interpolatedTime == 1f) {
+                        // Do this after collapsed
+                        castersView.visibility = View.INVISIBLE
+                        runnersView.visibility = View.INVISIBLE
+                        findViewById<TextView>(R.id.castersTextView).visibility = View.INVISIBLE
+                        findViewById<TextView>(R.id.runnersTextView).visibility = View.INVISIBLE
+                    }
+
+                    Log.i("Expandable", "Collapse | InterpolatedTime = $interpolatedTime")
+
+                    layoutParams.height = (initialHeight - distanceToCollapse * interpolatedTime).toInt()
+                    requestLayout()
                 }
 
-                Log.i("Expandable", "Collapse | InterpolatedTime = $interpolatedTime")
-
-                layoutParams.height = (initialHeight - distanceToCollapse * interpolatedTime).toInt()
-                requestLayout()
+                override fun willChangeBounds(): Boolean {
+                    return true
+                }
             }
 
-            override fun willChangeBounds(): Boolean {
+            a.duration = animationTime
+            startAnimation(a)
+        }
+    }
+
+    private fun doOnPreDraw(lambda: () -> Unit) {
+        viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
+            override fun onPreDraw(): Boolean {
+                lambda()
+                viewTreeObserver.removeOnPreDrawListener(this)
                 return true
             }
-        }
-
-        a.duration = animationTime
-        startAnimation(a)
+        })
     }
 }
