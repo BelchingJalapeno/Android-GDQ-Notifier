@@ -20,15 +20,13 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
     var expanded = true
         private set
 
-    override fun onFinishInflate() {
-        super.onFinishInflate()
-        findViewById<ImageView>(R.id.imageView).setOnClickListener {
-            if (!expanded) {
-                expand()
-            } else {
-                collapse()
-            }
+    override fun performClick(): Boolean {
+        if (!expanded) {
+            expand()
+        } else {
+            collapse()
         }
+        return super.performClick()
     }
 
     /**
