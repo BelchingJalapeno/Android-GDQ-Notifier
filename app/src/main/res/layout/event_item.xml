@@ -46,14 +46,18 @@
 
     <TextView
         android:id="@+id/runnersView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        app:layout_constraintBottom_toBottomOf="@+id/runnersTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/runnersTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/runnersTextView"
+        app:layout_constraintTop_toBottomOf="@+id/runLengthView"
         tools:text="gymnast86" />
 
     <TextView
@@ -74,14 +78,21 @@
 
     <TextView
         android:id="@+id/castersView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:paddingBottom="8dp"
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/castersTextView"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/castersTextView"
+        app:layout_constraintTop_toBottomOf="@+id/runnersView"
+        app:layout_constraintWidth_default="wrap"
         tools:text="musical_dardevil" />
 
     <TextView
@@ -89,21 +100,25 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:paddingBottom="8dp"
         android:text="@string/casters"
+        app:layout_constraintBottom_toBottomOf="@+id/castersView"
+        app:layout_constraintEnd_toStartOf="@+id/castersView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/runnersTextView" />
+        app:layout_constraintTop_toTopOf="@+id/castersView" />
 
     <TextView
         android:id="@+id/runnersTextView"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:text="@string/runners"
+        app:layout_constraintBottom_toBottomOf="@+id/runnersView"
+        app:layout_constraintEnd_toStartOf="@+id/runnersView"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startTimeView" />
+        app:layout_constraintTop_toTopOf="@+id/runnersView" />
 
     <ImageView
         android:id="@+id/notification_toggle_button"
