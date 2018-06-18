@@ -14,7 +14,8 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
 
     //https://stackoverflow.com/questions/41464629/expand-collapse-animation-in-cardview
 
-    private var expanded = true
+    var expanded = true
+        private set
 
     override fun performClick(): Boolean {
         if (!expanded) expand()
@@ -22,16 +23,8 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         return super.performClick()
     }
 
-    override fun onFinishInflate() {
-        super.onFinishInflate()
-        collapse(0)
-    }
-
     fun expand(animationTime: Long = 200) {
         doOnPreDraw {
-            if (expanded) {
-                return@doOnPreDraw
-            }
             expanded = true
             val initialHeight = height
             Log.i("Expandable", "InitialHeight = $initialHeight")
@@ -69,9 +62,6 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
 
     fun collapse(animationTime: Long = 200) {
         doOnPreDraw {
-            if (!expanded) {
-                return@doOnPreDraw
-            }
             expanded = false
             measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
             val initialHeight = measuredHeight
