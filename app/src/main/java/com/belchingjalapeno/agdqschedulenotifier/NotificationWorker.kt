@@ -1,6 +1,5 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
-import android.annotation.SuppressLint
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -61,7 +60,6 @@ class NotificationWorker : Worker() {
         return TwitchIntentBuilder.getTwitchPendingIntent(applicationContext)
     }
 
-    @SuppressLint("InlinedApi")
     private fun createNotificationChannel() {
         // Create the NotificationChannel, but only on API 26+ because
         // the NotificationChannel class is new and not in the support library
