@@ -49,11 +49,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupTabs(events: Array<SpeedRunEvent>) {
         val eventsByDay = getEventsByDay(events)
-        tab_layout.setupWithViewPager(speedrun_viewpager)
+        tab_layout.setupWithViewPager(speedrun_viewpager, false)
+        val fragmentList = eventsByDay.map { SpeedRunEventsFragment.newInstance(it) }
         speedrun_viewpager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
 
             override fun getItem(p0: Int): Fragment {
-                return SpeedRunEventsFragment.newInstance(eventsByDay[p0])
+                return fragmentList[p0]
             }
 
             override fun getCount(): Int {
