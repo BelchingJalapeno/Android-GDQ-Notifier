@@ -20,6 +20,12 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
     var expanded = true
         private set
 
+    private lateinit var castersView: TextView
+    private lateinit var runnersView: TextView
+    private lateinit var castersTextView: TextView
+    private lateinit var runnersTextView: TextView
+    private lateinit var notificationIconView: ImageView
+
     override fun performClick(): Boolean {
         if (!expanded) {
             expand()
@@ -27,6 +33,16 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             collapse()
         }
         return super.performClick()
+    }
+
+    override fun onFinishInflate() {
+        super.onFinishInflate()
+
+        castersView = findViewById<TextView>(R.id.castersView)
+        runnersView = findViewById<TextView>(R.id.runnersView)
+        castersTextView = findViewById<TextView>(R.id.castersTextView)
+        runnersTextView = findViewById<TextView>(R.id.runnersTextView)
+        notificationIconView = findViewById<ImageView>(R.id.expandImageView)
     }
 
     /**
@@ -51,28 +67,21 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
                         val percent = clamp((it.currentPlayTime.toDouble() / it.duration.toDouble()).toFloat())
                         layoutParams.height = (initialHeight + (distanceToExpand * percent)).toInt()
 
-                        findViewById<TextView>(R.id.castersView).visibility = View.VISIBLE
-                        findViewById<TextView>(R.id.runnersView).visibility = View.VISIBLE
-                        findViewById<TextView>(R.id.castersTextView).visibility = View.VISIBLE
-                        findViewById<TextView>(R.id.runnersTextView).visibility = View.VISIBLE
+                        castersView.visibility = View.VISIBLE
+                        runnersView.visibility = View.VISIBLE
+                        castersTextView.visibility = View.VISIBLE
+                        runnersTextView.visibility = View.VISIBLE
 
                         requestLayout()
                     }
                     .setDuration(animationTime)
                     .start()
         }
-        val notificationIconView = findViewById<ImageView>(R.id.expandImageView)
         val startingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
         val endingColor = ContextCompat.getColor(context, R.color.colorAccent)
         addColorAnimation(notificationIconView, startingColor, endingColor)
         notificationIconView.animate().rotation(-180.0f)
         notificationIconView.animate().setDuration(animationTime).start()
-
-
-        val castersView = findViewById<TextView>(R.id.castersView)
-        val runnersView = findViewById<TextView>(R.id.runnersView)
-        val castersTextView = findViewById<TextView>(R.id.castersTextView)
-        val runnersTextView = findViewById<TextView>(R.id.runnersTextView)
 
         addAlphaAnimation(castersTextView, 1.0f)
         addAlphaAnimation(runnersTextView, 1.0f)
@@ -93,8 +102,6 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             expanded = false
             measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
             val initialHeight = height
-            val castersView = findViewById<TextView>(R.id.castersView)
-            val runnersView = findViewById<TextView>(R.id.runnersView)
             val collapsedHeight = measuredHeight - (castersView.measuredHeight + runnersView.measuredHeight)
 
             val distanceToCollapse = initialHeight - collapsedHeight
@@ -107,29 +114,21 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
 
                         layoutParams.height = (initialHeight - (distanceToCollapse * percent)).toInt()
                         requestLayout()
-
-                        requestLayout()
                     }
                     .withEndAction {
                         castersView.visibility = View.INVISIBLE
                         runnersView.visibility = View.INVISIBLE
-                        findViewById<TextView>(R.id.castersTextView).visibility = View.INVISIBLE
-                        findViewById<TextView>(R.id.runnersTextView).visibility = View.INVISIBLE
+                        castersTextView.visibility = View.INVISIBLE
+                        runnersTextView.visibility = View.INVISIBLE
                     }
                     .setDuration(animationTime)
                     .start()
         }
-        val notificationIconView = findViewById<ImageView>(R.id.expandImageView)
         val startingColor = ContextCompat.getColor(context, R.color.colorAccent)
         val endingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
         addColorAnimation(notificationIconView, startingColor, endingColor)
         notificationIconView.animate().rotation(0.0f)
         notificationIconView.animate().setDuration(animationTime).start()
-
-        val castersView = findViewById<TextView>(R.id.castersView)
-        val runnersView = findViewById<TextView>(R.id.runnersView)
-        val castersTextView = findViewById<TextView>(R.id.castersTextView)
-        val runnersTextView = findViewById<TextView>(R.id.runnersTextView)
 
         addAlphaAnimation(castersTextView, 0.0f)
         addAlphaAnimation(runnersTextView, 0.0f)
