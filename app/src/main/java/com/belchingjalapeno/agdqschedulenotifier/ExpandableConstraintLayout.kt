@@ -95,7 +95,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             val initialHeight = height
             val castersView = findViewById<TextView>(R.id.castersView)
             val runnersView = findViewById<TextView>(R.id.runnersView)
-            val collapsedHeight = initialHeight - (castersView.measuredHeight + runnersView.measuredHeight)
+            val collapsedHeight = measuredHeight - (castersView.measuredHeight + runnersView.measuredHeight)
 
             val distanceToCollapse = initialHeight - collapsedHeight
 
