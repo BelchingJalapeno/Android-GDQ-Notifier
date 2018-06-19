@@ -49,7 +49,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
                         val clamp = { input: Float -> max(min(input, 1.0f), 0.0f) }
 
                         val percent = clamp((it.currentPlayTime.toDouble() / it.duration.toDouble()).toFloat())
-                        layoutParams.height = (initialHeight + distanceToExpand * percent).toInt()
+                        layoutParams.height = (initialHeight + (distanceToExpand * percent)).toInt()
 
                         findViewById<TextView>(R.id.castersView).visibility = View.VISIBLE
                         findViewById<TextView>(R.id.runnersView).visibility = View.VISIBLE
@@ -92,7 +92,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         doOnPreDraw {
             expanded = false
             measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
-            val initialHeight = measuredHeight
+            val initialHeight = height
             val castersView = findViewById<TextView>(R.id.castersView)
             val runnersView = findViewById<TextView>(R.id.runnersView)
             val collapsedHeight = initialHeight - (castersView.measuredHeight + runnersView.measuredHeight)
@@ -105,7 +105,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
 
                         val percent = clamp((it.currentPlayTime.toDouble() / it.duration.toDouble()).toFloat())
 
-                        layoutParams.height = (initialHeight - distanceToCollapse * percent).toInt()
+                        layoutParams.height = (initialHeight - (distanceToCollapse * percent)).toInt()
                         requestLayout()
 
                         requestLayout()
