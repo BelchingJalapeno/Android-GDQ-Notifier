@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.view.Menu
 import android.view.MenuItem
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var workQueueManager: WorkQueueManager
     private var searchView: SearchView? = null
     val subscribeFilter = EventFilter()
+    val recyclerViewPool = RecyclerView.RecycledViewPool()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

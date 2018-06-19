@@ -64,6 +64,7 @@ class SpeedRunEventsFragment : Fragment() {
         val mainActivity = activity as MainActivity
         val workManager = mainActivity.workQueueManager
 
+        recyclerView.setRecycledViewPool(mainActivity.recyclerViewPool)
         //set the items to your ItemAdapter
         itemAdapter.set(events.map { EventItem(it, workManager, mainActivity.subscribeFilter) })
 
