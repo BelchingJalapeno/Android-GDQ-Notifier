@@ -8,10 +8,10 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
-import android.view.animation.Animation
-import android.view.animation.Transformation
 import android.widget.ImageView
 import android.widget.TextView
+import kotlin.math.max
+import kotlin.math.min
 
 class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
 
@@ -43,29 +43,23 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
 
             val distanceToExpand = targetHeight - initialHeight
 
-            val a = object : Animation() {
-                override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
-                    if (interpolatedTime == 1f) {
-                        // Do this after expanded
+            animate()
+                    .setUpdateListener {
+
+                        val clamp = { input: Float -> max(min(input, 1.0f), 0.0f) }
+
+                        val percent = clamp((it.currentPlayTime.toDouble() / it.duration.toDouble()).toFloat())
+                        layoutParams.height = (initialHeight + distanceToExpand * percent).toInt()
+
+                        findViewById<TextView>(R.id.castersView).visibility = View.VISIBLE
+                        findViewById<TextView>(R.id.runnersView).visibility = View.VISIBLE
+                        findViewById<TextView>(R.id.castersTextView).visibility = View.VISIBLE
+                        findViewById<TextView>(R.id.runnersTextView).visibility = View.VISIBLE
+
+                        requestLayout()
                     }
-
-                    layoutParams.height = (initialHeight + distanceToExpand * interpolatedTime).toInt()
-
-                    findViewById<TextView>(R.id.castersView).visibility = View.VISIBLE
-                    findViewById<TextView>(R.id.runnersView).visibility = View.VISIBLE
-                    findViewById<TextView>(R.id.castersTextView).visibility = View.VISIBLE
-                    findViewById<TextView>(R.id.runnersTextView).visibility = View.VISIBLE
-
-                    requestLayout()
-                }
-
-                override fun willChangeBounds(): Boolean {
-                    return true
-                }
-            }
-
-            a.duration = animationTime
-            startAnimation(a)
+                    .setDuration(animationTime)
+                    .start()
         }
         val notificationIconView = findViewById<ImageView>(R.id.expandImageView)
         val startingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
@@ -105,29 +99,25 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
 
             val distanceToCollapse = initialHeight - collapsedHeight
 
-            val a = object : Animation() {
-                override fun applyTransformation(interpolatedTime: Float, t: Transformation) {
-                    if (interpolatedTime == 1f) {
-                        // Do this after collapsed
+            animate()
+                    .setUpdateListener {
+                        val clamp = { input: Float -> max(min(input, 1.0f), 0.0f) }
+
+                        val percent = clamp((it.currentPlayTime.toDouble() / it.duration.toDouble()).toFloat())
+
+                        layoutParams.height = (initialHeight - distanceToCollapse * percent).toInt()
+                        requestLayout()
+
+                        requestLayout()
+                    }
+                    .withEndAction {
                         castersView.visibility = View.INVISIBLE
                         runnersView.visibility = View.INVISIBLE
                         findViewById<TextView>(R.id.castersTextView).visibility = View.INVISIBLE
                         findViewById<TextView>(R.id.runnersTextView).visibility = View.INVISIBLE
                     }
-
-                    Log.i("Expandable", "Collapse | InterpolatedTime = $interpolatedTime")
-
-                    layoutParams.height = (initialHeight - distanceToCollapse * interpolatedTime).toInt()
-                    requestLayout()
-                }
-
-                override fun willChangeBounds(): Boolean {
-                    return true
-                }
-            }
-
-            a.duration = animationTime
-            startAnimation(a)
+                    .setDuration(animationTime)
+                    .start()
         }
         val notificationIconView = findViewById<ImageView>(R.id.expandImageView)
         val startingColor = ContextCompat.getColor(context, R.color.colorAccent)
