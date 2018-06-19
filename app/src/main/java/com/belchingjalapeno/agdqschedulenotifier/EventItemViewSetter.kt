@@ -18,7 +18,7 @@ class EventItemViewSetter {
         if (enabled) {
             val startingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
             val endingColor = ContextCompat.getColor(notificationIconView.context, R.color.colorAccent)
-            notificationIconView.setImageResource(R.drawable.ic_notifications_off_black_24dp)
+            notificationIconView.setImageResource(R.drawable.ic_notifications_active_black_24dp)
             addColorAnimation(notificationIconView, startingColor, endingColor)
             notificationIconView.animate().setDuration(animationTime).start()
         } else {
