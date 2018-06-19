@@ -73,6 +73,22 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         addColorAnimation(notificationIconView, startingColor, endingColor)
         notificationIconView.animate().rotation(-180.0f)
         notificationIconView.animate().setDuration(animationTime).start()
+
+
+        val castersView = findViewById<TextView>(R.id.castersView)
+        val runnersView = findViewById<TextView>(R.id.runnersView)
+        val castersTextView = findViewById<TextView>(R.id.castersTextView)
+        val runnersTextView = findViewById<TextView>(R.id.runnersTextView)
+
+        addAlphaAnimation(castersTextView, 1.0f)
+        addAlphaAnimation(runnersTextView, 1.0f)
+        addAlphaAnimation(castersView, 1.0f)
+        addAlphaAnimation(runnersView, 1.0f)
+
+        castersTextView.animate().setDuration(animationTime).start()
+        runnersTextView.animate().setDuration(animationTime).start()
+        castersView.animate().setDuration(animationTime).start()
+        runnersView.animate().setDuration(animationTime).start()
     }
 
     /**
@@ -119,6 +135,21 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         addColorAnimation(notificationIconView, startingColor, endingColor)
         notificationIconView.animate().rotation(0.0f)
         notificationIconView.animate().setDuration(animationTime).start()
+
+        val castersView = findViewById<TextView>(R.id.castersView)
+        val runnersView = findViewById<TextView>(R.id.runnersView)
+        val castersTextView = findViewById<TextView>(R.id.castersTextView)
+        val runnersTextView = findViewById<TextView>(R.id.runnersTextView)
+
+        addAlphaAnimation(castersTextView, 0.0f)
+        addAlphaAnimation(runnersTextView, 0.0f)
+        addAlphaAnimation(castersView, 0.0f)
+        addAlphaAnimation(runnersView, 0.0f)
+
+        castersTextView.animate().setDuration(animationTime).start()
+        runnersTextView.animate().setDuration(animationTime).start()
+        castersView.animate().setDuration(animationTime).start()
+        runnersView.animate().setDuration(animationTime).start()
     }
 
     private fun doOnPreDraw(lambda: () -> Unit) {

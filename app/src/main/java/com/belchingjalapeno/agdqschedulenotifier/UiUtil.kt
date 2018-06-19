@@ -35,6 +35,10 @@ fun addColorAnimation(imageView: ImageView, startColor: Int, endColor: Int) {
     })
 }
 
+fun addAlphaAnimation(imageView: View, endAlpha: Float) {
+    imageView.animate().alpha(endAlpha)
+}
+
 private fun clamp(value: Float, min: Float = 0.0f, max: Float = 1.0f): Float {
     return Math.max(Math.min(value, max), min)
 }
