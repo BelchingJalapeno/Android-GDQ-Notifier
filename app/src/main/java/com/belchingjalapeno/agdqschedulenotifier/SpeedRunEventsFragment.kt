@@ -9,8 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.google.gson.Gson
-import com.mikepenz.fastadapter.FastAdapter
-import com.mikepenz.fastadapter.adapters.ItemAdapter
 
 private const val ARG_EVENTS = "param1"
 
@@ -25,14 +23,9 @@ private const val ARG_EVENTS = "param1"
  */
 class SpeedRunEventsFragment : Fragment() {
 
-    //create the ItemAdapter holding your Items
-    val itemAdapter = ItemAdapter.items<EventItem>()!!
-    //create the managing FastAdapter, by passing in the itemAdapter
-    private val fastAdapter = FastAdapter.with<EventItem, ItemAdapter<EventItem>>(itemAdapter)
-
     private val changeListener = object : FilterChangedListener {
         override fun changed(notificationOnly: Boolean, query: String) {
-            itemAdapter.filter(query)
+            //todo notify recyclerview
         }
     }
 
@@ -59,25 +52,12 @@ class SpeedRunEventsFragment : Fragment() {
         //set our adapters to the RecyclerView
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
-        recyclerView.adapter = fastAdapter
 
         val mainActivity = activity as MainActivity
         val workManager = mainActivity.workQueueManager
+        recyclerView.adapter = EventItem(events, workManager, mainActivity.subscribeFilter)
 
         recyclerView.setRecycledViewPool(mainActivity.recyclerViewPool)
-        //set the items to your ItemAdapter
-        itemAdapter.set(events.map { EventItem(it, workManager, mainActivity.subscribeFilter) })
-
-        itemAdapter.itemFilter.withFilterPredicate({ item, constraint ->
-            //remove space that is added at the start for filter work around
-            val trimmedConstraint = constraint?.substring(1)
-            item.event.game.contains(trimmedConstraint.toString(), ignoreCase = true) &&
-                    if (mainActivity.subscribeFilter.notificationOnly) {
-                        mainActivity.isSubscribed(item.event)
-                    } else {
-                        true
-                    }
-        })
     }
 
     override fun onStart() {
