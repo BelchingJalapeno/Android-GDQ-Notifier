@@ -34,7 +34,7 @@ class NotificationWorker : Worker() {
 
     private fun createNotification(pendingIntent: PendingIntent, event: SpeedRunEvent): Notification {
         val formattedEstimatedTime = timeCalculator.getFormattedTime(timeCalculator.fromStringExpectedLengthToLong(event.runLength), true, true, true)
-        val contentText = "Est time $formattedEstimatedTime\n"
+        val contentText = "Length $formattedEstimatedTime\n"
         val mBuilder = NotificationCompat.Builder(this.applicationContext, CHANNEL_ID)
                 .setSmallIcon(R.drawable.glitch_icon_white_128px)
                 .setContentTitle("${event.game}(${event.category}) starting soon")
