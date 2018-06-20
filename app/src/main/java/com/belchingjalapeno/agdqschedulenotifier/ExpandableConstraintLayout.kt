@@ -24,7 +24,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
     private lateinit var runnersView: TextView
     private lateinit var castersTextView: TextView
     private lateinit var runnersTextView: TextView
-    private lateinit var notificationIconView: ImageView
+    private lateinit var expandImageView: ImageView
 
     override fun performClick(): Boolean {
         if (!expanded) {
@@ -38,11 +38,11 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
     override fun onFinishInflate() {
         super.onFinishInflate()
 
-        castersView = findViewById<TextView>(R.id.castersView)
-        runnersView = findViewById<TextView>(R.id.runnersView)
-        castersTextView = findViewById<TextView>(R.id.castersTextView)
-        runnersTextView = findViewById<TextView>(R.id.runnersTextView)
-        notificationIconView = findViewById<ImageView>(R.id.expandImageView)
+        castersView = findViewById(R.id.castersView)
+        runnersView = findViewById(R.id.runnersView)
+        castersTextView = findViewById(R.id.castersTextView)
+        runnersTextView = findViewById(R.id.runnersTextView)
+        expandImageView = findViewById(R.id.expandImageView)
     }
 
     /**
@@ -79,9 +79,9 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         }
         val startingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
         val endingColor = ContextCompat.getColor(context, R.color.colorAccent)
-        addColorAnimation(notificationIconView, startingColor, endingColor)
-        notificationIconView.animate().rotation(-180.0f)
-        notificationIconView.animate().setDuration(animationTime).start()
+        addColorAnimation(expandImageView, startingColor, endingColor)
+        expandImageView.animate().rotation(-180.0f)
+        expandImageView.animate().setDuration(animationTime).start()
 
         addAlphaAnimation(castersTextView, 1.0f)
         addAlphaAnimation(runnersTextView, 1.0f)
@@ -126,9 +126,9 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         }
         val startingColor = ContextCompat.getColor(context, R.color.colorAccent)
         val endingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
-        addColorAnimation(notificationIconView, startingColor, endingColor)
-        notificationIconView.animate().rotation(0.0f)
-        notificationIconView.animate().setDuration(animationTime).start()
+        addColorAnimation(expandImageView, startingColor, endingColor)
+        expandImageView.animate().rotation(0.0f)
+        expandImageView.animate().setDuration(animationTime).start()
 
         addAlphaAnimation(castersTextView, 0.0f)
         addAlphaAnimation(runnersTextView, 0.0f)
@@ -149,5 +149,33 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
                 return true
             }
         })
+    }
+
+    fun collapseNoAnimation() {
+        doOnPreDraw {
+            expanded = false
+            measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
+            val initialHeight = height
+            val collapsedHeight = measuredHeight - (castersView.measuredHeight + runnersView.measuredHeight)
+
+            val distanceToCollapse = initialHeight - collapsedHeight
+
+            castersView.visibility = View.INVISIBLE
+            runnersView.visibility = View.INVISIBLE
+            castersTextView.visibility = View.INVISIBLE
+            runnersTextView.visibility = View.INVISIBLE
+            layoutParams.height = (initialHeight - distanceToCollapse)
+
+            castersView.alpha = 0.0f
+            runnersView.alpha = 0.0f
+            castersTextView.alpha = 0.0f
+            runnersTextView.alpha = 0.0f
+
+            val color = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
+            expandImageView.rotation = 0.0f
+            expandImageView.setColorFilter(color)
+
+            requestLayout()
+        }
     }
 }

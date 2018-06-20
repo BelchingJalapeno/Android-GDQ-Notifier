@@ -60,7 +60,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
             castersView.text = item.runners
             runnersView.text = item.casters
 
-            expandableView.collapse(1)
+            expandableView.collapseNoAnimation()
 
             backgroundColorSetter.setColor(itemView, item, workQueueManager)
 
