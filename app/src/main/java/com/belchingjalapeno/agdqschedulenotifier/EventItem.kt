@@ -72,17 +72,16 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
                     return@setOnClickListener
                 }
                 val queueManager = workQueueManager
-                val event = item
-                val isQueued = queueManager.isQueued(event)
+                val isQueued = queueManager.isQueued(item)
 
                 if (isQueued) {
-                    queueManager.removeFromQueue(event)
+                    queueManager.removeFromQueue(item)
                 } else {
                     val currentTime = System.currentTimeMillis()
-                    val targetTime = timeCalculator.fromStringStartTimeToLong(event.startTime)
+                    val targetTime = timeCalculator.fromStringStartTimeToLong(item.startTime)
                     val timeDifference = timeCalculator.getTimeDiff(currentTime, targetTime)
 
-                    queueManager.addToQueue(event, timeDifference)
+                    queueManager.addToQueue(item, timeDifference)
                 }
 
                 backgroundColorSetter.setColor(notificationIcon, item, queueManager)
