@@ -17,11 +17,11 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toStartOf="@+id/notification_toggle_button"
-        app:layout_constrainedHeight="true"
+        app:layout_constraintHeight_default="wrap"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/expandImageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_default="wrap"
         tools:text="The Legend of Zelda: Majora's Mask 3D" />
 
     <TextView
@@ -51,6 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:textAlignment="textEnd"
@@ -82,17 +83,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:paddingBottom="8dp"
         android:textAlignment="textEnd"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constrainedHeight="true"
+        app:layout_constraintHeight_default="wrap"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/castersTextView"
         app:layout_constraintTop_toBottomOf="@+id/runnersView"
-        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_default="wrap"
         tools:text="musical_dardevil" />
 
     <TextView
