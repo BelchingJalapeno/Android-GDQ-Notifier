@@ -61,7 +61,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
             val targetHeight = measuredHeight
 
-            val distanceToExpand = targetHeight - initialHeight - TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16.0f, resources.displayMetrics).roundToInt()
+            val distanceToExpand = targetHeight - initialHeight
 
             animate()
                     .setUpdateListener {
