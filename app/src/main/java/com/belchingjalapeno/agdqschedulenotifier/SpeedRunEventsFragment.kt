@@ -25,10 +25,10 @@ class SpeedRunEventsFragment : Fragment() {
 
     private val changeListener = object : FilterChangedListener {
         override fun changed(notificationOnly: Boolean, query: String) {
-            //todo notify recyclerview
+            eventItem.filter(notificationOnly, query)
         }
     }
-
+    private lateinit var eventItem: EventItem
     private var events: Array<SpeedRunEvent> = arrayOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,7 +55,8 @@ class SpeedRunEventsFragment : Fragment() {
 
         val mainActivity = activity as MainActivity
         val workManager = mainActivity.workQueueManager
-        recyclerView.adapter = EventItem(events, workManager, mainActivity.subscribeFilter)
+        eventItem = EventItem(events, workManager, mainActivity.subscribeFilter)
+        recyclerView.adapter = eventItem
 
         recyclerView.setRecycledViewPool(mainActivity.recyclerViewPool)
     }

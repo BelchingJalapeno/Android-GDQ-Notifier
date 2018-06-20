@@ -1,17 +1,21 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
+import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 
-class EventItem(val events: Array<SpeedRunEvent>, val workQueueManager: WorkQueueManager, val eventFilter: EventFilter) : RecyclerView.Adapter<EventItem.ViewHolder>() {
+class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueManager: WorkQueueManager, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItem.ViewHolder>() {
 
     private val timeCalculator = TimeCalculator()
     private val backgroundColorSetter = BackgroundColorSetter()
     private val eventItemViewSetter = EventItemViewSetter()
+
+    private val backingEventList = events.toMutableList()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         val expandableView = LayoutInflater.from(p0.context)
@@ -20,11 +24,11 @@ class EventItem(val events: Array<SpeedRunEvent>, val workQueueManager: WorkQueu
     }
 
     override fun getItemCount(): Int {
-        return events.size
+        return backingEventList.size
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        bind(p0, events[p1])
+        bind(p0, backingEventList[p1])
     }
 
 
@@ -86,6 +90,41 @@ class EventItem(val events: Array<SpeedRunEvent>, val workQueueManager: WorkQueu
                 eventItemViewSetter.setViewState(queueManager, notificationIcon, item)
             }
         }
+    }
+
+    fun filter(notificationEnabled: Boolean, query: String) {
+        Log.i("TEST", "FILTER : $notificationEnabled , ($query)")
+        val backingListCopy = backingEventList.toList()
+        val filteredEvents = events.filter {
+            if (notificationEnabled) {
+                workQueueManager.isQueued(it)
+            } else {
+                true
+            }
+        }.filter {
+            it.game.contains(query, ignoreCase = true)
+        }
+        DiffUtil.calculateDiff(object : DiffUtil.Callback() {
+            override fun areItemsTheSame(p0: Int, p1: Int): Boolean {
+                return backingListCopy[p0] === filteredEvents[p1]
+            }
+
+            override fun getOldListSize(): Int {
+                return backingListCopy.size
+            }
+
+            override fun getNewListSize(): Int {
+                return filteredEvents.size
+            }
+
+            override fun areContentsTheSame(p0: Int, p1: Int): Boolean {
+                return backingListCopy[p0] == filteredEvents[p1]
+            }
+        }).dispatchUpdatesTo(this)
+        backingEventList.clear()
+        backingEventList.addAll(filteredEvents)
+
+        Log.i("TEST", "FILTERED")
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

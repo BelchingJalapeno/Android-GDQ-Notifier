@@ -3,7 +3,7 @@ package com.belchingjalapeno.agdqschedulenotifier
 class EventFilter {
     var notificationOnly = false
         private set
-    var query: String = " "
+    var query: String = ""
         private set
     private val changeListeners: MutableList<FilterChangedListener> = mutableListOf()
 

@@ -109,11 +109,7 @@ class MainActivity : AppCompatActivity() {
             item.isChecked = !item.isChecked
             //add space for filter not getting called work around
             val searchView1 = searchView
-            val query = if (searchView1 != null) {
-                " " + searchView1.query
-            } else {
-                " "
-            }
+            val query = searchView1?.query?.toString() ?: ""
             subscribeFilter.changeFilter(item.isChecked, query)
 
             true
