@@ -16,14 +16,14 @@ class NotificationWorker : Worker() {
 
     private val timeCalculator = TimeCalculator()
 
-    override fun doWork(): WorkerResult {
+    override fun doWork(): Result {
         createNotificationChannel()
 
         val event = dataToEvent(inputData)
         val notification = createNotification(createTwitchIntent(), event)
         showNotification(notification, event.hashCode())
 
-        return WorkerResult.SUCCESS
+        return Result.SUCCESS
     }
 
     private fun showNotification(notification: Notification, eventId: Int) {
