@@ -92,7 +92,6 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
     }
 
     fun filter(notificationEnabled: Boolean, query: String) {
-        Log.i("TEST", "FILTER : $notificationEnabled , ($query)")
         val backingListCopy = backingEventList.toList()
         val filteredEvents = events.filter {
             if (notificationEnabled) {
@@ -122,8 +121,6 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
         }).dispatchUpdatesTo(this)
         backingEventList.clear()
         backingEventList.addAll(filteredEvents)
-
-        Log.i("TEST", "FILTERED")
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
