@@ -106,7 +106,8 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             expanded = false
             measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
             val initialHeight = height
-            val collapsedHeight = measuredHeight - (castersView.measuredHeight + runnersView.measuredHeight)
+            //subtract 16dp extra because extra is added for some reason
+            val collapsedHeight = measuredHeight - (castersView.measuredHeight + runnersView.measuredHeight) - TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16.0f, resources.displayMetrics)
 
             val distanceToCollapse = initialHeight - collapsedHeight
 
