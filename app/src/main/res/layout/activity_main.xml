@@ -21,7 +21,6 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:tabMode="scrollable"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -31,8 +30,7 @@
         android:id="@+id/speedrun_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior"
-        />
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/donate_fab"
