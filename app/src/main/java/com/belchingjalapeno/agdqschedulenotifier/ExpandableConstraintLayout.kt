@@ -67,16 +67,16 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
                         val percent = clamp((it.currentPlayTime.toDouble() / it.duration.toDouble()).toFloat())
                         layoutParams.height = (initialHeight + (distanceToExpand * percent)).toInt()
 
-                        castersView.visibility = View.VISIBLE
-                        runnersView.visibility = View.VISIBLE
-                        castersTextView.visibility = View.VISIBLE
-                        runnersTextView.visibility = View.VISIBLE
-
                         requestLayout()
                     }
                     .setDuration(animationTime)
                     .start()
         }
+        castersView.visibility = View.VISIBLE
+        runnersView.visibility = View.VISIBLE
+        castersTextView.visibility = View.VISIBLE
+        runnersTextView.visibility = View.VISIBLE
+
         val startingColor = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
         val endingColor = ContextCompat.getColor(context, R.color.colorAccent)
         addColorAnimation(expandImageView, startingColor, endingColor)
