@@ -6,12 +6,14 @@ import android.support.constraint.ConstraintLayout
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.util.Log
+import android.util.TypedValue
 import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.math.roundToInt
 
 class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
 
@@ -43,6 +45,8 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         castersTextView = findViewById(R.id.castersTextView)
         runnersTextView = findViewById(R.id.runnersTextView)
         expandImageView = findViewById(R.id.expandImageView)
+
+        collapseNoAnimation()
     }
 
     /**
@@ -57,7 +61,7 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
             measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
             val targetHeight = measuredHeight
 
-            val distanceToExpand = targetHeight - initialHeight
+            val distanceToExpand = targetHeight - initialHeight - TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16.0f, resources.displayMetrics).roundToInt()
 
             animate()
                     .setUpdateListener {

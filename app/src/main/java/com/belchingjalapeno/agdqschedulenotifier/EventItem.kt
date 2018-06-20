@@ -2,7 +2,6 @@ package com.belchingjalapeno.agdqschedulenotifier
 
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,7 +59,6 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
             castersView.text = item.runners
             runnersView.text = item.casters
 
-            expandableView.collapseNoAnimation()
 
             backgroundColorSetter.setColor(itemView, item, workQueueManager)
 
