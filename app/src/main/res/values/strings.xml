@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">AGDQScheduleNotifier</string>
+    <string name="main_activity_name">SGDQ 2018</string>
     <string name="search">Search</string>
     <string name="only_show_subscribed">Filter subscribed</string>
     <string name="twitch">Twitch stream</string>
