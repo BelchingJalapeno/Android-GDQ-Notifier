@@ -24,3 +24,5 @@ X - icon
 X - change colors?
 
 allow setting donate and twitch stream button url via the json file
+fix tappnig fast showing invisible views sometimes
+fix layout not correct height when line wraps while preventing jitter regression
