@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 
-class TwitchIntentBuilder {
+class ExternalIntentsBuilder {
     companion object {
 
         fun getTwitchPendingIntent(context: Context): PendingIntent {
@@ -20,6 +20,14 @@ class TwitchIntentBuilder {
 
         fun getDonateIntent(): Intent {
             return Intent(Intent.ACTION_VIEW, Uri.parse("https://gamesdonequick.com/tracker/donate/sgdq2018"))
+        }
+
+        fun getFilePickerJsonIntent(): Intent {
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            intent.addCategory(Intent.CATEGORY_OPENABLE)
+            intent.type = "application/*"
+
+            return intent
         }
     }
 }

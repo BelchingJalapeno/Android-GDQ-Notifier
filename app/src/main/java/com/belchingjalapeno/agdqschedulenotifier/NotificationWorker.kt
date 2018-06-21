@@ -57,7 +57,7 @@ class NotificationWorker : Worker() {
     }
 
     private fun createTwitchIntent(): PendingIntent {
-        return TwitchIntentBuilder.getTwitchPendingIntent(applicationContext)
+        return ExternalIntentsBuilder.getTwitchPendingIntent(applicationContext)
     }
 
     private fun createNotificationChannel() {

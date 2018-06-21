@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDonateFab() {
-        donate_fab.setOnClickListener { startActivity(TwitchIntentBuilder.getDonateIntent()) }
+        donate_fab.setOnClickListener { startActivity(ExternalIntentsBuilder.getDonateIntent()) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.app_bar_twitch -> {
-            startActivity(TwitchIntentBuilder.getTwitchIntent())
+            startActivity(ExternalIntentsBuilder.getTwitchIntent())
             true
         }
 
