@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         val mutableListOf = mutableListOf<SpeedRunEvent>()
         mutableListOf.addAll(events)
         val time = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.getDefault()).format(Date(System.currentTimeMillis() + (1000 * 60)))
-        mutableListOf.add(0, SpeedRunEvent(time, "test", "test", "0:01:00", "test", "test", "0:01:00"))
+//        mutableListOf.add(0, SpeedRunEvent(time, "test", "test", "0:01:00", "test", "test", "0:01:00"))
         events = mutableListOf.toTypedArray()
 
         setupTabs(events)
