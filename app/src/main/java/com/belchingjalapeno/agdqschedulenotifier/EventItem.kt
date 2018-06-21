@@ -62,7 +62,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
 
             backgroundColorSetter.setColor(itemView, item, workQueueManager)
 
-            eventItemViewSetter.setViewState(workQueueManager, itemView, item, 1)
+            eventItemViewSetter.setViewState(workQueueManager, itemView, item, 0)
 
             notificationIcon.setOnClickListener {
                 //don't allow subscribing / unsubscribing if the filter is enabled
