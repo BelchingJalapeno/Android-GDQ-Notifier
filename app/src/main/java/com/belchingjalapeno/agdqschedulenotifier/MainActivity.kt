@@ -1,6 +1,8 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
@@ -13,11 +15,13 @@ import android.support.v7.widget.SearchView
 import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.BufferedReader
-import java.io.InputStreamReader
+import java.io.*
 import java.text.SimpleDateFormat
 import java.util.*
 
+
+private const val REQUEST_CODE_ADD_EVENTS = 1
+private const val REQUEST_CODE_REPLACE_EVENTS = 2
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,9 +36,17 @@ class MainActivity : AppCompatActivity() {
 
         workQueueManager = WorkQueueManager(getSharedPref(), ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
 
-        val resource = resources.openRawResource(R.raw.events)
-        var events = getEvents(BufferedReader(InputStreamReader(resource)))
-        resource.close()
+        val eventsFile = getEventsFile()
+        var events = if (eventsFile.exists()) {
+            val fileReader = FileReader(eventsFile)
+            val events = getEvents(fileReader)
+            fileReader.close()
+            events
+        } else {
+            val defaultEvents = getDefaultEvents()
+            saveEvents(eventsFile, defaultEvents)
+            defaultEvents
+        }
 
         val mutableListOf = mutableListOf<SpeedRunEvent>()
         mutableListOf.addAll(events)
@@ -45,6 +57,21 @@ class MainActivity : AppCompatActivity() {
         setupTabs(events)
         setSupportActionBar(main_toolbar)
         setupDonateFab()
+    }
+
+    private fun getEventsFile() = File(filesDir, "events.json")
+
+    private fun saveEvents(eventsFile: File, events: Array<SpeedRunEvent>) {
+        val fileWriter = FileWriter(eventsFile)
+        fileWriter.write(eventsToSJsonString(events))
+        fileWriter.close()
+    }
+
+    private fun getDefaultEvents(): Array<SpeedRunEvent> {
+        val resource = resources.openRawResource(R.raw.events)
+        val events = getEvents(BufferedReader(InputStreamReader(resource)))
+        resource.close()
+        return events
     }
 
     private fun setupTabs(events: Array<SpeedRunEvent>) {
@@ -107,16 +134,51 @@ class MainActivity : AppCompatActivity() {
 
         R.id.app_bar_subscribed -> {
             item.isChecked = !item.isChecked
-            //add space for filter not getting called work around
-            val searchView1 = searchView
-            val query = searchView1?.query?.toString() ?: ""
+            val query = searchView?.query?.toString() ?: ""
             subscribeFilter.changeFilter(item.isChecked, query)
 
             true
         }
 
+        R.id.app_bar_add_events -> {
+            startActivityForResult(ExternalIntentsBuilder.getFilePickerJsonIntent(), REQUEST_CODE_ADD_EVENTS)
+            true
+        }
+
+        R.id.app_bar_replace_events -> {
+            startActivityForResult(ExternalIntentsBuilder.getFilePickerJsonIntent(), REQUEST_CODE_REPLACE_EVENTS)
+            true
+        }
+
         else -> {
             super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (resultCode == Activity.RESULT_OK) {
+            val uri = data?.data
+            val eventsFileReader = InputStreamReader(contentResolver.openInputStream(uri))
+            val newEvents = getEvents(eventsFileReader)
+            eventsFileReader.close()
+            when (requestCode) {
+                REQUEST_CODE_ADD_EVENTS -> {
+                    val fileReader = FileReader(getEventsFile())
+                    val oldEvents = getEvents(fileReader)
+                    fileReader.close()
+
+                    //remove duplicates
+                    val events = (oldEvents + newEvents).toSet().toTypedArray()
+
+                    saveEvents(getEventsFile(), events)
+                }
+
+                REQUEST_CODE_REPLACE_EVENTS -> {
+                    workQueueManager.clearAll()
+                    saveEvents(getEventsFile(), newEvents)
+                }
+            }
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 

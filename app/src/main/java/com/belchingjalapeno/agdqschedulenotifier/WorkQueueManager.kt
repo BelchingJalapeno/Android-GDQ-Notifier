@@ -49,4 +49,8 @@ class WorkQueueManager(private val pref: SharedPreferences,
 
         WorkManager.getInstance().enqueue(workRequest)
     }
+
+    fun clearAll() {
+        WorkManager.getInstance().cancelAllWork()
+    }
 }

@@ -30,6 +30,10 @@ fun eventToData(event: SpeedRunEvent): Data {
             .build()
 }
 
+fun eventsToSJsonString(events: Array<SpeedRunEvent>): String {
+    return gson.toJson(events)
+}
+
 fun getEvents(reader: Reader): Array<SpeedRunEvent> {
     return gson.fromJson<Array<SpeedRunEvent>>(reader, Array<SpeedRunEvent>::class.java)
 }
