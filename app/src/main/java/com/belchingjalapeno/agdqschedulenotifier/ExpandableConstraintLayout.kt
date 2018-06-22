@@ -13,7 +13,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import kotlin.math.max
 import kotlin.math.min
-import kotlin.math.roundToInt
 
 class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : ConstraintLayout(context, attrs) {
 
@@ -46,7 +45,20 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         runnersTextView = findViewById(R.id.runnersTextView)
         expandImageView = findViewById(R.id.expandImageView)
 
-        collapseNoAnimation()
+        expanded = false
+        castersView.visibility = View.GONE
+        runnersView.visibility = View.GONE
+        castersTextView.visibility = View.GONE
+        runnersTextView.visibility = View.GONE
+
+        castersView.alpha = 0.0f
+        runnersView.alpha = 0.0f
+        castersTextView.alpha = 0.0f
+        runnersTextView.alpha = 0.0f
+
+        val color = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
+        expandImageView.rotation = 0.0f
+        expandImageView.setColorFilter(color)
     }
 
     /**
@@ -121,10 +133,10 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
                         requestLayout()
                     }
                     .withEndAction {
-                        castersView.visibility = View.INVISIBLE
-                        runnersView.visibility = View.INVISIBLE
-                        castersTextView.visibility = View.INVISIBLE
-                        runnersTextView.visibility = View.INVISIBLE
+                        castersView.visibility = View.GONE
+                        runnersView.visibility = View.GONE
+                        castersTextView.visibility = View.GONE
+                        runnersTextView.visibility = View.GONE
                     }
                     .setDuration(animationTime)
                     .start()
@@ -156,31 +168,24 @@ class ExpandableConstraintLayout(context: Context?, attrs: AttributeSet?) : Cons
         })
     }
 
-    fun collapseNoAnimation() {
-        doOnPreDraw {
-            expanded = false
-            measure(MeasureSpec.makeMeasureSpec(measuredWidth, MeasureSpec.AT_MOST), MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
-            val initialHeight = height
-            val collapsedHeight = measuredHeight - (castersView.measuredHeight + runnersView.measuredHeight)
+    fun collapseNoAnimation(collapsedSize: Int) {
+        expanded = false
+        castersView.visibility = View.GONE
+        runnersView.visibility = View.GONE
+        castersTextView.visibility = View.GONE
+        runnersTextView.visibility = View.GONE
+        layoutParams.height = collapsedSize
 
-            val distanceToCollapse = initialHeight - collapsedHeight
+        castersView.alpha = 0.0f
+        runnersView.alpha = 0.0f
+        castersTextView.alpha = 0.0f
+        runnersTextView.alpha = 0.0f
 
-            castersView.visibility = View.INVISIBLE
-            runnersView.visibility = View.INVISIBLE
-            castersTextView.visibility = View.INVISIBLE
-            runnersTextView.visibility = View.INVISIBLE
-            layoutParams.height = (initialHeight - distanceToCollapse)
+        val color = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
+        expandImageView.rotation = 0.0f
+        expandImageView.setColorFilter(color)
 
-            castersView.alpha = 0.0f
-            runnersView.alpha = 0.0f
-            castersTextView.alpha = 0.0f
-            runnersTextView.alpha = 0.0f
-
-            val color = Color.argb((0.54f * 255).toInt(), 255, 255, 255)
-            expandImageView.rotation = 0.0f
-            expandImageView.setColorFilter(color)
-
-            requestLayout()
-        }
+        requestLayout()
+        invalidate()
     }
 }

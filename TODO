@@ -22,7 +22,7 @@ X - fix scroll jumping
 X - so you can just see your schedule, dynamically update schedule due to stretch goals and whatnot
 X - icon
 X - change colors?
+X -fix layout not correct height when line wraps while preventing jitter regression
 
 allow setting donate and twitch stream button url via the json file
 fix tappnig fast showing invisible views sometimes
-fix layout not correct height when line wraps while preventing jitter regression

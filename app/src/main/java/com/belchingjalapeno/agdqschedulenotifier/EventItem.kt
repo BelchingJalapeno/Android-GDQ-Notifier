@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
 
@@ -15,6 +16,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
     private val eventItemViewSetter = EventItemViewSetter()
 
     private val backingEventList = events.toMutableList()
+    private val heightMap = mutableMapOf<SpeedRunEvent, Int>()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         val expandableView = LayoutInflater.from(p0.context)
@@ -59,6 +61,26 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
             castersView.text = item.runners
             runnersView.text = item.casters
 
+            if (!heightMap.contains(item)) {
+                expandableView.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
+                    override fun onPreDraw(): Boolean {
+                        castersView.visibility = View.GONE
+                        runnersView.visibility = View.GONE
+                        castersTextView.visibility = View.GONE
+                        runnersTextView.visibility = View.GONE
+                        expandableView.measure(View.MeasureSpec.makeMeasureSpec(expandableView.measuredWidth, View.MeasureSpec.AT_MOST), View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED))
+
+                        heightMap[item] = expandableView.measuredHeight
+                        expandableView.collapseNoAnimation(heightMap[item]!!)
+
+                        expandableView.viewTreeObserver.removeOnPreDrawListener(this)
+
+                        return true
+                    }
+                })
+            } else {
+                expandableView.collapseNoAnimation(heightMap[item]!!)
+            }
 
             backgroundColorSetter.setColor(itemView, item, workQueueManager)
 
@@ -129,6 +151,8 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
         val categoryView: TextView = itemView.findViewById(R.id.categoryView)
         val castersView: TextView = itemView.findViewById(R.id.castersView)
         val runnersView: TextView = itemView.findViewById(R.id.runnersView)
+        val runnersTextView: TextView = itemView.findViewById(R.id.runnersTextView)
+        val castersTextView: TextView = itemView.findViewById(R.id.castersTextView)
         val expandableView: ExpandableConstraintLayout = itemView as ExpandableConstraintLayout
         val notificationIcon: ImageView = itemView.findViewById(R.id.notification_toggle_button)
     }
