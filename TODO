@@ -23,6 +23,6 @@ X - so you can just see your schedule, dynamically update schedule due to stretc
 X - icon
 X - change colors?
 X -fix layout not correct height when line wraps while preventing jitter regression
+X - fix tappnig fast showing invisible views sometimes
 
 allow setting donate and twitch stream button url via the json file
-fix tappnig fast showing invisible views sometimes
