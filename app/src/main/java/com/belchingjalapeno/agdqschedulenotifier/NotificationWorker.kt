@@ -4,6 +4,7 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.support.v4.app.NotificationCompat
@@ -57,7 +58,8 @@ class NotificationWorker : Worker() {
     }
 
     private fun createTwitchIntent(): PendingIntent {
-        return ExternalIntentsBuilder.getTwitchPendingIntent(applicationContext)
+        val sharedPreferences = applicationContext.getSharedPreferences("enqueued", Context.MODE_PRIVATE)
+        return ExternalIntentsBuilder.getTwitchPendingIntent(applicationContext, sharedPreferences)
     }
 
     private fun createNotificationChannel() {

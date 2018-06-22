@@ -42,13 +42,13 @@ class MainActivity : AppCompatActivity() {
         val eventsFile = getEventsFile()
         var events = if (eventsFile.exists()) {
             val fileReader = FileReader(eventsFile)
-            val events = getEvents(fileReader)
+            val eventData = getEventData(fileReader)
             fileReader.close()
-            events
+            eventData.speedRunEvents
         } else {
-            val defaultEvents = getDefaultEvents()
-            saveEvents(eventsFile, defaultEvents)
-            defaultEvents
+            val defaultEventData = getDefaultEventData()
+            saveEvents(eventsFile, defaultEventData)
+            defaultEventData.speedRunEvents
         }
 
         val mutableListOf = mutableListOf<SpeedRunEvent>()
@@ -64,17 +64,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun getEventsFile() = File(filesDir, "events.json")
 
-    private fun saveEvents(eventsFile: File, events: Array<SpeedRunEvent>) {
+    private fun saveEvents(eventsFile: File, eventData: EventData) {
         val fileWriter = FileWriter(eventsFile)
-        fileWriter.write(eventsToSJsonString(events))
+        fileWriter.write(eventDataToJsonString(eventData))
         fileWriter.close()
     }
 
-    private fun getDefaultEvents(): Array<SpeedRunEvent> {
+    private fun getDefaultEventData(): EventData {
         val resource = resources.openRawResource(R.raw.events)
-        val events = getEvents(BufferedReader(InputStreamReader(resource)))
+        val eventData = getEventData(BufferedReader(InputStreamReader(resource)))
         resource.close()
-        return events
+        return eventData
     }
 
     private fun setupTabs(events: Array<SpeedRunEvent>) {
@@ -162,23 +162,37 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK) {
             val uri = data?.data
             val eventsFileReader = InputStreamReader(contentResolver.openInputStream(uri))
-            val newEvents = getEvents(eventsFileReader)
+            val newEventData = getEventData(eventsFileReader)
+            if (newEventData.twitchUrl != null) {
+                getSharedPref()
+                        .edit()
+                        .putString(TWITCH_PREFERENCE_KEY, newEventData.twitchUrl)
+                        .apply()
+            }
+            if (newEventData.donateUrl != null) {
+                getSharedPref()
+                        .edit()
+                        .putString(DONATE_PREFERENCE_KEY, newEventData.donateUrl)
+                        .apply()
+            }
             eventsFileReader.close()
             when (requestCode) {
                 REQUEST_CODE_ADD_EVENTS -> {
                     val fileReader = FileReader(getEventsFile())
-                    val oldEvents = getEvents(fileReader)
+                    val oldEvents = getEventData(fileReader)
                     fileReader.close()
 
                     //remove duplicates
-                    val events = (oldEvents + newEvents).toSet().toTypedArray()
+                    val events = (oldEvents.speedRunEvents + newEventData.speedRunEvents).toSet().toTypedArray()
 
-                    saveEvents(getEventsFile(), events)
+                    val twitchUrl = newEventData.twitchUrl ?: oldEvents.twitchUrl
+                    val donateUrl = newEventData.donateUrl ?: oldEvents.donateUrl
+                    saveEvents(getEventsFile(), EventData(twitchUrl, donateUrl, events))
                 }
 
                 REQUEST_CODE_REPLACE_EVENTS -> {
                     workQueueManager.clearAll()
-                    saveEvents(getEventsFile(), newEvents)
+                    saveEvents(getEventsFile(), newEventData)
                 }
             }
             startActivity(Intent(this, MainActivity::class.java))
@@ -212,6 +226,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun getSharedPref(): SharedPreferences {
-        return getSharedPreferences("enqueued", Context.MODE_PRIVATE)
+        return applicationContext.getSharedPreferences("enqueued", Context.MODE_PRIVATE)
     }
 }

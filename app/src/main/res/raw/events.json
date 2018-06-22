@@ -1,1415 +1,1417 @@
-[
-  {
-    "time": "2018-06-24T16:30:00Z",
-    "game": "Pre-Show",
-    "runners": "SpikeVegeta, feasel, Protomagicalgirl, darkman78, JHobz",
-    "est_time": "0:30:00",
-    "category": "Pre-Show%",
-    "casters": "YellowKillerBee",
-    "setup_time": "0:00:00"
-  },
-  {
-    "time": "2018-06-24T17:00:00Z",
-    "game": "Banjo-Tooie",
-    "runners": "GarageDoorOpener",
-    "est_time": "0:47:00",
-    "category": "Any%",
-    "casters": "YellowKillerBee",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-24T17:57:00Z",
-    "game": "Spyro the Dragon",
-    "runners": "ChrisLBC",
-    "est_time": "0:45:00",
-    "category": "Any%",
-    "casters": "YellowKillerBee",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-24T18:52:00Z",
-    "game": "Iconoclasts",
-    "runners": "RiskyCB",
-    "est_time": "0:50:00",
-    "category": "Any%",
-    "casters": "theboyks",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-24T19:52:00Z",
-    "game": "Kirby: Super Star Ultra",
-    "runners": "Kinnin11",
-    "est_time": "0:35:00",
-    "category": "Meta Knightmare Ultra",
-    "casters": "theboyks",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-24T20:42:00Z",
-    "game": "Shantae and the Pirate's Curse",
-    "runners": "tinahacks, JTNoriMaki",
-    "est_time": "1:10:00",
-    "category": "Any% Pirate No-OOB Race",
-    "casters": "theboyks",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-24T22:02:00Z",
-    "game": "Warcraft III: Reign of Chaos",
-    "runners": "CovertMuffin",
-    "est_time": "1:00:00",
-    "category": "Undead Campaign Normal",
-    "casters": "musical_daredevil",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-24T23:12:00Z",
-    "game": "The Legend of Zelda: Majora's Mask 3D",
-    "runners": "gymnast86",
-    "est_time": "1:35:00",
-    "category": "Any%",
-    "casters": "musical_daredevil",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T00:57:00Z",
-    "game": "DOOM (2016)",
-    "runners": "jeromegood",
-    "est_time": "0:50:00",
-    "category": "Any%",
-    "casters": "AnEternalEnigma",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T01:57:00Z",
-    "game": "Resident Evil 4",
-    "runners": "JTB",
-    "est_time": "1:40:00",
-    "category": "New Game, Professional",
-    "casters": "AnEternalEnigma",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T03:47:00Z",
-    "game": "Ninja Gaiden Black",
-    "runners": "MikeKanis",
-    "est_time": "2:20:00",
-    "category": "Any% Normal",
-    "casters": "Yen24",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T06:17:00Z",
-    "game": "Ninja Gaiden",
-    "runners": "Aquas",
-    "est_time": "0:13:00",
-    "category": "Any%",
-    "casters": "Yen24",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T06:40:00Z",
-    "game": "Gimmick!",
-    "runners": "Aquas",
-    "est_time": "0:15:00",
-    "category": "Any% Glitchless",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T07:05:00Z",
-    "game": "Ghosts 'N Goblins",
-    "runners": "ERROR72",
-    "est_time": "0:25:00",
-    "category": "Any% (2 loops)",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T07:40:00Z",
-    "game": "Wacky Races",
-    "runners": "The_Kov",
-    "est_time": "0:22:00",
-    "category": "any%",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T08:12:00Z",
-    "game": "Kid Kool",
-    "runners": "Smartball",
-    "est_time": "0:25:00",
-    "category": "any%",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T08:47:00Z",
-    "game": "Pizza Pop!",
-    "runners": "Apollo22237",
-    "est_time": "0:14:00",
-    "category": "any%",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T09:11:00Z",
-    "game": "Bangai-O!",
-    "runners": "akerasi",
-    "est_time": "0:51:00",
-    "category": "any%",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T10:12:00Z",
-    "game": "Gunstar Super Heroes",
-    "runners": "danray",
-    "est_time": "0:25:00",
-    "category": "Hard Red",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T10:47:00Z",
-    "game": "Gauntlet Legends",
-    "runners": "Boyo003",
-    "est_time": "1:08:00",
-    "category": "any%",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T12:05:00Z",
-    "game": "Dungeon Magic",
-    "runners": "iast",
-    "est_time": "0:18:00",
-    "category": "any% (Gren)",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T12:33:00Z",
-    "game": "Super Smash TV",
-    "runners": "brisulph, JackimusWedge",
-    "est_time": "0:38:00",
-    "category": "Any % Normal 2 Player",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T13:21:00Z",
-    "game": "Hagane: The Final Conflict",
-    "runners": "Epic",
-    "est_time": "0:22:00",
-    "category": "Any%",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T13:53:00Z",
-    "game": "Animaniacs",
-    "runners": "Epic",
-    "est_time": "0:26:00",
-    "category": "Any%",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T14:29:00Z",
-    "game": "Ardy Lightfoot",
-    "runners": "giygasblues",
-    "est_time": "0:29:00",
-    "category": "any%",
-    "casters": "Lizstar",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T15:08:00Z",
-    "game": "Cool Spot",
-    "runners": "GlitchCat7",
-    "est_time": "0:15:00",
-    "category": "any% easy",
-    "casters": "Lizstar",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T15:33:00Z",
-    "game": "Sparkster",
-    "runners": "Drakodan",
-    "est_time": "0:25:00",
-    "category": "Normal",
-    "casters": "Lizstar",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T16:08:00Z",
-    "game": "Rocket Knight Adventures",
-    "runners": "d4gr0n",
-    "est_time": "0:35:00",
-    "category": "any% (Easy)",
-    "casters": "Lizstar",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T16:53:00Z",
-    "game": "Disgaea 5: Alliance of Vengeance",
-    "runners": "GreenZSaber",
-    "est_time": "1:27:00",
-    "category": "New Game Any% (No DLC)",
-    "casters": "MapleSR",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-25T18:35:00Z",
-    "game": "Pikmin 3",
-    "runners": "360Chrism",
-    "est_time": "1:08:00",
-    "category": "Any%",
-    "casters": "MapleSR",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T19:53:00Z",
-    "game": "Soft Body",
-    "runners": "v_input_output",
-    "est_time": "0:35:00",
-    "category": "Soft Game",
-    "casters": "CovertMuffin",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T20:38:00Z",
-    "game": "Monolith",
-    "runners": "Studio",
-    "est_time": "0:15:00",
-    "category": "5-Stage, Normal, Intense Lethality",
-    "casters": "CovertMuffin",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T21:03:00Z",
-    "game": "Master Spy",
-    "runners": "Obidobi",
-    "est_time": "0:22:00",
-    "category": "Any% (Optional Developer Commentary)",
-    "casters": "CovertMuffin",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T21:35:00Z",
-    "game": "Enter The Gungeon",
-    "runners": "teddyras",
-    "est_time": "0:30:00",
-    "category": "1 Character",
-    "casters": "DarkTwinge",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-25T22:20:00Z",
-    "game": "Dustforce DX",
-    "runners": "fishmcmuffins, Freshmaniac",
-    "est_time": "0:45:00",
-    "category": "Any% All Levels (NG+) Race",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-25T23:15:00Z",
-    "game": "Axiom Verge",
-    "runners": "GVirus",
-    "est_time": "0:45:00",
-    "category": "any%",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T00:10:00Z",
-    "game": "Mega Man 9",
-    "runners": "The Blacktastic",
-    "est_time": "0:34:00",
-    "category": "Any% (Proto Man)",
-    "casters": "Mike Uyama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T00:54:00Z",
-    "game": "Mega Man Zero 4",
-    "runners": "Nu_",
-    "est_time": "1:00:00",
-    "category": "any%",
-    "casters": "Mike Uyama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T02:04:00Z",
-    "game": "SETUP BLOCK 1",
-    "runners": "Tech Crew",
-    "est_time": "0:45:00",
-    "category": "Tech Things",
-    "casters": "Mike Uyama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T02:59:00Z",
-    "game": "Rise of the Tomb Raider",
-    "runners": "Studio",
-    "est_time": "1:20:00",
-    "category": "any%",
-    "casters": "CovertMuffin",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T04:29:00Z",
-    "game": "Tomb Raider",
-    "runners": "Beckski93",
-    "est_time": "1:15:00",
-    "category": "any% glitched",
-    "casters": "CovertMuffin",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T05:54:00Z",
-    "game": "Resident Evil HD Remaster",
-    "runners": "Pessimism",
-    "est_time": "1:34:00",
-    "category": "New Game 100% (Best Ending)",
-    "casters": "FrenchToast",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T07:38:00Z",
-    "game": "F.E.A.R.",
-    "runners": "Maxylobes",
-    "est_time": "1:05:00",
-    "category": "Any%",
-    "casters": "FrenchToast",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T08:53:00Z",
-    "game": "Penumbra: Overture",
-    "runners": "Blood_Thunder",
-    "est_time": "0:20:00",
-    "category": "Any% QSA",
-    "casters": "AnEternalEnigma",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T09:23:00Z",
-    "game": "Amy",
-    "runners": "FoldableHuman",
-    "est_time": "1:00:00",
-    "category": "Amy%",
-    "casters": "AnEternalEnigma",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T10:33:00Z",
-    "game": "Pet the Pup at the Party",
-    "runners": "Bullets",
-    "est_time": "0:08:00",
-    "category": "10 Pups",
-    "casters": "LLK",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T10:51:00Z",
-    "game": "FreezeMe",
-    "runners": "Mildew",
-    "est_time": "0:55:00",
-    "category": "25 Cubes",
-    "casters": "LLK",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T11:56:00Z",
-    "game": "Legend of Kay Anniversary",
-    "runners": "DarkTerrex",
-    "est_time": "0:35:00",
-    "category": "Any%",
-    "casters": "LLK",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T12:41:00Z",
-    "game": "The Simpsons: Hit & Run",
-    "runners": "Sadlybadlyy",
-    "est_time": "1:45:00",
-    "category": "All Story Missions",
-    "casters": "MisterGameandShout",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T14:36:00Z",
-    "game": "Bonk's Revenge",
-    "runners": "lattmackey",
-    "est_time": "0:30:00",
-    "category": "Expert",
-    "casters": "Yen24",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T15:16:00Z",
-    "game": "Splatterhouse",
-    "runners": "zallard1",
-    "est_time": "0:16:00",
-    "category": "any%",
-    "casters": "Yen24",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T15:42:00Z",
-    "game": "Splatterhouse 2",
-    "runners": "zallard1",
-    "est_time": "0:20:00",
-    "category": "any%",
-    "casters": "Yen24",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T16:12:00Z",
-    "game": "Castlevania",
-    "runners": "Komrade",
-    "est_time": "0:15:00",
-    "category": "Any%",
-    "casters": "Yen24",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T16:37:00Z",
-    "game": "Castlevania III",
-    "runners": "MikeKanis",
-    "est_time": "0:35:00",
-    "category": "Sypha Route",
-    "casters": "Prolix",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T17:22:00Z",
-    "game": "Castlevania: Bloodlines",
-    "runners": "Klaige",
-    "est_time": "0:35:00",
-    "category": "John Morris or Eric Lecarde Any% Expert Difficulty",
-    "casters": "Prolix",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T18:07:00Z",
-    "game": "Castlevania: Circle of the Moon",
-    "runners": "darrenvile",
-    "est_time": "0:43:00",
-    "category": "Fighter Mode All Bosses vs Magician Mode All Bosses",
-    "casters": "Prolix",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T19:00:00Z",
-    "game": "Dragon Warrior III",
-    "runners": "vaxherd",
-    "est_time": "1:20:00",
-    "category": "Any%",
-    "casters": "Prolix",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T20:30:00Z",
-    "game": "Sonic Adventure DX: Director's Cut",
-    "runners": "JustFlandre",
-    "est_time": "0:36:00",
-    "category": "Sonic's Story",
-    "casters": "Lizstar",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T21:16:00Z",
-    "game": "Sonic Spinball",
-    "runners": "Zaxon96",
-    "est_time": "0:20:00",
-    "category": "any%",
-    "casters": "Lizstar",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T21:46:00Z",
-    "game": "Sonic the Hedgehog 2",
-    "runners": "mike89",
-    "est_time": "0:25:00",
-    "category": "Sonic",
-    "casters": "Lizstar",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-26T22:21:00Z",
-    "game": "SETUP BLOCK 2",
-    "runners": "Tech Crew",
-    "est_time": "0:48:00",
-    "category": "Tech Stuff",
-    "casters": "Lizstar",
-    "setup_time": "0:20:00"
-  },
-  {
-    "time": "2018-06-26T23:29:00Z",
-    "game": "Metroid: Zero Mission",
-    "runners": "samthedigital, Dragonfangs, john_unfil, CScottyW",
-    "est_time": "1:20:00",
-    "category": "100% Normal Race",
-    "casters": "MapleSR",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T00:59:00Z",
-    "game": "Metroid Samus Returns",
-    "runners": "Mr_Shasta",
-    "est_time": "1:55:00",
-    "category": "Any%",
-    "casters": "MapleSR",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T03:04:00Z",
-    "game": "Super Metroid",
-    "runners": "oatsngoats",
-    "est_time": "1:25:00",
-    "category": "100% Map Completion",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T04:39:00Z",
-    "game": "Halo 2",
-    "runners": "Ranabundana",
-    "est_time": "1:42:00",
-    "category": "Legendary",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T06:31:00Z",
-    "game": "The Legend of Zelda: Skyward Sword",
-    "runners": "gymnast86",
-    "est_time": "5:15:00",
-    "category": "Any%",
-    "casters": "Calyrica",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T11:56:00Z",
-    "game": "Prince of Persia: Warrior Within",
-    "runners": "catalyst",
-    "est_time": "0:25:00",
-    "category": "any% - normal",
-    "casters": "MisterGameandShout",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T12:31:00Z",
-    "game": "Kid Chameleon",
-    "runners": "peaches",
-    "est_time": "0:30:00",
-    "category": "4 Boss",
-    "casters": "MisterGameandShout",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T13:11:00Z",
-    "game": "Wiz 'n' Liz: The Frantic Wabbit Wescue",
-    "runners": "SilverDile",
-    "est_time": "0:20:00",
-    "category": "Wizard",
-    "casters": "MisterGameandShout",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T13:41:00Z",
-    "game": "Sylvan Tale",
-    "runners": "Omnigamer",
-    "est_time": "1:06:00",
-    "category": "100%",
-    "casters": "Sooraya",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T14:57:00Z",
-    "game": "SETUP BLOCK 3",
-    "runners": "Tech Crew",
-    "est_time": "0:35:00",
-    "category": "Tech Stuff",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T15:42:00Z",
-    "game": "Spider-Man: Web of Fire",
-    "runners": "PeteDorr",
-    "est_time": "0:13:00",
-    "category": "Beat the Game",
-    "casters": "Sooraya",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T16:05:00Z",
-    "game": "Spider-Man & Venom's Maximum Carnage",
-    "runners": "Ninjaofsorts",
-    "est_time": "0:22:00",
-    "category": "any%",
-    "casters": "Sooraya",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T16:37:00Z",
-    "game": "Batman Returns",
-    "runners": "LRock",
-    "est_time": "0:26:00",
-    "category": "Mania%",
-    "casters": "Arlynia",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-27T17:18:00Z",
-    "game": "Contra: Shattered Soldier",
-    "runners": "Aquas, TheDrifter18, Crak Atak",
-    "est_time": "0:35:00",
-    "category": "Any% All Stages Race",
-    "casters": "Arlynia",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T18:03:00Z",
-    "game": "High Hell",
-    "runners": "SNeaky",
-    "est_time": "0:25:00",
-    "category": "Any%",
-    "casters": "Arlynia",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T18:38:00Z",
-    "game": "Shadow Warrior Classic Redux",
-    "runners": "Ignite",
-    "est_time": "0:25:00",
-    "category": "Any% no ssl",
-    "casters": "CovertMuffin",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T19:13:00Z",
-    "game": "Sublevel Zero Redux",
-    "runners": "roncli",
-    "est_time": "0:30:00",
-    "category": "Normal Any%",
-    "casters": "CovertMuffin",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T19:53:00Z",
-    "game": "Thief: The Dark Project",
-    "runners": "Psych0sis",
-    "est_time": "0:42:00",
-    "category": "Any% Normal",
-    "casters": "CovertMuffin",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T20:45:00Z",
-    "game": "Metal Gear Solid: The Twin Snakes",
-    "runners": "plywood",
-    "est_time": "1:12:00",
-    "category": "Extreme",
-    "casters": "SakuraTsubasa",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-27T22:07:00Z",
-    "game": "The Legend of Zelda: Four Swords Adventures",
-    "runners": "Zmaster91",
-    "est_time": "2:17:00",
-    "category": "Any%",
-    "casters": "SakuraTsubasa",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T00:34:00Z",
-    "game": "Super Mario 3D Land",
-    "runners": "zeldacubed1",
-    "est_time": "1:10:00",
-    "category": "warpless",
-    "casters": "YellowKillerBee",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T01:54:00Z",
-    "game": "Cuphead",
-    "runners": "TheMexicanRunner",
-    "est_time": "0:55:00",
-    "category": "All Flags (Regular, Legacy)",
-    "casters": "Mike Uyama",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-28T03:04:00Z",
-    "game": "A Hat in Time",
-    "runners": "flarebear, ConnorAce",
-    "est_time": "1:00:00",
-    "category": "Any% Race",
-    "casters": "YellowKillerBee",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-28T04:19:00Z",
-    "game": "Celeste",
-    "runners": "TGH, yoshipro",
-    "est_time": "0:40:00",
-    "category": "Any% race",
-    "casters": "Mike Uyama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T05:09:00Z",
-    "game": "SETUP BLOCK 4",
-    "runners": "Tech Crew",
-    "est_time": "0:26:00",
-    "category": "Tech Stuff",
-    "casters": "Mike Uyama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T05:45:00Z",
-    "game": "Getting Over It with Bennett Foddy",
-    "runners": "MONTYvsTHEWORLD",
-    "est_time": "0:05:00",
-    "category": "Glitchless%",
-    "casters": "FrenchToast",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T06:00:00Z",
-    "game": "Miner Ultra Adventures",
-    "runners": "Konasumi",
-    "est_time": "0:15:00",
-    "category": "Any%",
-    "casters": "FrenchToast",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T06:25:00Z",
-    "game": "Roundabout",
-    "runners": "GNU Order",
-    "est_time": "0:11:00",
-    "category": "ESports Speedrun Mode",
-    "casters": "FrenchToast",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T06:46:00Z",
-    "game": "Live",
-    "runners": "LifeL1ke",
-    "est_time": "0:11:00",
-    "category": "Beat the Game",
-    "casters": "FrenchToast",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T07:07:00Z",
-    "game": "Stilt Fella",
-    "runners": "PHatHome666",
-    "est_time": "0:20:00",
-    "category": "Any%",
-    "casters": "FrenchToast",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T07:37:00Z",
-    "game": "Club Drive",
-    "runners": "PeteDorr",
-    "est_time": "0:13:00",
-    "category": "All Races (2 Laps)",
-    "casters": "FrenchToast",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T08:00:00Z",
-    "game": "Bio Miracle Bokutte Upa",
-    "runners": "EnchantressOfNumbers",
-    "est_time": "0:30:00",
-    "category": "Normal Difficulty",
-    "casters": "Calyrica",
-    "setup_time": "0:11:00"
-  },
-  {
-    "time": "2018-06-28T08:41:00Z",
-    "game": "Yo! Noid 2",
-    "runners": "AlucardX60",
-    "est_time": "0:12:00",
-    "category": "Any%",
-    "casters": "Calyrica",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T09:03:00Z",
-    "game": "Jungle King Tar-chan: World Tour Rumble",
-    "runners": "Aweglib",
-    "est_time": "0:30:00",
-    "category": "Any%",
-    "casters": "Calyrica",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T09:43:00Z",
-    "game": "Pac-Man 2: The New Adventures",
-    "runners": "PARTY MAN X",
-    "est_time": "0:30:00",
-    "category": "any%",
-    "casters": "Calyrica",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T10:23:00Z",
-    "game": "Pac 'n Roll Remix",
-    "runners": "SuperViperT302",
-    "est_time": "0:27:00",
-    "category": "Any%",
-    "casters": "Calyrica",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T11:00:00Z",
-    "game": "Don Doko Don 2",
-    "runners": "pip_johnson",
-    "est_time": "0:25:00",
-    "category": "any%",
-    "casters": "LLK",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T11:35:00Z",
-    "game": "Silver Grapple",
-    "runners": "Ivan",
-    "est_time": "0:20:00",
-    "category": "any% good ending",
-    "casters": "LLK",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T12:05:00Z",
-    "game": "Gift",
-    "runners": "SecksWrecks",
-    "est_time": "0:10:00",
-    "category": "any%",
-    "casters": "LLK",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T12:25:00Z",
-    "game": "El Viento",
-    "runners": "belthegor",
-    "est_time": "0:14:00",
-    "category": "any%",
-    "casters": "LLK",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T12:49:00Z",
-    "game": "Xeodrifter",
-    "runners": "JBuzzyBee",
-    "est_time": "0:18:00",
-    "category": "Any%",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T13:17:00Z",
-    "game": "Titan Souls",
-    "runners": "Zic3",
-    "est_time": "0:24:00",
-    "category": "Hard Mode 100%",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T13:51:00Z",
-    "game": "A Story About my Uncle",
-    "runners": "TheRealVincentio",
-    "est_time": "0:35:00",
-    "category": "any% No Fling",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-28T14:41:00Z",
-    "game": "Strider",
-    "runners": "NME, Elipsis, Mr Magnificent",
-    "est_time": "0:05:00",
-    "category": "any% race",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-28T15:01:00Z",
-    "game": "The Legend of Zelda",
-    "runners": "LackAttack24, BT, Eunos",
-    "est_time": "1:00:00",
-    "category": "low% Race",
-    "casters": "Sooraya",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T16:11:00Z",
-    "game": "The Legend of Zelda: Oracle of Seasons",
-    "runners": "mghtymth",
-    "est_time": "2:03:00",
-    "category": "Any%",
-    "casters": "Sooraya",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T18:24:00Z",
-    "game": "Paper Mario",
-    "runners": "imglower",
-    "est_time": "1:55:00",
-    "category": "Any%",
-    "casters": "MapleSR",
-    "setup_time": "0:16:00"
-  },
-  {
-    "time": "2018-06-28T20:35:00Z",
-    "game": "DeadCore",
-    "runners": "imawakka",
-    "est_time": "0:25:00",
-    "category": "NWNM NG (No Wall Clips No Mega Jumps New Game)",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T21:10:00Z",
-    "game": "Deus Ex",
-    "runners": "Heinki",
-    "est_time": "0:52:00",
-    "category": "any%",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T22:12:00Z",
-    "game": "Deus Ex Mankind Divided",
-    "runners": "Heinki",
-    "est_time": "1:05:00",
-    "category": "any%",
-    "casters": "Agama",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-28T23:27:00Z",
-    "game": "Prey (2017)",
-    "runners": "LifeL1ke",
-    "est_time": "0:50:00",
-    "category": "No OoB",
-    "casters": "theboyks",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T00:27:00Z",
-    "game": "SETUP BLOCK 5",
-    "runners": "Tech Crew",
-    "est_time": "0:35:00",
-    "category": "Tech Stuff",
-    "casters": "theboyks",
-    "setup_time": "0:20:00"
-  },
-  {
-    "time": "2018-06-29T01:22:00Z",
-    "game": "Super Mario Bros.",
-    "runners": "SuperSonic71087, RetroBob_, Kosmic, RoyLGamer",
-    "est_time": "0:32:00",
-    "category": "warpless",
-    "casters": "Skybilz",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-29T02:09:00Z",
-    "game": "Super Mario Bros. 3",
-    "runners": "mitchflowerpower, grandpoobear",
-    "est_time": "1:00:00",
-    "category": "All Forts Race",
-    "casters": "Skybilz",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T03:19:00Z",
-    "game": "Super Mario World",
-    "runners": "rezephos",
-    "est_time": "1:12:00",
-    "category": "All Castles & Forts, Small Only",
-    "casters": "Skybilz",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T04:41:00Z",
-    "game": "Mario Kart 8 Deluxe",
-    "runners": "AeonFrodo",
-    "est_time": "1:37:00",
-    "category": "32 Tracks, 200cc, Items",
-    "casters": "Arlynia",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T06:28:00Z",
-    "game": "Wave Race: Blue Storm",
-    "runners": "Pearstrike",
-    "est_time": "0:15:00",
-    "category": "Normal Circuit (No Retire)",
-    "casters": "Arlynia",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-29T06:58:00Z",
-    "game": "Runbow",
-    "runners": "MooMooAkai, MunchaKoopas",
-    "est_time": "0:25:00",
-    "category": "Bowhemoth",
-    "casters": "Arlynia",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-29T07:38:00Z",
-    "game": "Borderlands: the Pre-Sequel!",
-    "runners": "Shockwve, Amyrlinn",
-    "est_time": "2:20:00",
-    "category": "Co-op Any%",
-    "casters": "Prolix",
-    "setup_time": "0:20:00"
-  },
-  {
-    "time": "2018-06-29T10:18:00Z",
-    "game": "Bionic Commando",
-    "runners": "MURPHAGATOR!",
-    "est_time": "1:05:00",
-    "category": "any%",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T11:33:00Z",
-    "game": "Bound",
-    "runners": "chuckles825",
-    "est_time": "0:35:00",
-    "category": "Any%",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T12:18:00Z",
-    "game": "Catherine",
-    "runners": "Ghoul02",
-    "est_time": "0:30:00",
-    "category": "Babel Pairs 1 Player 2 Controllers",
-    "casters": "DarkTwinge",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T12:58:00Z",
-    "game": "Double Dragon",
-    "runners": "LRock",
-    "est_time": "0:14:00",
-    "category": "Any%",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T13:22:00Z",
-    "game": "Double Dragon II: The Revenge",
-    "runners": "sinister1",
-    "est_time": "0:14:00",
-    "category": "any%",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T13:46:00Z",
-    "game": "Golden Axe",
-    "runners": "InTheMug",
-    "est_time": "0:15:00",
-    "category": "Tyris Flare",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T14:11:00Z",
-    "game": "Streets of Rage 2",
-    "runners": "Anthopants",
-    "est_time": "0:57:00",
-    "category": "Mania%",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T15:18:00Z",
-    "game": "Battletoads & Double Dragon",
-    "runners": "PJ, Mecha Richter",
-    "est_time": "0:25:00",
-    "category": "Any% co-op",
-    "casters": "TokyoScarab",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T15:53:00Z",
-    "game": "Rockman No-Constancy",
-    "runners": "Kuumba",
-    "est_time": "0:40:00",
-    "category": "any% normal",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T16:43:00Z",
-    "game": "Mega Man 7",
-    "runners": "almondcity",
-    "est_time": "0:45:00",
-    "category": "any%",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:15:00"
-  },
-  {
-    "time": "2018-06-29T17:43:00Z",
-    "game": "Mega Man 8",
-    "runners": "orsa, cleartonic, maple",
-    "est_time": "0:55:00",
-    "category": "Any% Race",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T18:48:00Z",
-    "game": "Goof Troop",
-    "runners": "swordsmankirby, Bbforky",
-    "est_time": "0:24:00",
-    "category": "Co-Op",
-    "casters": "SakuraTsubasa",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-29T19:22:00Z",
-    "game": "Kingdom Hearts HD 1.5 ReMix (KH1FM)",
-    "runners": "mistmaster1",
-    "est_time": "3:05:00",
-    "category": "Any% (Level 1 Proud Mode)",
-    "casters": "SakuraTsubasa",
-    "setup_time": "0:35:00"
-  },
-  {
-    "time": "2018-06-29T23:02:00Z",
-    "game": "Super Mario 64",
-    "runners": "Puncayshun, cheese05",
-    "est_time": "1:00:00",
-    "category": "70 star race",
-    "casters": "YellowKillerBee",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T00:12:00Z",
-    "game": "The Legend of Zelda: The Wind Waker HD",
-    "runners": "Linkus7",
-    "est_time": "1:15:00",
-    "category": "Any%",
-    "casters": "YellowKillerBee",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T01:37:00Z",
-    "game": "SETUP BLOCK 6",
-    "runners": "Tech Crew",
-    "est_time": "0:37:00",
-    "category": "Tech Stuff",
-    "casters": "Raelcun",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T02:24:00Z",
-    "game": "TASBot plays F-Zero GX by talented authors",
-    "runners": "dwangoAC",
-    "est_time": "0:10:00",
-    "category": "TASBot%",
-    "casters": "Raelcun",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T02:44:00Z",
-    "game": "TASBot plays Super Metroid 0% by Sniq and total",
-    "runners": "dwangoAC",
-    "est_time": "0:07:07",
-    "category": "0% while running past audible invisible animals",
-    "casters": "Raelcun",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T03:01:07Z",
-    "game": "Dark Souls",
-    "runners": "catalyst",
-    "est_time": "1:35:00",
-    "category": "All Bosses",
-    "casters": "musical_daredevil",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T04:46:07Z",
-    "game": "Pokemon Yellow/Red",
-    "runners": "MeGotsThis",
-    "est_time": "2:47:00",
-    "category": "Any% Glitchless 2 Games 1 Controller",
-    "casters": "Yen24",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T07:43:07Z",
-    "game": "Star Wars Jedi Knight: Dark Forces II",
-    "runners": "ysalamiri",
-    "est_time": "0:30:00",
-    "category": "any%",
-    "casters": "Calyrica",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T08:23:07Z",
-    "game": "Star Wars Jedi Knight: Mysteries of the Sith",
-    "runners": "ysalamiri",
-    "est_time": "0:25:00",
-    "category": "any%",
-    "casters": "Calyrica",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T08:58:07Z",
-    "game": "Super Star Wars: The Empire Strikes Back",
-    "runners": "Indy",
-    "est_time": "0:45:00",
-    "category": "any%",
-    "casters": "Calyrica",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T09:53:07Z",
-    "game": "Hob",
-    "runners": "halfcoordinated",
-    "est_time": "0:55:00",
-    "category": "Any% No Clip (One-Handed)",
-    "casters": "theboyks",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T10:58:07Z",
-    "game": "I Am Bread",
-    "runners": "Nerd_Squared",
-    "est_time": "0:10:00",
-    "category": "Bagel Race",
-    "casters": "theboyks",
-    "setup_time": "0:13:00"
-  },
-  {
-    "time": "2018-06-30T11:21:07Z",
-    "game": "Ratchet: Deadlocked",
-    "runners": "Davie",
-    "est_time": "0:50:00",
-    "category": "NG+ No EGS",
-    "casters": "Nikasaur",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T12:21:07Z",
-    "game": "Spyro 2: Ripto's Rage",
-    "runners": "AlexDest",
-    "est_time": "0:32:00",
-    "category": "14 Talisman",
-    "casters": "Nikasaur",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T13:03:07Z",
-    "game": "Crash Bandicoot: N. Sane Trilogy",
-    "runners": "CameronVengenz",
-    "est_time": "1:02:00",
-    "category": "Crash Bandicoot 1 Any%",
-    "casters": "Nikasaur",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T14:15:07Z",
-    "game": "Kirby's Dream Land",
-    "runners": "eBloodyCandy",
-    "est_time": "0:15:00",
-    "category": "Beat Extra Mode",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T14:40:07Z",
-    "game": "Kirby's Adventure",
-    "runners": "swordsmankirby",
-    "est_time": "0:50:00",
-    "category": "Any% No Major Glitches",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T15:40:07Z",
-    "game": "New Super Mario Bros. 2",
-    "runners": "eddaket",
-    "est_time": "1:00:00",
-    "category": "Warpless",
-    "casters": "Protomagicalgirl",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T16:50:07Z",
-    "game": "Undertale",
-    "runners": "SnowieY101",
-    "est_time": "1:35:00",
-    "category": "True Pacifist Ending",
-    "casters": "SakuraTsubasa",
-    "setup_time": "0:20:00"
-  },
-  {
-    "time": "2018-06-30T18:45:07Z",
-    "game": "Super Mario Maker",
-    "runners": "Carl Sagan, grandpoobear, GlitchCat7, failstream, jaku, Cliffy",
-    "est_time": "1:30:00",
-    "category": "3v3 Blind Level Race",
-    "casters": "SakuraTsubasa",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T20:25:07Z",
-    "game": "The Legend of Zelda: Ocarina of Time",
-    "runners": "Runnerguy2489",
-    "est_time": "1:30:00",
-    "category": "Bingo",
-    "casters": "Prolix",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T22:05:07Z",
-    "game": "SETUP BLOCK 7",
-    "runners": "Tech Crew",
-    "est_time": "1:07:00",
-    "category": "We're getting close to the end",
-    "casters": "Prolix",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-06-30T23:22:07Z",
-    "game": "Final Fantasy VI",
-    "runners": "puwexil",
-    "est_time": "7:02:00",
-    "category": "Glitchless Any%",
-    "casters": "CovertMuffin/Nikasaur",
-    "setup_time": "0:10:00"
-  },
-  {
-    "time": "2018-07-01T06:34:07Z",
-    "game": "FINALE",
-    "runners": "None",
-    "est_time": "0:10:00",
-    "category": "post-GDQ blues",
-    "casters": "STAFF",
-    "setup_time": "0:10:00"
-  }
-]
+{
+  "events": [
+    {
+      "time": "2018-06-24T16:30:00Z",
+      "game": "Pre-Show",
+      "runners": "SpikeVegeta, feasel, Protomagicalgirl, darkman78, JHobz",
+      "est_time": "0:30:00",
+      "category": "Pre-Show%",
+      "casters": "YellowKillerBee",
+      "setup_time": "0:00:00"
+    },
+    {
+      "time": "2018-06-24T17:00:00Z",
+      "game": "Banjo-Tooie",
+      "runners": "GarageDoorOpener",
+      "est_time": "0:47:00",
+      "category": "Any%",
+      "casters": "YellowKillerBee",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-24T17:57:00Z",
+      "game": "Spyro the Dragon",
+      "runners": "ChrisLBC",
+      "est_time": "0:45:00",
+      "category": "Any%",
+      "casters": "YellowKillerBee",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-24T18:52:00Z",
+      "game": "Iconoclasts",
+      "runners": "RiskyCB",
+      "est_time": "0:50:00",
+      "category": "Any%",
+      "casters": "theboyks",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-24T19:52:00Z",
+      "game": "Kirby: Super Star Ultra",
+      "runners": "Kinnin11",
+      "est_time": "0:35:00",
+      "category": "Meta Knightmare Ultra",
+      "casters": "theboyks",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-24T20:42:00Z",
+      "game": "Shantae and the Pirate's Curse",
+      "runners": "tinahacks, JTNoriMaki",
+      "est_time": "1:10:00",
+      "category": "Any% Pirate No-OOB Race",
+      "casters": "theboyks",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-24T22:02:00Z",
+      "game": "Warcraft III: Reign of Chaos",
+      "runners": "CovertMuffin",
+      "est_time": "1:00:00",
+      "category": "Undead Campaign Normal",
+      "casters": "musical_daredevil",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-24T23:12:00Z",
+      "game": "The Legend of Zelda: Majora's Mask 3D",
+      "runners": "gymnast86",
+      "est_time": "1:35:00",
+      "category": "Any%",
+      "casters": "musical_daredevil",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T00:57:00Z",
+      "game": "DOOM (2016)",
+      "runners": "jeromegood",
+      "est_time": "0:50:00",
+      "category": "Any%",
+      "casters": "AnEternalEnigma",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T01:57:00Z",
+      "game": "Resident Evil 4",
+      "runners": "JTB",
+      "est_time": "1:40:00",
+      "category": "New Game, Professional",
+      "casters": "AnEternalEnigma",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T03:47:00Z",
+      "game": "Ninja Gaiden Black",
+      "runners": "MikeKanis",
+      "est_time": "2:20:00",
+      "category": "Any% Normal",
+      "casters": "Yen24",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T06:17:00Z",
+      "game": "Ninja Gaiden",
+      "runners": "Aquas",
+      "est_time": "0:13:00",
+      "category": "Any%",
+      "casters": "Yen24",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T06:40:00Z",
+      "game": "Gimmick!",
+      "runners": "Aquas",
+      "est_time": "0:15:00",
+      "category": "Any% Glitchless",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T07:05:00Z",
+      "game": "Ghosts 'N Goblins",
+      "runners": "ERROR72",
+      "est_time": "0:25:00",
+      "category": "Any% (2 loops)",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T07:40:00Z",
+      "game": "Wacky Races",
+      "runners": "The_Kov",
+      "est_time": "0:22:00",
+      "category": "any%",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T08:12:00Z",
+      "game": "Kid Kool",
+      "runners": "Smartball",
+      "est_time": "0:25:00",
+      "category": "any%",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T08:47:00Z",
+      "game": "Pizza Pop!",
+      "runners": "Apollo22237",
+      "est_time": "0:14:00",
+      "category": "any%",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T09:11:00Z",
+      "game": "Bangai-O!",
+      "runners": "akerasi",
+      "est_time": "0:51:00",
+      "category": "any%",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T10:12:00Z",
+      "game": "Gunstar Super Heroes",
+      "runners": "danray",
+      "est_time": "0:25:00",
+      "category": "Hard Red",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T10:47:00Z",
+      "game": "Gauntlet Legends",
+      "runners": "Boyo003",
+      "est_time": "1:08:00",
+      "category": "any%",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T12:05:00Z",
+      "game": "Dungeon Magic",
+      "runners": "iast",
+      "est_time": "0:18:00",
+      "category": "any% (Gren)",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T12:33:00Z",
+      "game": "Super Smash TV",
+      "runners": "brisulph, JackimusWedge",
+      "est_time": "0:38:00",
+      "category": "Any % Normal 2 Player",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T13:21:00Z",
+      "game": "Hagane: The Final Conflict",
+      "runners": "Epic",
+      "est_time": "0:22:00",
+      "category": "Any%",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T13:53:00Z",
+      "game": "Animaniacs",
+      "runners": "Epic",
+      "est_time": "0:26:00",
+      "category": "Any%",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T14:29:00Z",
+      "game": "Ardy Lightfoot",
+      "runners": "giygasblues",
+      "est_time": "0:29:00",
+      "category": "any%",
+      "casters": "Lizstar",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T15:08:00Z",
+      "game": "Cool Spot",
+      "runners": "GlitchCat7",
+      "est_time": "0:15:00",
+      "category": "any% easy",
+      "casters": "Lizstar",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T15:33:00Z",
+      "game": "Sparkster",
+      "runners": "Drakodan",
+      "est_time": "0:25:00",
+      "category": "Normal",
+      "casters": "Lizstar",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T16:08:00Z",
+      "game": "Rocket Knight Adventures",
+      "runners": "d4gr0n",
+      "est_time": "0:35:00",
+      "category": "any% (Easy)",
+      "casters": "Lizstar",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T16:53:00Z",
+      "game": "Disgaea 5: Alliance of Vengeance",
+      "runners": "GreenZSaber",
+      "est_time": "1:27:00",
+      "category": "New Game Any% (No DLC)",
+      "casters": "MapleSR",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-25T18:35:00Z",
+      "game": "Pikmin 3",
+      "runners": "360Chrism",
+      "est_time": "1:08:00",
+      "category": "Any%",
+      "casters": "MapleSR",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T19:53:00Z",
+      "game": "Soft Body",
+      "runners": "v_input_output",
+      "est_time": "0:35:00",
+      "category": "Soft Game",
+      "casters": "CovertMuffin",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T20:38:00Z",
+      "game": "Monolith",
+      "runners": "Studio",
+      "est_time": "0:15:00",
+      "category": "5-Stage, Normal, Intense Lethality",
+      "casters": "CovertMuffin",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T21:03:00Z",
+      "game": "Master Spy",
+      "runners": "Obidobi",
+      "est_time": "0:22:00",
+      "category": "Any% (Optional Developer Commentary)",
+      "casters": "CovertMuffin",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T21:35:00Z",
+      "game": "Enter The Gungeon",
+      "runners": "teddyras",
+      "est_time": "0:30:00",
+      "category": "1 Character",
+      "casters": "DarkTwinge",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-25T22:20:00Z",
+      "game": "Dustforce DX",
+      "runners": "fishmcmuffins, Freshmaniac",
+      "est_time": "0:45:00",
+      "category": "Any% All Levels (NG+) Race",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-25T23:15:00Z",
+      "game": "Axiom Verge",
+      "runners": "GVirus",
+      "est_time": "0:45:00",
+      "category": "any%",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T00:10:00Z",
+      "game": "Mega Man 9",
+      "runners": "The Blacktastic",
+      "est_time": "0:34:00",
+      "category": "Any% (Proto Man)",
+      "casters": "Mike Uyama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T00:54:00Z",
+      "game": "Mega Man Zero 4",
+      "runners": "Nu_",
+      "est_time": "1:00:00",
+      "category": "any%",
+      "casters": "Mike Uyama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T02:04:00Z",
+      "game": "SETUP BLOCK 1",
+      "runners": "Tech Crew",
+      "est_time": "0:45:00",
+      "category": "Tech Things",
+      "casters": "Mike Uyama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T02:59:00Z",
+      "game": "Rise of the Tomb Raider",
+      "runners": "Studio",
+      "est_time": "1:20:00",
+      "category": "any%",
+      "casters": "CovertMuffin",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T04:29:00Z",
+      "game": "Tomb Raider",
+      "runners": "Beckski93",
+      "est_time": "1:15:00",
+      "category": "any% glitched",
+      "casters": "CovertMuffin",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T05:54:00Z",
+      "game": "Resident Evil HD Remaster",
+      "runners": "Pessimism",
+      "est_time": "1:34:00",
+      "category": "New Game 100% (Best Ending)",
+      "casters": "FrenchToast",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T07:38:00Z",
+      "game": "F.E.A.R.",
+      "runners": "Maxylobes",
+      "est_time": "1:05:00",
+      "category": "Any%",
+      "casters": "FrenchToast",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T08:53:00Z",
+      "game": "Penumbra: Overture",
+      "runners": "Blood_Thunder",
+      "est_time": "0:20:00",
+      "category": "Any% QSA",
+      "casters": "AnEternalEnigma",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T09:23:00Z",
+      "game": "Amy",
+      "runners": "FoldableHuman",
+      "est_time": "1:00:00",
+      "category": "Amy%",
+      "casters": "AnEternalEnigma",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T10:33:00Z",
+      "game": "Pet the Pup at the Party",
+      "runners": "Bullets",
+      "est_time": "0:08:00",
+      "category": "10 Pups",
+      "casters": "LLK",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T10:51:00Z",
+      "game": "FreezeMe",
+      "runners": "Mildew",
+      "est_time": "0:55:00",
+      "category": "25 Cubes",
+      "casters": "LLK",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T11:56:00Z",
+      "game": "Legend of Kay Anniversary",
+      "runners": "DarkTerrex",
+      "est_time": "0:35:00",
+      "category": "Any%",
+      "casters": "LLK",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T12:41:00Z",
+      "game": "The Simpsons: Hit & Run",
+      "runners": "Sadlybadlyy",
+      "est_time": "1:45:00",
+      "category": "All Story Missions",
+      "casters": "MisterGameandShout",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T14:36:00Z",
+      "game": "Bonk's Revenge",
+      "runners": "lattmackey",
+      "est_time": "0:30:00",
+      "category": "Expert",
+      "casters": "Yen24",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T15:16:00Z",
+      "game": "Splatterhouse",
+      "runners": "zallard1",
+      "est_time": "0:16:00",
+      "category": "any%",
+      "casters": "Yen24",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T15:42:00Z",
+      "game": "Splatterhouse 2",
+      "runners": "zallard1",
+      "est_time": "0:20:00",
+      "category": "any%",
+      "casters": "Yen24",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T16:12:00Z",
+      "game": "Castlevania",
+      "runners": "Komrade",
+      "est_time": "0:15:00",
+      "category": "Any%",
+      "casters": "Yen24",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T16:37:00Z",
+      "game": "Castlevania III",
+      "runners": "MikeKanis",
+      "est_time": "0:35:00",
+      "category": "Sypha Route",
+      "casters": "Prolix",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T17:22:00Z",
+      "game": "Castlevania: Bloodlines",
+      "runners": "Klaige",
+      "est_time": "0:35:00",
+      "category": "John Morris or Eric Lecarde Any% Expert Difficulty",
+      "casters": "Prolix",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T18:07:00Z",
+      "game": "Castlevania: Circle of the Moon",
+      "runners": "darrenvile",
+      "est_time": "0:43:00",
+      "category": "Fighter Mode All Bosses vs Magician Mode All Bosses",
+      "casters": "Prolix",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T19:00:00Z",
+      "game": "Dragon Warrior III",
+      "runners": "vaxherd",
+      "est_time": "1:20:00",
+      "category": "Any%",
+      "casters": "Prolix",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T20:30:00Z",
+      "game": "Sonic Adventure DX: Director's Cut",
+      "runners": "JustFlandre",
+      "est_time": "0:36:00",
+      "category": "Sonic's Story",
+      "casters": "Lizstar",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T21:16:00Z",
+      "game": "Sonic Spinball",
+      "runners": "Zaxon96",
+      "est_time": "0:20:00",
+      "category": "any%",
+      "casters": "Lizstar",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T21:46:00Z",
+      "game": "Sonic the Hedgehog 2",
+      "runners": "mike89",
+      "est_time": "0:25:00",
+      "category": "Sonic",
+      "casters": "Lizstar",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-26T22:21:00Z",
+      "game": "SETUP BLOCK 2",
+      "runners": "Tech Crew",
+      "est_time": "0:48:00",
+      "category": "Tech Stuff",
+      "casters": "Lizstar",
+      "setup_time": "0:20:00"
+    },
+    {
+      "time": "2018-06-26T23:29:00Z",
+      "game": "Metroid: Zero Mission",
+      "runners": "samthedigital, Dragonfangs, john_unfil, CScottyW",
+      "est_time": "1:20:00",
+      "category": "100% Normal Race",
+      "casters": "MapleSR",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T00:59:00Z",
+      "game": "Metroid Samus Returns",
+      "runners": "Mr_Shasta",
+      "est_time": "1:55:00",
+      "category": "Any%",
+      "casters": "MapleSR",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T03:04:00Z",
+      "game": "Super Metroid",
+      "runners": "oatsngoats",
+      "est_time": "1:25:00",
+      "category": "100% Map Completion",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T04:39:00Z",
+      "game": "Halo 2",
+      "runners": "Ranabundana",
+      "est_time": "1:42:00",
+      "category": "Legendary",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T06:31:00Z",
+      "game": "The Legend of Zelda: Skyward Sword",
+      "runners": "gymnast86",
+      "est_time": "5:15:00",
+      "category": "Any%",
+      "casters": "Calyrica",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T11:56:00Z",
+      "game": "Prince of Persia: Warrior Within",
+      "runners": "catalyst",
+      "est_time": "0:25:00",
+      "category": "any% - normal",
+      "casters": "MisterGameandShout",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T12:31:00Z",
+      "game": "Kid Chameleon",
+      "runners": "peaches",
+      "est_time": "0:30:00",
+      "category": "4 Boss",
+      "casters": "MisterGameandShout",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T13:11:00Z",
+      "game": "Wiz 'n' Liz: The Frantic Wabbit Wescue",
+      "runners": "SilverDile",
+      "est_time": "0:20:00",
+      "category": "Wizard",
+      "casters": "MisterGameandShout",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T13:41:00Z",
+      "game": "Sylvan Tale",
+      "runners": "Omnigamer",
+      "est_time": "1:06:00",
+      "category": "100%",
+      "casters": "Sooraya",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T14:57:00Z",
+      "game": "SETUP BLOCK 3",
+      "runners": "Tech Crew",
+      "est_time": "0:35:00",
+      "category": "Tech Stuff",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T15:42:00Z",
+      "game": "Spider-Man: Web of Fire",
+      "runners": "PeteDorr",
+      "est_time": "0:13:00",
+      "category": "Beat the Game",
+      "casters": "Sooraya",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T16:05:00Z",
+      "game": "Spider-Man & Venom's Maximum Carnage",
+      "runners": "Ninjaofsorts",
+      "est_time": "0:22:00",
+      "category": "any%",
+      "casters": "Sooraya",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T16:37:00Z",
+      "game": "Batman Returns",
+      "runners": "LRock",
+      "est_time": "0:26:00",
+      "category": "Mania%",
+      "casters": "Arlynia",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-27T17:18:00Z",
+      "game": "Contra: Shattered Soldier",
+      "runners": "Aquas, TheDrifter18, Crak Atak",
+      "est_time": "0:35:00",
+      "category": "Any% All Stages Race",
+      "casters": "Arlynia",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T18:03:00Z",
+      "game": "High Hell",
+      "runners": "SNeaky",
+      "est_time": "0:25:00",
+      "category": "Any%",
+      "casters": "Arlynia",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T18:38:00Z",
+      "game": "Shadow Warrior Classic Redux",
+      "runners": "Ignite",
+      "est_time": "0:25:00",
+      "category": "Any% no ssl",
+      "casters": "CovertMuffin",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T19:13:00Z",
+      "game": "Sublevel Zero Redux",
+      "runners": "roncli",
+      "est_time": "0:30:00",
+      "category": "Normal Any%",
+      "casters": "CovertMuffin",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T19:53:00Z",
+      "game": "Thief: The Dark Project",
+      "runners": "Psych0sis",
+      "est_time": "0:42:00",
+      "category": "Any% Normal",
+      "casters": "CovertMuffin",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T20:45:00Z",
+      "game": "Metal Gear Solid: The Twin Snakes",
+      "runners": "plywood",
+      "est_time": "1:12:00",
+      "category": "Extreme",
+      "casters": "SakuraTsubasa",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-27T22:07:00Z",
+      "game": "The Legend of Zelda: Four Swords Adventures",
+      "runners": "Zmaster91",
+      "est_time": "2:17:00",
+      "category": "Any%",
+      "casters": "SakuraTsubasa",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T00:34:00Z",
+      "game": "Super Mario 3D Land",
+      "runners": "zeldacubed1",
+      "est_time": "1:10:00",
+      "category": "warpless",
+      "casters": "YellowKillerBee",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T01:54:00Z",
+      "game": "Cuphead",
+      "runners": "TheMexicanRunner",
+      "est_time": "0:55:00",
+      "category": "All Flags (Regular, Legacy)",
+      "casters": "Mike Uyama",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-28T03:04:00Z",
+      "game": "A Hat in Time",
+      "runners": "flarebear, ConnorAce",
+      "est_time": "1:00:00",
+      "category": "Any% Race",
+      "casters": "YellowKillerBee",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-28T04:19:00Z",
+      "game": "Celeste",
+      "runners": "TGH, yoshipro",
+      "est_time": "0:40:00",
+      "category": "Any% race",
+      "casters": "Mike Uyama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T05:09:00Z",
+      "game": "SETUP BLOCK 4",
+      "runners": "Tech Crew",
+      "est_time": "0:26:00",
+      "category": "Tech Stuff",
+      "casters": "Mike Uyama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T05:45:00Z",
+      "game": "Getting Over It with Bennett Foddy",
+      "runners": "MONTYvsTHEWORLD",
+      "est_time": "0:05:00",
+      "category": "Glitchless%",
+      "casters": "FrenchToast",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T06:00:00Z",
+      "game": "Miner Ultra Adventures",
+      "runners": "Konasumi",
+      "est_time": "0:15:00",
+      "category": "Any%",
+      "casters": "FrenchToast",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T06:25:00Z",
+      "game": "Roundabout",
+      "runners": "GNU Order",
+      "est_time": "0:11:00",
+      "category": "ESports Speedrun Mode",
+      "casters": "FrenchToast",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T06:46:00Z",
+      "game": "Live",
+      "runners": "LifeL1ke",
+      "est_time": "0:11:00",
+      "category": "Beat the Game",
+      "casters": "FrenchToast",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T07:07:00Z",
+      "game": "Stilt Fella",
+      "runners": "PHatHome666",
+      "est_time": "0:20:00",
+      "category": "Any%",
+      "casters": "FrenchToast",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T07:37:00Z",
+      "game": "Club Drive",
+      "runners": "PeteDorr",
+      "est_time": "0:13:00",
+      "category": "All Races (2 Laps)",
+      "casters": "FrenchToast",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T08:00:00Z",
+      "game": "Bio Miracle Bokutte Upa",
+      "runners": "EnchantressOfNumbers",
+      "est_time": "0:30:00",
+      "category": "Normal Difficulty",
+      "casters": "Calyrica",
+      "setup_time": "0:11:00"
+    },
+    {
+      "time": "2018-06-28T08:41:00Z",
+      "game": "Yo! Noid 2",
+      "runners": "AlucardX60",
+      "est_time": "0:12:00",
+      "category": "Any%",
+      "casters": "Calyrica",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T09:03:00Z",
+      "game": "Jungle King Tar-chan: World Tour Rumble",
+      "runners": "Aweglib",
+      "est_time": "0:30:00",
+      "category": "Any%",
+      "casters": "Calyrica",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T09:43:00Z",
+      "game": "Pac-Man 2: The New Adventures",
+      "runners": "PARTY MAN X",
+      "est_time": "0:30:00",
+      "category": "any%",
+      "casters": "Calyrica",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T10:23:00Z",
+      "game": "Pac 'n Roll Remix",
+      "runners": "SuperViperT302",
+      "est_time": "0:27:00",
+      "category": "Any%",
+      "casters": "Calyrica",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T11:00:00Z",
+      "game": "Don Doko Don 2",
+      "runners": "pip_johnson",
+      "est_time": "0:25:00",
+      "category": "any%",
+      "casters": "LLK",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T11:35:00Z",
+      "game": "Silver Grapple",
+      "runners": "Ivan",
+      "est_time": "0:20:00",
+      "category": "any% good ending",
+      "casters": "LLK",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T12:05:00Z",
+      "game": "Gift",
+      "runners": "SecksWrecks",
+      "est_time": "0:10:00",
+      "category": "any%",
+      "casters": "LLK",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T12:25:00Z",
+      "game": "El Viento",
+      "runners": "belthegor",
+      "est_time": "0:14:00",
+      "category": "any%",
+      "casters": "LLK",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T12:49:00Z",
+      "game": "Xeodrifter",
+      "runners": "JBuzzyBee",
+      "est_time": "0:18:00",
+      "category": "Any%",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T13:17:00Z",
+      "game": "Titan Souls",
+      "runners": "Zic3",
+      "est_time": "0:24:00",
+      "category": "Hard Mode 100%",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T13:51:00Z",
+      "game": "A Story About my Uncle",
+      "runners": "TheRealVincentio",
+      "est_time": "0:35:00",
+      "category": "any% No Fling",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-28T14:41:00Z",
+      "game": "Strider",
+      "runners": "NME, Elipsis, Mr Magnificent",
+      "est_time": "0:05:00",
+      "category": "any% race",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-28T15:01:00Z",
+      "game": "The Legend of Zelda",
+      "runners": "LackAttack24, BT, Eunos",
+      "est_time": "1:00:00",
+      "category": "low% Race",
+      "casters": "Sooraya",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T16:11:00Z",
+      "game": "The Legend of Zelda: Oracle of Seasons",
+      "runners": "mghtymth",
+      "est_time": "2:03:00",
+      "category": "Any%",
+      "casters": "Sooraya",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T18:24:00Z",
+      "game": "Paper Mario",
+      "runners": "imglower",
+      "est_time": "1:55:00",
+      "category": "Any%",
+      "casters": "MapleSR",
+      "setup_time": "0:16:00"
+    },
+    {
+      "time": "2018-06-28T20:35:00Z",
+      "game": "DeadCore",
+      "runners": "imawakka",
+      "est_time": "0:25:00",
+      "category": "NWNM NG (No Wall Clips No Mega Jumps New Game)",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T21:10:00Z",
+      "game": "Deus Ex",
+      "runners": "Heinki",
+      "est_time": "0:52:00",
+      "category": "any%",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T22:12:00Z",
+      "game": "Deus Ex Mankind Divided",
+      "runners": "Heinki",
+      "est_time": "1:05:00",
+      "category": "any%",
+      "casters": "Agama",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-28T23:27:00Z",
+      "game": "Prey (2017)",
+      "runners": "LifeL1ke",
+      "est_time": "0:50:00",
+      "category": "No OoB",
+      "casters": "theboyks",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T00:27:00Z",
+      "game": "SETUP BLOCK 5",
+      "runners": "Tech Crew",
+      "est_time": "0:35:00",
+      "category": "Tech Stuff",
+      "casters": "theboyks",
+      "setup_time": "0:20:00"
+    },
+    {
+      "time": "2018-06-29T01:22:00Z",
+      "game": "Super Mario Bros.",
+      "runners": "SuperSonic71087, RetroBob_, Kosmic, RoyLGamer",
+      "est_time": "0:32:00",
+      "category": "warpless",
+      "casters": "Skybilz",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-29T02:09:00Z",
+      "game": "Super Mario Bros. 3",
+      "runners": "mitchflowerpower, grandpoobear",
+      "est_time": "1:00:00",
+      "category": "All Forts Race",
+      "casters": "Skybilz",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T03:19:00Z",
+      "game": "Super Mario World",
+      "runners": "rezephos",
+      "est_time": "1:12:00",
+      "category": "All Castles & Forts, Small Only",
+      "casters": "Skybilz",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T04:41:00Z",
+      "game": "Mario Kart 8 Deluxe",
+      "runners": "AeonFrodo",
+      "est_time": "1:37:00",
+      "category": "32 Tracks, 200cc, Items",
+      "casters": "Arlynia",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T06:28:00Z",
+      "game": "Wave Race: Blue Storm",
+      "runners": "Pearstrike",
+      "est_time": "0:15:00",
+      "category": "Normal Circuit (No Retire)",
+      "casters": "Arlynia",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-29T06:58:00Z",
+      "game": "Runbow",
+      "runners": "MooMooAkai, MunchaKoopas",
+      "est_time": "0:25:00",
+      "category": "Bowhemoth",
+      "casters": "Arlynia",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-29T07:38:00Z",
+      "game": "Borderlands: the Pre-Sequel!",
+      "runners": "Shockwve, Amyrlinn",
+      "est_time": "2:20:00",
+      "category": "Co-op Any%",
+      "casters": "Prolix",
+      "setup_time": "0:20:00"
+    },
+    {
+      "time": "2018-06-29T10:18:00Z",
+      "game": "Bionic Commando",
+      "runners": "MURPHAGATOR!",
+      "est_time": "1:05:00",
+      "category": "any%",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T11:33:00Z",
+      "game": "Bound",
+      "runners": "chuckles825",
+      "est_time": "0:35:00",
+      "category": "Any%",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T12:18:00Z",
+      "game": "Catherine",
+      "runners": "Ghoul02",
+      "est_time": "0:30:00",
+      "category": "Babel Pairs 1 Player 2 Controllers",
+      "casters": "DarkTwinge",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T12:58:00Z",
+      "game": "Double Dragon",
+      "runners": "LRock",
+      "est_time": "0:14:00",
+      "category": "Any%",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T13:22:00Z",
+      "game": "Double Dragon II: The Revenge",
+      "runners": "sinister1",
+      "est_time": "0:14:00",
+      "category": "any%",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T13:46:00Z",
+      "game": "Golden Axe",
+      "runners": "InTheMug",
+      "est_time": "0:15:00",
+      "category": "Tyris Flare",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T14:11:00Z",
+      "game": "Streets of Rage 2",
+      "runners": "Anthopants",
+      "est_time": "0:57:00",
+      "category": "Mania%",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T15:18:00Z",
+      "game": "Battletoads & Double Dragon",
+      "runners": "PJ, Mecha Richter",
+      "est_time": "0:25:00",
+      "category": "Any% co-op",
+      "casters": "TokyoScarab",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T15:53:00Z",
+      "game": "Rockman No-Constancy",
+      "runners": "Kuumba",
+      "est_time": "0:40:00",
+      "category": "any% normal",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T16:43:00Z",
+      "game": "Mega Man 7",
+      "runners": "almondcity",
+      "est_time": "0:45:00",
+      "category": "any%",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:15:00"
+    },
+    {
+      "time": "2018-06-29T17:43:00Z",
+      "game": "Mega Man 8",
+      "runners": "orsa, cleartonic, maple",
+      "est_time": "0:55:00",
+      "category": "Any% Race",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T18:48:00Z",
+      "game": "Goof Troop",
+      "runners": "swordsmankirby, Bbforky",
+      "est_time": "0:24:00",
+      "category": "Co-Op",
+      "casters": "SakuraTsubasa",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-29T19:22:00Z",
+      "game": "Kingdom Hearts HD 1.5 ReMix (KH1FM)",
+      "runners": "mistmaster1",
+      "est_time": "3:05:00",
+      "category": "Any% (Level 1 Proud Mode)",
+      "casters": "SakuraTsubasa",
+      "setup_time": "0:35:00"
+    },
+    {
+      "time": "2018-06-29T23:02:00Z",
+      "game": "Super Mario 64",
+      "runners": "Puncayshun, cheese05",
+      "est_time": "1:00:00",
+      "category": "70 star race",
+      "casters": "YellowKillerBee",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T00:12:00Z",
+      "game": "The Legend of Zelda: The Wind Waker HD",
+      "runners": "Linkus7",
+      "est_time": "1:15:00",
+      "category": "Any%",
+      "casters": "YellowKillerBee",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T01:37:00Z",
+      "game": "SETUP BLOCK 6",
+      "runners": "Tech Crew",
+      "est_time": "0:37:00",
+      "category": "Tech Stuff",
+      "casters": "Raelcun",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T02:24:00Z",
+      "game": "TASBot plays F-Zero GX by talented authors",
+      "runners": "dwangoAC",
+      "est_time": "0:10:00",
+      "category": "TASBot%",
+      "casters": "Raelcun",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T02:44:00Z",
+      "game": "TASBot plays Super Metroid 0% by Sniq and total",
+      "runners": "dwangoAC",
+      "est_time": "0:07:07",
+      "category": "0% while running past audible invisible animals",
+      "casters": "Raelcun",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T03:01:07Z",
+      "game": "Dark Souls",
+      "runners": "catalyst",
+      "est_time": "1:35:00",
+      "category": "All Bosses",
+      "casters": "musical_daredevil",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T04:46:07Z",
+      "game": "Pokemon Yellow/Red",
+      "runners": "MeGotsThis",
+      "est_time": "2:47:00",
+      "category": "Any% Glitchless 2 Games 1 Controller",
+      "casters": "Yen24",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T07:43:07Z",
+      "game": "Star Wars Jedi Knight: Dark Forces II",
+      "runners": "ysalamiri",
+      "est_time": "0:30:00",
+      "category": "any%",
+      "casters": "Calyrica",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T08:23:07Z",
+      "game": "Star Wars Jedi Knight: Mysteries of the Sith",
+      "runners": "ysalamiri",
+      "est_time": "0:25:00",
+      "category": "any%",
+      "casters": "Calyrica",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T08:58:07Z",
+      "game": "Super Star Wars: The Empire Strikes Back",
+      "runners": "Indy",
+      "est_time": "0:45:00",
+      "category": "any%",
+      "casters": "Calyrica",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T09:53:07Z",
+      "game": "Hob",
+      "runners": "halfcoordinated",
+      "est_time": "0:55:00",
+      "category": "Any% No Clip (One-Handed)",
+      "casters": "theboyks",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T10:58:07Z",
+      "game": "I Am Bread",
+      "runners": "Nerd_Squared",
+      "est_time": "0:10:00",
+      "category": "Bagel Race",
+      "casters": "theboyks",
+      "setup_time": "0:13:00"
+    },
+    {
+      "time": "2018-06-30T11:21:07Z",
+      "game": "Ratchet: Deadlocked",
+      "runners": "Davie",
+      "est_time": "0:50:00",
+      "category": "NG+ No EGS",
+      "casters": "Nikasaur",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T12:21:07Z",
+      "game": "Spyro 2: Ripto's Rage",
+      "runners": "AlexDest",
+      "est_time": "0:32:00",
+      "category": "14 Talisman",
+      "casters": "Nikasaur",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T13:03:07Z",
+      "game": "Crash Bandicoot: N. Sane Trilogy",
+      "runners": "CameronVengenz",
+      "est_time": "1:02:00",
+      "category": "Crash Bandicoot 1 Any%",
+      "casters": "Nikasaur",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T14:15:07Z",
+      "game": "Kirby's Dream Land",
+      "runners": "eBloodyCandy",
+      "est_time": "0:15:00",
+      "category": "Beat Extra Mode",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T14:40:07Z",
+      "game": "Kirby's Adventure",
+      "runners": "swordsmankirby",
+      "est_time": "0:50:00",
+      "category": "Any% No Major Glitches",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T15:40:07Z",
+      "game": "New Super Mario Bros. 2",
+      "runners": "eddaket",
+      "est_time": "1:00:00",
+      "category": "Warpless",
+      "casters": "Protomagicalgirl",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T16:50:07Z",
+      "game": "Undertale",
+      "runners": "SnowieY101",
+      "est_time": "1:35:00",
+      "category": "True Pacifist Ending",
+      "casters": "SakuraTsubasa",
+      "setup_time": "0:20:00"
+    },
+    {
+      "time": "2018-06-30T18:45:07Z",
+      "game": "Super Mario Maker",
+      "runners": "Carl Sagan, grandpoobear, GlitchCat7, failstream, jaku, Cliffy",
+      "est_time": "1:30:00",
+      "category": "3v3 Blind Level Race",
+      "casters": "SakuraTsubasa",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T20:25:07Z",
+      "game": "The Legend of Zelda: Ocarina of Time",
+      "runners": "Runnerguy2489",
+      "est_time": "1:30:00",
+      "category": "Bingo",
+      "casters": "Prolix",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T22:05:07Z",
+      "game": "SETUP BLOCK 7",
+      "runners": "Tech Crew",
+      "est_time": "1:07:00",
+      "category": "We're getting close to the end",
+      "casters": "Prolix",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-06-30T23:22:07Z",
+      "game": "Final Fantasy VI",
+      "runners": "puwexil",
+      "est_time": "7:02:00",
+      "category": "Glitchless Any%",
+      "casters": "CovertMuffin/Nikasaur",
+      "setup_time": "0:10:00"
+    },
+    {
+      "time": "2018-07-01T06:34:07Z",
+      "game": "FINALE",
+      "runners": "None",
+      "est_time": "0:10:00",
+      "category": "post-GDQ blues",
+      "casters": "STAFF",
+      "setup_time": "0:10:00"
+    }
+  ]
+}

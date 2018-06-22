@@ -25,4 +25,5 @@ X - change colors?
 X -fix layout not correct height when line wraps while preventing jitter regression
 X - fix tappnig fast showing invisible views sometimes
 
-allow setting donate and twitch stream button url via the json file
+X -allow setting donate and twitch stream button url via the json file
+change when adding or replacing event data from restarting activity leaving backstack

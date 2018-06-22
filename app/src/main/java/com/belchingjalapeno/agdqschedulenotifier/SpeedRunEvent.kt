@@ -18,6 +18,13 @@ data class SpeedRunEvent(
         val setupTime: String
 )
 
+class EventData(
+        val twitchUrl: String?,
+        val donateUrl: String?,
+        @SerializedName("events")
+        val speedRunEvents: Array<SpeedRunEvent>
+)
+
 private val gson = Gson()
 
 fun dataToEvent(data: Data): SpeedRunEvent {
@@ -30,14 +37,18 @@ fun eventToData(event: SpeedRunEvent): Data {
             .build()
 }
 
-fun eventsToSJsonString(events: Array<SpeedRunEvent>): String {
-    return gson.toJson(events)
-}
-
-fun getEvents(reader: Reader): Array<SpeedRunEvent> {
-    return gson.fromJson<Array<SpeedRunEvent>>(reader, Array<SpeedRunEvent>::class.java)
+fun eventDataToJsonString(eventData: EventData): String {
+    return gson.toJson(eventData)
 }
 
 fun getEvents(reader: String): Array<SpeedRunEvent> {
     return gson.fromJson<Array<SpeedRunEvent>>(reader, Array<SpeedRunEvent>::class.java)
+}
+
+fun getEventData(reader: Reader): EventData {
+    return gson.fromJson<EventData>(reader, EventData::class.java)
+}
+
+fun getEventData(reader: String): EventData {
+    return gson.fromJson<EventData>(reader, EventData::class.java)
 }
