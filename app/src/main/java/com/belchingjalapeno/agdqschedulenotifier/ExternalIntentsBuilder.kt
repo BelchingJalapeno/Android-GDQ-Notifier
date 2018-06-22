@@ -3,23 +3,24 @@ package com.belchingjalapeno.agdqschedulenotifier
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 
 class ExternalIntentsBuilder {
     companion object {
 
-        fun getTwitchPendingIntent(context: Context): PendingIntent {
-            val intent = getTwitchIntent()
+        fun getTwitchPendingIntent(context: Context, sharedPreferences: SharedPreferences): PendingIntent {
+            val intent = getTwitchIntent(sharedPreferences)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             return PendingIntent.getActivity(context, 0, intent, 0)
         }
 
-        fun getTwitchIntent(): Intent {
-            return Intent(Intent.ACTION_VIEW, Uri.parse("https://www.twitch.tv/gamesdonequick"))
+        fun getTwitchIntent(sharedPreferences: SharedPreferences): Intent {
+            return Intent(Intent.ACTION_VIEW, Uri.parse(sharedPreferences.getString(TWITCH_PREFERENCE_KEY, "https://www.twitch.tv/gamesdonequick")))
         }
 
-        fun getDonateIntent(): Intent {
-            return Intent(Intent.ACTION_VIEW, Uri.parse("https://gamesdonequick.com/tracker/donate/sgdq2018"))
+        fun getDonateIntent(sharedPreferences: SharedPreferences): Intent {
+            return Intent(Intent.ACTION_VIEW, Uri.parse(sharedPreferences.getString(DONATE_PREFERENCE_KEY, "https://gamesdonequick.com/tracker/donate/sgdq2018")))
         }
 
         fun getFilePickerJsonIntent(): Intent {

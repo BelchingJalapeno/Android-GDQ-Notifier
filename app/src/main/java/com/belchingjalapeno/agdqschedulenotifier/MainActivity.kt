@@ -23,6 +23,9 @@ import java.util.*
 private const val REQUEST_CODE_ADD_EVENTS = 1
 private const val REQUEST_CODE_REPLACE_EVENTS = 2
 
+const val TWITCH_PREFERENCE_KEY = "TWITCH_PREFERENCE_KEY"
+const val DONATE_PREFERENCE_KEY = "DONATE_PREFERENCE_KEY"
+
 class MainActivity : AppCompatActivity() {
 
     lateinit var workQueueManager: WorkQueueManager
@@ -50,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
         val mutableListOf = mutableListOf<SpeedRunEvent>()
         mutableListOf.addAll(events)
-        val time = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.getDefault()).format(Date(System.currentTimeMillis() + (1000 * 60)))
+//        val time = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.getDefault()).format(Date(System.currentTimeMillis() + (1000 * 60)))
 //        mutableListOf.add(0, SpeedRunEvent(time, "test", "test", "0:01:00", "test", "test", "0:01:00"))
         events = mutableListOf.toTypedArray()
 
@@ -107,7 +110,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupDonateFab() {
-        donate_fab.setOnClickListener { startActivity(ExternalIntentsBuilder.getDonateIntent()) }
+        donate_fab.setOnClickListener { startActivity(ExternalIntentsBuilder.getDonateIntent(getSharedPref())) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -128,7 +131,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.app_bar_twitch -> {
-            startActivity(ExternalIntentsBuilder.getTwitchIntent())
+            startActivity(ExternalIntentsBuilder.getTwitchIntent(getSharedPref()))
             true
         }
 
