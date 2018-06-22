@@ -26,4 +26,4 @@ X -fix layout not correct height when line wraps while preventing jitter regress
 X - fix tappnig fast showing invisible views sometimes
 
 X -allow setting donate and twitch stream button url via the json file
-change when adding or replacing event data from restarting activity leaving backstack
+X - change when adding or replacing event data from restarting activity leaving backstack
