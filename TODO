@@ -29,4 +29,4 @@ X -allow setting donate and twitch stream button url via the json file
 X - change when adding or replacing event data from restarting activity leaving backstack
 
 convert json time values to use milliseconds from 1970 blah blah
-change icon to have same color / accent as app
+X - change icon to have same color / accent as app
