@@ -43,7 +43,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
                 if (timeCalculator.getHours(timeDifference) <= 0) {
                     timeCalculator.getFormattedTime(timeDifference, showMinutes = true, showSeconds = true)
                 } else {
-                    timeCalculator.getFormattedTime(timeDifference, showMinutes = true)
+                    timeCalculator.getFormattedTime(timeDifference, showHours = true, showMinutes = true)
                 }
             } else {
                 timeCalculator.getFormattedTime(timeDifference, showHours = true)
