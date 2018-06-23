@@ -6,12 +6,12 @@ import com.google.gson.annotations.SerializedName
 import java.io.Reader
 
 data class SpeedRunEvent(
-        @SerializedName("time")
-        val startTime: String,
+        @SerializedName("start_time")
+        val startTime: Long,
         val game: String,
         val runners: String,
         @SerializedName("est_time")
-        val runLength: String,
+        val estimatedTime: String,
         val category: String,
         val casters: String,
         @SerializedName("setup_time")

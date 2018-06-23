@@ -1,24 +1,15 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
-import java.text.SimpleDateFormat
-import java.util.*
-
 /**
  * Time related calculations and formatting
  */
 class TimeCalculator {
 
-    private companion object {
-        private val simpleDateFormatLength = SimpleDateFormat("H:mm:ss", Locale.getDefault())
-        private val simpleDateFormatStartTime = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.getDefault())
-    }
-
-    fun fromStringStartTimeToLong(startTime: String): Long {
-        return simpleDateFormatStartTime.parse(startTime).time
-    }
-
     fun fromStringExpectedLengthToLong(runLength: String): Long {
-        return simpleDateFormatLength.parse(runLength).time
+        //split hh:mm:ss into  hours minutes seconds
+        val split = runLength.split(":").map { it.trim() }
+        //add the milliseconds of the hours, minutes, and seconds up for the total time
+        return (split[0].toLong() * (60 * 60 * 1000)) + (split[1].toLong() * (60 * 1000)) + (split[2].toLong() * (1000))
     }
 
     fun getTimeDiff(currentTime: Long, targetTime: Long): Long {

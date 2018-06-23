@@ -20,17 +20,17 @@
         <code>
             <pre>
 {
-    <span class=variable>"twitchUrl"</span>: <span class=type>string</span>(optional),
-    <span class=variable>"donateUrl"</span>: <span class=type>string</span>(optional),
+    <span class=variable>"twitch_url"</span>: <span class=type>string</span>(optional),
+    <span class=variable>"donate_url"</span>: <span class=type>string</span>(optional),
     <span class=variable>"events"</span>: [
         {
-            <span class=variable>"time"</span>: <span class=type>long</span>(milliseconds since 1970),
+            <span class=variable>"start_time"</span>: <span class=type>long</span>(milliseconds since midnight, Jan 1st, 1970 in UTC),
             <span class=variable>"game"</span>: <span class=type>string</span>,
             <span class=variable>"runners"</span>: <span class=type>string</span>,
-            <span class=variable>"est_time"</span>: <span class=type>string</span>(h:mm:ss),
+            <span class=variable>"est_time"</span>: <span class=type>string</span>(hh:mm:ss),
             <span class=variable>"category"</span>: <span class=type>string</span>,
             <span class=variable>"casters"</span>: <span class=type>string</span>,
-            <span class=variable>"setup_time"</span>: <span class=type>string</span>(h:mm:ss)
+            <span class=variable>"setup_time"</span>: <span class=type>string</span>(hh:mm:ss)
         }
     ]
 }</pre>

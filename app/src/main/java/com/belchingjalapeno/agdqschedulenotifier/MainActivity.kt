@@ -96,17 +96,16 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun getPageTitle(position: Int): CharSequence? {
-                val fromStringStartTimeToLong = TimeCalculator().fromStringStartTimeToLong(eventsByDay[position][0].startTime)
+                val fromStringStartTimeToLong = eventsByDay[position][0].startTime
                 return SimpleDateFormat("MMMM d", Locale.getDefault()).format(Date(fromStringStartTimeToLong))
             }
         }
     }
 
     private fun getEventsByDay(events: Array<SpeedRunEvent>): Array<Array<SpeedRunEvent>> {
-        val calc = TimeCalculator()
-        events.sortBy { calc.fromStringStartTimeToLong(it.startTime) }
+        events.sortBy { it.startTime }
         val groupBy = events.groupBy({
-            val date = Date(calc.fromStringStartTimeToLong(it.startTime))
+            val date = Date(it.startTime)
             SimpleDateFormat.getDateInstance().format(date)
         })
         val v = groupBy.values.map { it.toTypedArray() }

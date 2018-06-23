@@ -14,7 +14,7 @@ class WorkQueueManager(private val pref: SharedPreferences,
     private val timeCalculator = TimeCalculator()
 
     fun isQueued(event: SpeedRunEvent): Boolean {
-        if (timeCalculator.fromStringStartTimeToLong(event.startTime) < System.currentTimeMillis()) {
+        if ((event.startTime) < System.currentTimeMillis()) {
             pref.edit()
                     .remove(event.hashCode().toString())
                     .apply()

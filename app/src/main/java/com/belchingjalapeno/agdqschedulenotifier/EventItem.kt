@@ -36,7 +36,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
     fun bind(viewHolder: ViewHolder, item: SpeedRunEvent) {
         viewHolder.apply {
             val currentTime = System.currentTimeMillis()
-            val targetTime = timeCalculator.fromStringStartTimeToLong(item.startTime)
+            val targetTime = item.startTime
             val timeDifference = timeCalculator.getTimeDiff(currentTime, targetTime)
             //show more precise time as we get closer to the event
             val time: String = if (timeCalculator.getDays(timeDifference) <= 0) {
@@ -51,7 +51,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
 
             startTimeView.text = "When   $time"
 
-            val expectedLengthInMillis = timeCalculator.fromStringExpectedLengthToLong(item.runLength)
+            val expectedLengthInMillis = timeCalculator.fromStringExpectedLengthToLong(item.estimatedTime)
             val time2 = timeCalculator.getFormattedTime(expectedLengthInMillis, showHours = true, showMinutes = true, showSeconds = true)
 
             runLengthView.text = "Length   $time2"
@@ -98,7 +98,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
                     queueManager.removeFromQueue(item)
                 } else {
                     val currentTime = System.currentTimeMillis()
-                    val targetTime = timeCalculator.fromStringStartTimeToLong(item.startTime)
+                    val targetTime = (item.startTime)
                     val timeDifference = timeCalculator.getTimeDiff(currentTime, targetTime)
 
                     queueManager.addToQueue(item, timeDifference)
