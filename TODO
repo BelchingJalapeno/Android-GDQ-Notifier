@@ -31,4 +31,4 @@ X - change when adding or replacing event data from restarting activity leaving 
 X - convert json time values to use milliseconds from 1970 blah blah
 X - change icon to have same color / accent as app
 
-donate and twitch url from json not working
+X - donate and twitch url from json not working
