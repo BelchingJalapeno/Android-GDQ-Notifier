@@ -19,7 +19,9 @@ data class SpeedRunEvent(
 )
 
 class EventData(
+        @SerializedName("twitch_url")
         val twitchUrl: String?,
+        @SerializedName("donate_url")
         val donateUrl: String?,
         @SerializedName("events")
         val speedRunEvents: Array<SpeedRunEvent>
