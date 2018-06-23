@@ -28,4 +28,8 @@
         android:id="@+id/app_bar_replace_events"
         android:title="@string/replace_events"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/app_bar_file_format_info"
+        android:title="@string/file_info"
+        app:showAsAction="never" />
 </menu>

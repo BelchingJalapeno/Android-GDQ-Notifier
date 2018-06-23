@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <style>
+    .variable{
+        color: #007ac1;
+    }
+    .type{
+        color: #03a9f4;
+    }
+    pre {
+        background-color: #eee;
+        border-radius: 2px;
+        font-family: courier, monospace;
+        padding: 8px 8px;
+        overflow: scroll;
+    }
+    </style>
+    <body>
+        <p>Editing events is done with a JSON file and looks like this.</p>
+        <code>
+            <pre>
+{
+    <span class=variable>"twitchUrl"</span>: <span class=type>string</span>(optional),
+    <span class=variable>"donateUrl"</span>: <span class=type>string</span>(optional),
+    <span class=variable>"events"</span>: [
+        {
+            <span class=variable>"time"</span>: <span class=type>long</span>(milliseconds since 1970),
+            <span class=variable>"game"</span>: <span class=type>string</span>,
+            <span class=variable>"runners"</span>: <span class=type>string</span>,
+            <span class=variable>"est_time"</span>: <span class=type>string</span>(h:mm:ss),
+            <span class=variable>"category"</span>: <span class=type>string</span>,
+            <span class=variable>"casters"</span>: <span class=type>string</span>,
+            <span class=variable>"setup_time"</span>: <span class=type>string</span>(h:mm:ss)
+        }
+    ]
+}</pre>
+        </code>
+    </body>
+</html>

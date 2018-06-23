@@ -2,6 +2,7 @@ package com.belchingjalapeno.agdqschedulenotifier
 
 import android.app.Activity
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
@@ -9,11 +10,14 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.content.ContextCompat
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.SearchView
 import android.view.Menu
 import android.view.MenuItem
+import android.webkit.WebView
+import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.*
 import java.text.SimpleDateFormat
@@ -144,12 +148,46 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.app_bar_add_events -> {
-            startActivityForResult(ExternalIntentsBuilder.getFilePickerJsonIntent(), REQUEST_CODE_ADD_EVENTS)
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setCancelable(true)
+            dialogBuilder.setTitle("Add events")
+            dialogBuilder.setMessage("This will keep your notifications active and add unique events to your current events. See file info in menu for more info.")
+            dialogBuilder.setPositiveButton("Choose File", { dialogInterface: DialogInterface, i: Int ->
+                startActivityForResult(ExternalIntentsBuilder.getFilePickerJsonIntent(), REQUEST_CODE_ADD_EVENTS)
+            })
+            dialogBuilder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
+            dialogBuilder.create().show()
             true
         }
 
         R.id.app_bar_replace_events -> {
-            startActivityForResult(ExternalIntentsBuilder.getFilePickerJsonIntent(), REQUEST_CODE_REPLACE_EVENTS)
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setCancelable(true)
+            dialogBuilder.setTitle("Replace all events")
+            dialogBuilder.setMessage("This will cancel all notifications and replace all events. See file info in menu for more info.")
+            dialogBuilder.setPositiveButton("Choose File", { dialogInterface: DialogInterface, i: Int ->
+                startActivityForResult(ExternalIntentsBuilder.getFilePickerJsonIntent(), REQUEST_CODE_REPLACE_EVENTS)
+            })
+            dialogBuilder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
+            dialogBuilder.create().show()
+            true
+        }
+
+        R.id.app_bar_file_format_info -> {
+            val resource = resources.openRawResource(R.raw.json_sample)
+            val html = (BufferedReader(InputStreamReader(resource))).readText()
+            resource.close()
+
+            val dialogBuilder = AlertDialog.Builder(this)
+            dialogBuilder.setCancelable(true)
+            dialogBuilder.setTitle("File info")
+            val frameView = FrameLayout(this)
+            val webView = layoutInflater.inflate(R.layout.dialog_web_view, frameView, true).findViewById<WebView>(R.id.dialog_web_view)
+            webView.loadData(html, "text/html", "utf8")
+            dialogBuilder.setView(frameView)
+            dialogBuilder.setPositiveButton("Got it", { dialogInterface: DialogInterface, i: Int ->
+            })
+            dialogBuilder.create().show()
             true
         }
 

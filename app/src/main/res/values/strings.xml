@@ -13,4 +13,5 @@
     <string name="expand_icon_button">Expand Icon Button</string>
     <string name="replace_events">Replace events</string>
     <string name="add_events">Add events</string>
+    <string name="file_info">File info</string>
 </resources>
