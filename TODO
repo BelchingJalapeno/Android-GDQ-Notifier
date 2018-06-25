@@ -43,3 +43,5 @@ change notification to say the exact time the event starts, and then the next 2 
 maybe having a time on the events would be nice
 maybe modify the add event thing to have it's own gui screen to add events from in the app
 maybe have a jump to current event or show current/day
+
+extract all strings from things like the dialogs into xml
