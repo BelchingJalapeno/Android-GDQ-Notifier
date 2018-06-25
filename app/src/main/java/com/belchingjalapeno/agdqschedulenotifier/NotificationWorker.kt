@@ -38,7 +38,7 @@ class NotificationWorker : Worker() {
         val contentText = "Length $formattedEstimatedTime\n"
         val mBuilder = NotificationCompat.Builder(this.applicationContext, CHANNEL_ID)
                 .setSmallIcon(R.drawable.glitch_icon_white_128px)
-                .setContentTitle("${event.game}(${event.category}) starting soon")
+                .setContentTitle("${event.game}(${event.category}) starting at ${timeCalculator.getTimeFromMilliseconds(event.startTime)}")
                 .setContentText(contentText)
                 .setStyle(NotificationCompat.BigTextStyle()
                         .bigText(contentText +
@@ -76,5 +76,42 @@ class NotificationWorker : Worker() {
             val notificationManager = this.applicationContext.getSystemService(NotificationManager::class.java)
             notificationManager.createNotificationChannel(channel)
         }
+    }
+
+    fun test(pendingIntent: PendingIntent, speedRunEvent: SpeedRunEvent, context:Context) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+//            val name = getString(R.string.channel_name)
+//            val description = getString(R.string.channel_description)
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(CHANNEL_ID, "name todo", importance)
+            channel.description = "channel description todo"
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            val notificationManager = context.getSystemService(NotificationManager::class.java)
+            notificationManager.createNotificationChannel(channel)
+        }
+
+
+        val formattedEstimatedTime = timeCalculator.getFormattedTime(timeCalculator.fromStringExpectedLengthToLong(speedRunEvent.estimatedTime), true, true, true)
+            val contentText = "${timeCalculator.getTimeFromMilliseconds(speedRunEvent.startTime)}, Length $formattedEstimatedTime\n"
+            val mBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
+                    .setSmallIcon(R.drawable.glitch_icon_white_128px)
+                    .setContentTitle("${speedRunEvent.game}(${speedRunEvent.category})")
+                    .setContentText(contentText)
+                    .setStyle(NotificationCompat.BigTextStyle()
+                            .bigText(contentText +
+                                    "Runners ${speedRunEvent.runners}\n" +
+                                    "Casters ${speedRunEvent.casters}"))
+                    // Set the intent that will fire when the user taps the notification
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setContentIntent(pendingIntent)
+                    .setAutoCancel(true)
+
+
+
+        val notificationManager = NotificationManagerCompat.from(context)
+
+        notificationManager.notify(speedRunEvent.hashCode(), mBuilder.build())
     }
 }
