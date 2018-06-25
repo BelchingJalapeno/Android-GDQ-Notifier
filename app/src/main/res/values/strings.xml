@@ -11,7 +11,8 @@
     <string name="runners">Runners</string>
     <string name="casters">Casters</string>
     <string name="expand_icon_button">Expand Icon Button</string>
-    <string name="replace_events">Replace events</string>
-    <string name="add_events">Add events</string>
+    <string name="replace_events">Replace</string>
+    <string name="add_events">Add</string>
     <string name="file_info">File info</string>
+    <string name="edit">Edit events</string>
 </resources>
