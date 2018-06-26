@@ -1,10 +1,15 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
+import android.app.AlarmManager
 import android.content.SharedPreferences
+import android.os.Build
+import android.os.Build.VERSION.SDK_INT
+import android.provider.Settings
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import java.util.*
 import java.util.concurrent.TimeUnit
+
 
 class WorkQueueManager(private val pref: SharedPreferences,
                        val queuedColor: Int,
@@ -24,7 +29,14 @@ class WorkQueueManager(private val pref: SharedPreferences,
 
     fun removeFromQueue(event: SpeedRunEvent) {
         val uuidString = pref.getString(event.hashCode().toString(), "")
-        WorkManager.getInstance().cancelWorkById(UUID.fromString(uuidString))
+        WorkManager.getInstance().synchronous().cancelWorkByIdSync(UUID.fromString(uuidString))
+        if (SDK_INT <= Build.VERSION_CODES.LOLLIPOP) {
+            val nextAlarm = Settings.System.getString(getContentResolver(),
+                    Settings.System.NEXT_ALARM_FORMATTED)
+        } else {
+            val v: AlarmManager = InstrumentationRegistry.getContext().getSystemService(AlarmManager::class.java)
+            v.nextAlarmClock
+        }
 
         pref.edit()
                 .remove(event.hashCode().toString())
@@ -47,10 +59,14 @@ class WorkQueueManager(private val pref: SharedPreferences,
                 .putString(event.hashCode().toString(), workRequest.id.toString())
                 .apply()
 
-        WorkManager.getInstance().enqueue(workRequest)
+        WorkManager.getInstance().synchronous().enqueueSync(workRequest)
     }
 
     fun clearAll() {
-        WorkManager.getInstance().cancelAllWork()
+        WorkManager.getInstance().synchronous().cancelAllWorkSync()
+    }
+
+    fun size(): Int {
+        return -1
     }
 }
