@@ -150,7 +150,7 @@ class MainActivity : AppCompatActivity() {
             dialogBuilder.setTitle("Add events")
             dialogBuilder.setMessage("This will keep your notifications active and add unique events to your current events. See file info in menu for more info.")
             dialogBuilder.setPositiveButton("Choose File", { dialogInterface: DialogInterface, i: Int ->
-                startActivityForResult(ExternalIntentsBuilder.getFilePickerJsonIntent(), REQUEST_CODE_ADD_EVENTS)
+                startActivityForResult(ExternalIntentsBuilder.getJsonFilePickerIntent(), REQUEST_CODE_ADD_EVENTS)
             })
             dialogBuilder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
             dialogBuilder.create().show()
@@ -163,7 +163,7 @@ class MainActivity : AppCompatActivity() {
             dialogBuilder.setTitle("Replace all events")
             dialogBuilder.setMessage("This will cancel all notifications and replace all events. See file info in menu for more info.")
             dialogBuilder.setPositiveButton("Choose File", { dialogInterface: DialogInterface, i: Int ->
-                startActivityForResult(ExternalIntentsBuilder.getFilePickerJsonIntent(), REQUEST_CODE_REPLACE_EVENTS)
+                startActivityForResult(ExternalIntentsBuilder.getJsonFilePickerIntent(), REQUEST_CODE_REPLACE_EVENTS)
             })
             dialogBuilder.setNegativeButton("Cancel", { dialogInterface: DialogInterface, i: Int -> })
             dialogBuilder.create().show()

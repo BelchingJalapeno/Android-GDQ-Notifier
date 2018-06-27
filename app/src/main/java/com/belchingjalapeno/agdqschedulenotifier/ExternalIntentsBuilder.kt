@@ -23,7 +23,7 @@ class ExternalIntentsBuilder {
             return Intent(Intent.ACTION_VIEW, Uri.parse(sharedPreferences.getString(DONATE_PREFERENCE_KEY, "https://gamesdonequick.com/tracker/ui/donate/sgdq2018")))
         }
 
-        fun getFilePickerJsonIntent(): Intent {
+        fun getJsonFilePickerIntent(): Intent {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             intent.addCategory(Intent.CATEGORY_OPENABLE)
             intent.type = "application/*"
