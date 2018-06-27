@@ -19,7 +19,7 @@ class AlarmNotificationReceiver : BroadcastReceiver() {
         val database = NotificationEventDatabase.getDatabase(context)
         val eventDao = database.notificationEventDao()
         val notificationCreator = NotificationCreator(context)
-        val alarmManagerNotifier = AlarmManagerNotifier(context, 5L * 60L * 1000L)
+        val alarmManagerNotifier = AlarmManagerNotifier(context)
 
         val currentEvent = eventDao.getEvent(eventId)
         if (currentEvent == null) {

@@ -11,7 +11,7 @@ class NotificationQueue(context: Context) {
     private val database = NotificationEventDatabase.getDatabase(context)
     private val eventsDao = database.notificationEventDao()
 
-    private val alarmManagerNotifier = AlarmManagerNotifier(context, 5L * 60L * 1000L)
+    private val alarmManagerNotifier = AlarmManagerNotifier(context)
 
     fun isQueued(event: SpeedRunEvent): Boolean {
         if ((event.startTime) < System.currentTimeMillis()) {

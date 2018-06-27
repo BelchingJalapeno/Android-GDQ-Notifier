@@ -5,10 +5,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 
-/**
- * @param timeWindow duration in milliseconds before alarm exact time that it can go off
- */
-class AlarmManagerNotifier(private val context: Context, private val timeWindow: Long) {
+class AlarmManagerNotifier(private val context: Context) {
 
     companion object {
         const val REQUEST_CODE = 1
@@ -22,7 +19,6 @@ class AlarmManagerNotifier(private val context: Context, private val timeWindow:
      */
     fun setAlarm(id: Int, time: Long) {
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, time, createPendingIntent(id))
-//        alarmManager.setWindow(AlarmManager.RTC_WAKEUP, time - timeWindow, timeWindow, createPendingIntent(id))
     }
 
     fun cancelAlarm(id: Int) {

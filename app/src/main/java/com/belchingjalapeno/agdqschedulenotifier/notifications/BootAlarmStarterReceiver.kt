@@ -24,15 +24,9 @@ class BootAlarmStarterReceiver : BroadcastReceiver() {
             return
         }
 
-        val timeWindow = getTimeWindow()
         val event = events[0]
-        val alarmManagerNotifier = AlarmManagerNotifier(context, timeWindow)
+        val alarmManagerNotifier = AlarmManagerNotifier(context)
 
         alarmManagerNotifier.setAlarm(event.id, event.speedRunEvent.startTime)
-    }
-
-    //todo actually get time window from somewhere instead of hardcoded value
-    private fun getTimeWindow(): Long {
-        return 5L * 60L * 1000L
     }
 }
