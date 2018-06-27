@@ -9,8 +9,6 @@ class BackgroundColorSetter {
     fun setColor(v: View?, event: SpeedRunEvent, queueManager: WorkQueueManager) {
         if (timeCalculator.getTimeDiff(System.currentTimeMillis(), event.startTime) <= 0) {
             v?.setBackgroundColor(queueManager.oldEventColor)
-        } else if (queueManager.isQueued(event)) {
-//            v?.setBackgroundColor(queueManager.queuedColor)
         } else {
             v?.setBackgroundColor(queueManager.nonQueuedColor)
         }
