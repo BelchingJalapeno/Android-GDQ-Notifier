@@ -9,12 +9,14 @@ import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
 
-class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueManager: WorkQueueManager, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItem.ViewHolder>() {
+class EventItem(private val events: Array<SpeedRunEvent>, private val notificationQueue: WorkQueueManager, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItem.ViewHolder>() {
 
-    private val timeCalculator = TimeCalculator()
-    private val eventItemViewSetter = EventItemViewSetter()
+    private val timeFormatter = TimeCalculator()
+    private val notificationUiStateSetter = NotificationUiStateSetter()
 
-    private val backingEventList = events.toMutableList()
+    //all of the events that are shown in the RecyclerView that arnt filtered out
+    private val visibleEventList = events.toMutableList()
+    //list map of events to how high the itemview is when it is displayed, used for animating collapse
     private val heightMap = mutableMapOf<SpeedRunEvent, Int>()
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
@@ -24,34 +26,33 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
     }
 
     override fun getItemCount(): Int {
-        return backingEventList.size
+        return visibleEventList.size
     }
 
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
-        bind(p0, backingEventList[p1])
+        bind(p0, visibleEventList[p1])
     }
 
-
-    fun bind(viewHolder: ViewHolder, item: SpeedRunEvent) {
+    private fun bind(viewHolder: ViewHolder, item: SpeedRunEvent) {
         viewHolder.apply {
             val currentTime = System.currentTimeMillis()
             val targetTime = item.startTime
-            val timeDifference = timeCalculator.getTimeDiff(currentTime, targetTime)
+            val timeDifference = timeFormatter.getTimeDiff(currentTime, targetTime)
             //show more precise time as we get closer to the event
-            val time: String = if (timeCalculator.getDays(timeDifference) <= 0) {
-                if (timeCalculator.getHours(timeDifference) <= 0) {
-                    timeCalculator.getFormattedTime(timeDifference, showMinutes = true, showSeconds = true)
+            val time: String = if (timeFormatter.getDays(timeDifference) <= 0) {
+                if (timeFormatter.getHours(timeDifference) <= 0) {
+                    timeFormatter.getFormattedTime(timeDifference, showMinutes = true, showSeconds = true)
                 } else {
-                    timeCalculator.getFormattedTime(timeDifference, showHours = true, showMinutes = true)
+                    timeFormatter.getFormattedTime(timeDifference, showHours = true, showMinutes = true)
                 }
             } else {
-                timeCalculator.getFormattedTime(timeDifference, showHours = true)
+                timeFormatter.getFormattedTime(timeDifference, showHours = true)
             }
 
             startTimeView.text = "When   $time"
 
-            val expectedLengthInMillis = timeCalculator.fromStringExpectedLengthToLong(item.estimatedTime)
-            val time2 = timeCalculator.getFormattedTime(expectedLengthInMillis, showHours = true, showMinutes = true, showSeconds = true)
+            val expectedLengthInMillis = timeFormatter.fromStringExpectedLengthToLong(item.estimatedTime)
+            val time2 = timeFormatter.getFormattedTime(expectedLengthInMillis, showHours = true, showMinutes = true, showSeconds = true)
 
             runLengthView.text = "Length   $time2"
 
@@ -81,40 +82,34 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
                 expandableView.collapseNoAnimation(heightMap[item]!!)
             }
 
-            setBackgroundColorState(itemView, item, workQueueManager)
+            setBackgroundColorState(itemView, item, notificationQueue)
 
-            eventItemViewSetter.setViewState(workQueueManager, itemView, item, 0)
+            notificationUiStateSetter.setViewState(notificationQueue, itemView, item, 0)
 
             notificationIcon.setOnClickListener {
                 //don't allow subscribing / unsubscribing if the filter is enabled
                 if (eventFilter.notificationOnly) {
                     return@setOnClickListener
                 }
-                val queueManager = workQueueManager
-                val isQueued = queueManager.isQueued(item)
 
-                if (isQueued) {
-                    queueManager.removeFromQueue(item)
+                if (notificationQueue.isQueued(item)) {
+                    notificationQueue.removeFromQueue(item)
                 } else {
-                    val currentTime = System.currentTimeMillis()
-                    val targetTime = (item.startTime)
-                    val timeDifference = timeCalculator.getTimeDiff(currentTime, targetTime)
-
-                    queueManager.addToQueue(item)
+                    notificationQueue.addToQueue(item)
                 }
 
-                setBackgroundColorState(notificationIcon, item, queueManager)
+                setBackgroundColorState(notificationIcon, item, notificationQueue)
 
-                eventItemViewSetter.setViewState(queueManager, notificationIcon, item)
+                notificationUiStateSetter.setViewState(notificationQueue, notificationIcon, item)
             }
         }
     }
 
     fun filter(notificationEnabled: Boolean, query: String) {
-        val backingListCopy = backingEventList.toList()
+        val backingListCopy = visibleEventList.toList()
         val filteredEvents = events.filter {
             if (notificationEnabled) {
-                workQueueManager.isQueued(it)
+                notificationQueue.isQueued(it)
             } else {
                 true
             }
@@ -137,13 +132,15 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
             override fun areContentsTheSame(p0: Int, p1: Int): Boolean {
                 return backingListCopy[p0] == filteredEvents[p1]
             }
-        }).dispatchUpdatesTo(this)
-        backingEventList.clear()
-        backingEventList.addAll(filteredEvents)
+        })
+                .dispatchUpdatesTo(this)
+
+        visibleEventList.clear()
+        visibleEventList.addAll(filteredEvents)
     }
 
     private fun setBackgroundColorState(v: View?, event: SpeedRunEvent, queueManager: WorkQueueManager) {
-        if (timeCalculator.getTimeDiff(System.currentTimeMillis(), event.startTime) <= 0) {
+        if (timeFormatter.getTimeDiff(System.currentTimeMillis(), event.startTime) <= 0) {
             v?.setBackgroundColor(queueManager.oldEventColor)
         } else {
             v?.setBackgroundColor(queueManager.nonQueuedColor)

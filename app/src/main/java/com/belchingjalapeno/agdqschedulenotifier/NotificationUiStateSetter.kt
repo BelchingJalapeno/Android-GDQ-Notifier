@@ -5,7 +5,7 @@ import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.ImageView
 
-class EventItemViewSetter {
+class NotificationUiStateSetter {
     fun setViewState(workQueueManager: WorkQueueManager, parentView: View, speedRunEvent: SpeedRunEvent, animationTime: Long = 200) {
         val notificationToggleView = parentView.findViewById<ImageView>(R.id.notification_toggle_button)!!
 
