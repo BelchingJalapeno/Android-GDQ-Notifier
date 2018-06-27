@@ -12,7 +12,6 @@ import android.widget.TextView
 class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueManager: WorkQueueManager, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItem.ViewHolder>() {
 
     private val timeCalculator = TimeCalculator()
-    private val backgroundColorSetter = BackgroundColorSetter()
     private val eventItemViewSetter = EventItemViewSetter()
 
     private val backingEventList = events.toMutableList()
@@ -82,7 +81,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
                 expandableView.collapseNoAnimation(heightMap[item]!!)
             }
 
-            backgroundColorSetter.setColor(itemView, item, workQueueManager)
+            setBackgroundColorState(itemView, item, workQueueManager)
 
             eventItemViewSetter.setViewState(workQueueManager, itemView, item, 0)
 
@@ -104,7 +103,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
                     queueManager.addToQueue(item)
                 }
 
-                backgroundColorSetter.setColor(notificationIcon, item, queueManager)
+                setBackgroundColorState(notificationIcon, item, queueManager)
 
                 eventItemViewSetter.setViewState(queueManager, notificationIcon, item)
             }
@@ -141,6 +140,14 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
         }).dispatchUpdatesTo(this)
         backingEventList.clear()
         backingEventList.addAll(filteredEvents)
+    }
+
+    private fun setBackgroundColorState(v: View?, event: SpeedRunEvent, queueManager: WorkQueueManager) {
+        if (timeCalculator.getTimeDiff(System.currentTimeMillis(), event.startTime) <= 0) {
+            v?.setBackgroundColor(queueManager.oldEventColor)
+        } else {
+            v?.setBackgroundColor(queueManager.nonQueuedColor)
+        }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
