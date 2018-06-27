@@ -50,7 +50,7 @@ class TimeCalculator {
         val s = "hh:mm a"
         val hourMinuteDateFormat = SimpleDateFormat(s, Locale.getDefault())
         return when {
-            days <= 0 -> " " + hourMinuteDateFormat.format(targetDate)
+            days <= 0 -> "at " + hourMinuteDateFormat.format(targetDate)
             days == 1L -> "Tomorrow, " + hourMinuteDateFormat.format(targetDate)
             days < 7 -> SimpleDateFormat("EEE, $s", Locale.getDefault()).format(targetDate)
             else -> SimpleDateFormat("MMM dd, $s", Locale.getDefault()).format(targetDate)
