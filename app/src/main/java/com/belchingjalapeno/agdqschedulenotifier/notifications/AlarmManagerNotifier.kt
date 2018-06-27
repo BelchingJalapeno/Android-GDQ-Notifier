@@ -30,7 +30,7 @@ class AlarmManagerNotifier(private val context: Context, private val timeWindow:
     }
 
     private fun createPendingIntent(id: Int): PendingIntent {
-        return PendingIntent.getBroadcast(context, REQUEST_CODE, createIntent(id), PendingIntent.FLAG_ONE_SHOT)
+        return PendingIntent.getBroadcast(context, REQUEST_CODE, createIntent(id), PendingIntent.FLAG_UPDATE_CURRENT)
     }
 
     private fun createIntent(id: Int): Intent {
