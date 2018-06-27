@@ -10,7 +10,7 @@ import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
 
-class EventItem(private val events: Array<SpeedRunEvent>, private val notificationQueue: NotificationQueue, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItem.ViewHolder>() {
+class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val notificationQueue: NotificationQueue, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItemAdapter.ViewHolder>() {
 
     private val timeFormatter = TimeCalculator()
     private val notificationUiStateSetter = NotificationUiStateSetter()
