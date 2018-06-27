@@ -7,23 +7,25 @@ class EventToNotificationTextFormatter {
 
     private val timeUtils = TimeCalculator()
 
-    fun getContentTitle(event: SpeedRunEvent): String {
-        return "${event.game}(${event.category}) starting at ${timeUtils.getTimeFromMilliseconds(event.startTime)}"
+    fun getContentTitle(currentEvent: SpeedRunEvent): String {
+        return "${currentEvent.game}(${currentEvent.category}) starting at ${timeUtils.getTimeFromMilliseconds(currentEvent.startTime)}"
     }
 
-    fun getContentText(event: SpeedRunEvent): String {
-        val estimatedMillis = timeUtils.fromStringExpectedLengthToLong(event.estimatedTime)
-        val formattedEstimatedTime = timeUtils.getFormattedTime(estimatedMillis, true, true, true)
-        return "Length $formattedEstimatedTime"
-    }
-
-    fun getBigText(event: SpeedRunEvent, nextEvent: SpeedRunEvent?, nextNextEvent: SpeedRunEvent?): String {
-        var bigText = getContentText(event)
-        if (nextEvent != null) {
-            bigText += "\n${nextEvent.game} ${timeUtils.getRelativeTimeFromMilliseconds(nextEvent.startTime)}"
+    fun getContentText(nextEvent: SpeedRunEvent?): String {
+        return if (nextEvent != null) {
+            "${nextEvent.game} ${timeUtils.getRelativeTimeFromMilliseconds(nextEvent.startTime)}"
+        } else {
+            "Click to watch"
         }
+    }
+
+    fun getBigText(nextEvent: SpeedRunEvent?, nextNextEvent: SpeedRunEvent?, nextNextNextEvent: SpeedRunEvent?): String {
+        var bigText = getContentText(nextEvent)
         if (nextNextEvent != null) {
             bigText += "\n${nextNextEvent.game} ${timeUtils.getRelativeTimeFromMilliseconds(nextNextEvent.startTime)}"
+        }
+        if (nextNextNextEvent != null) {
+            bigText += "\n${nextNextNextEvent.game} ${timeUtils.getRelativeTimeFromMilliseconds(nextNextNextEvent.startTime)}"
         }
         return bigText
     }

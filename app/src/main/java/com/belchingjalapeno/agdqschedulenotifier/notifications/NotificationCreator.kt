@@ -24,10 +24,10 @@ class NotificationCreator(private val context: Context) {
         createNotificationChannel()
     }
 
-    fun showNotification(event: NotificationEvent, nextEvent: NotificationEvent?, nextNextEvent: NotificationEvent?) {
+    fun showNotification(event: NotificationEvent, nextEvent: NotificationEvent?, nextNextEvent: NotificationEvent?, nextNextNextEvent: NotificationEvent?) {
         val contentTitle = notificationTextFormatter.getContentTitle(event.speedRunEvent)
-        val contentText = notificationTextFormatter.getContentText(event.speedRunEvent)
-        val bigText = notificationTextFormatter.getBigText(event.speedRunEvent, nextEvent?.speedRunEvent, nextNextEvent?.speedRunEvent)
+        val contentText = notificationTextFormatter.getContentText(nextEvent?.speedRunEvent)
+        val bigText = notificationTextFormatter.getBigText(nextEvent?.speedRunEvent, nextNextEvent?.speedRunEvent, nextNextNextEvent?.speedRunEvent)
         val notification = createNotification(createTwitchIntent(), contentTitle, contentText, bigText)
         showNotification(notification, event.id)
     }

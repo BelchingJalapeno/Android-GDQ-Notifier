@@ -30,11 +30,12 @@ class AlarmNotificationReceiver : BroadcastReceiver() {
         eventDao.delete(currentEvent)
         eventDao.deletePastEvents(System.currentTimeMillis())
 
-        val events = eventDao.getEarliestEvents(2)
+        val events = eventDao.getEarliestEvents(3)
 
         val nextEvent = getEventOrNull(events, 0)
         val nextNextEvent = getEventOrNull(events, 1)
-        notificationCreator.showNotification(currentEvent, nextEvent, nextNextEvent)
+        val nextNextNextEvent = getEventOrNull(events, 2)
+        notificationCreator.showNotification(currentEvent, nextEvent, nextNextEvent, nextNextNextEvent)
 
         //set alarm for next event
         setNextAlarm(eventDao, alarmManagerNotifier)
