@@ -20,7 +20,7 @@ class ExternalIntentsBuilder {
         }
 
         fun getDonateIntent(sharedPreferences: SharedPreferences): Intent {
-            return Intent(Intent.ACTION_VIEW, Uri.parse(sharedPreferences.getString(DONATE_PREFERENCE_KEY, "https://gamesdonequick.com/tracker/donate/sgdq2018")))
+            return Intent(Intent.ACTION_VIEW, Uri.parse(sharedPreferences.getString(DONATE_PREFERENCE_KEY, "https://gamesdonequick.com/tracker/ui/donate/sgdq2018")))
         }
 
         fun getFilePickerJsonIntent(): Intent {
