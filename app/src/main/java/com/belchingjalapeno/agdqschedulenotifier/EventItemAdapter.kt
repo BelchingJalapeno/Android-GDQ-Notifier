@@ -12,7 +12,7 @@ import android.widget.TextView
 
 class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val notificationQueue: NotificationQueue, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItemAdapter.ViewHolder>() {
 
-    private val timeFormatter = TimeCalculator()
+    private val timeFormatter = TimeFormatter()
     private val notificationUiStateSetter = NotificationUiStateSetter()
 
     //all of the events that are shown in the RecyclerView that arnt filtered out

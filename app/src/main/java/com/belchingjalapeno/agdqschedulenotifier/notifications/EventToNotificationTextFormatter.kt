@@ -1,11 +1,11 @@
 package com.belchingjalapeno.agdqschedulenotifier.notifications
 
 import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
-import com.belchingjalapeno.agdqschedulenotifier.TimeCalculator
+import com.belchingjalapeno.agdqschedulenotifier.TimeFormatter
 
 class EventToNotificationTextFormatter {
 
-    private val timeUtils = TimeCalculator()
+    private val timeUtils = TimeFormatter()
 
     fun getContentTitle(currentEvent: SpeedRunEvent): String {
         return "${currentEvent.game}(${currentEvent.category}) starting at ${timeUtils.getTimeFromMilliseconds(currentEvent.startTime)}"

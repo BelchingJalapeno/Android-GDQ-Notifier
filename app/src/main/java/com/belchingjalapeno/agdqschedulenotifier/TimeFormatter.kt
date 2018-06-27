@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit
 /**
  * Time related calculations and formatting
  */
-class TimeCalculator {
+class TimeFormatter {
 
     fun fromStringExpectedLengthToLong(runLength: String): Long {
         //split hh:mm:ss into  hours minutes seconds
