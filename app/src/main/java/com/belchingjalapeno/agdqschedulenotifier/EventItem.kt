@@ -86,7 +86,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val notificati
                 expandableView.collapseNoAnimation(heightMap[item]!!)
             }
 
-            setBackgroundColorState(itemView, item, notificationQueue)
+            setBackgroundColorState(itemView, item)
 
             notificationUiStateSetter.setViewState(notificationQueue, itemView, item, 0)
 
@@ -102,7 +102,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val notificati
                     notificationQueue.addToQueue(item)
                 }
 
-                setBackgroundColorState(notificationIcon, item, notificationQueue)
+                setBackgroundColorState(notificationIcon, item)
 
                 notificationUiStateSetter.setViewState(notificationQueue, notificationIcon, item)
             }
@@ -143,7 +143,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val notificati
         visibleEventList.addAll(filteredEvents)
     }
 
-    private fun setBackgroundColorState(v: View?, event: SpeedRunEvent, queue: NotificationQueue) {
+    private fun setBackgroundColorState(v: View?, event: SpeedRunEvent) {
         if (timeFormatter.getTimeDiff(System.currentTimeMillis(), event.startTime) <= 0) {
             v?.setBackgroundColor(oldEventBackgroundColor)
         } else {
