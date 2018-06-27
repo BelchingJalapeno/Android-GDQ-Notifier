@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        workQueueManager = WorkQueueManager(this, ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
+        workQueueManager = WorkQueueManager(this)
 
         val eventsFile = getEventsFile()
         var events = if (eventsFile.exists()) {

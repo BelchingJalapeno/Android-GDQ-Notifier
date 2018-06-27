@@ -1,17 +1,12 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
 import android.content.Context
-import android.util.Log
 import com.belchingjalapeno.agdqschedulenotifier.notifications.AlarmManagerNotifier
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEvent
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEventDatabase
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.getEvent
 
-
-class WorkQueueManager(context: Context,
-                       val queuedColor: Int,
-                       val nonQueuedColor: Int,
-                       val oldEventColor: Int) {
+class WorkQueueManager(context: Context) {
 
     private val database = NotificationEventDatabase.getDatabase(context)
     private val eventsDao = database.notificationEventDao()
@@ -67,7 +62,6 @@ class WorkQueueManager(context: Context,
         val earliestEvents = eventsDao.getEarliestEvents(1)
         if (earliestEvents.isNotEmpty()) {
             val notificationEvent = earliestEvents[0]
-            Log.i("TESTEST", "" + notificationEvent.id)
             alarmManagerNotifier.setAlarm(notificationEvent.id, notificationEvent.speedRunEvent.startTime)
         }
     }

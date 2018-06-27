@@ -1,5 +1,6 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
+import android.graphics.Color
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -18,6 +19,9 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val notificati
     private val visibleEventList = events.toMutableList()
     //list map of events to how high the itemview is when it is displayed, used for animating collapse
     private val heightMap = mutableMapOf<SpeedRunEvent, Int>()
+
+    private val oldEventBackgroundColor = Color.LTGRAY
+    private val futureEventBackgroundColor = Color.WHITE
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         val expandableView = LayoutInflater.from(p0.context)
@@ -141,9 +145,9 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val notificati
 
     private fun setBackgroundColorState(v: View?, event: SpeedRunEvent, queueManager: WorkQueueManager) {
         if (timeFormatter.getTimeDiff(System.currentTimeMillis(), event.startTime) <= 0) {
-            v?.setBackgroundColor(queueManager.oldEventColor)
+            v?.setBackgroundColor(oldEventBackgroundColor)
         } else {
-            v?.setBackgroundColor(queueManager.nonQueuedColor)
+            v?.setBackgroundColor(futureEventBackgroundColor)
         }
     }
 
