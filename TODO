@@ -34,10 +34,10 @@ X - change icon to have same color / accent as app
 X - donate and twitch url from json not working
 
 X - making adding replacing and info in menu into submenu
+X - change to using alarm manager all the time for notifications for better notification accutacy
 option to get notified early  and let them choose the amount of minutesW
 polish / fix fab button animation
 add whats next on my schedule button / info
-change to using alarm manager all the time for notifications for better notification accutacy
 change notification to say the exact time the event starts, and then the next 2 upcoming subscribed games
 
 maybe having a time on the events would be nice
