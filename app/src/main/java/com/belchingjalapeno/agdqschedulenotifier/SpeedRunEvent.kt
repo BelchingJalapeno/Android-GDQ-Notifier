@@ -32,14 +32,14 @@ fun eventDataToJsonString(eventData: EventData): String {
     return gson.toJson(eventData)
 }
 
-fun getEvents(reader: String): Array<SpeedRunEvent> {
-    return gson.fromJson<Array<SpeedRunEvent>>(reader, Array<SpeedRunEvent>::class.java)
+fun getEvents(jsonString: String): Array<SpeedRunEvent> {
+    return gson.fromJson<Array<SpeedRunEvent>>(jsonString, Array<SpeedRunEvent>::class.java)
 }
 
 fun getEventData(reader: Reader): EventData {
     return gson.fromJson<EventData>(reader, EventData::class.java)
 }
 
-fun getEventData(reader: String): EventData {
-    return gson.fromJson<EventData>(reader, EventData::class.java)
+fun getEventData(jsonString: String): EventData {
+    return gson.fromJson<EventData>(jsonString, EventData::class.java)
 }
