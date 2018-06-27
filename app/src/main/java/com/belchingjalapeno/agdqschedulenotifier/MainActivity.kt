@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        workQueueManager = WorkQueueManager(getSharedPref(), ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
+        workQueueManager = WorkQueueManager(this, ContextCompat.getColor(this, R.color.colorAccent), Color.WHITE, Color.LTGRAY)
 
         val eventsFile = getEventsFile()
         var events = if (eventsFile.exists()) {
@@ -57,8 +57,8 @@ class MainActivity : AppCompatActivity() {
 
         val mutableListOf = mutableListOf<SpeedRunEvent>()
         mutableListOf.addAll(events)
-//        val time = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX", Locale.getDefault()).format(Date(System.currentTimeMillis() + (1000 * 60)))
-//        mutableListOf.add(0, SpeedRunEvent(time, "test", "test", "0:01:00", "test", "test", "0:01:00"))
+        mutableListOf.add(0, SpeedRunEvent(System.currentTimeMillis() + 60 * 1000L, "test1", "test", "0:01:00", "test", "test", "0:01:00"))
+        mutableListOf.add(1, SpeedRunEvent(System.currentTimeMillis() + 90 * 1000L, "test2", "test", "0:01:00", "test", "test", "0:01:00"))
         events = mutableListOf.toTypedArray()
 
         setupTabs(events)

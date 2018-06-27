@@ -101,7 +101,7 @@ class EventItem(private val events: Array<SpeedRunEvent>, private val workQueueM
                     val targetTime = (item.startTime)
                     val timeDifference = timeCalculator.getTimeDiff(currentTime, targetTime)
 
-                    queueManager.addToQueue(item, timeDifference)
+                    queueManager.addToQueue(item)
                 }
 
                 backgroundColorSetter.setColor(notificationIcon, item, queueManager)

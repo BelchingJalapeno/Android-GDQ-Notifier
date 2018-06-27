@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -34,13 +36,12 @@ dependencies {
 
     implementation 'com.android.support:design:28.0.0-alpha3'
 
-    def work_version = "1.0.0-alpha03"
-
-    implementation "android.arch.work:work-runtime:$work_version" // use -ktx for Kotlin
-
-//    // optional - Test helpers
-    androidTestImplementation "android.arch.work:work-testing:$work_version"
-
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.android.support:recyclerview-v7:28.0.0-alpha3'
+
+    def room_version = "1.1.1"
+
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version"
+
 }

@@ -15,4 +15,6 @@
     <string name="add_events">Add</string>
     <string name="file_info">File info</string>
     <string name="edit">Edit events</string>
+    <string name="notification_channel_name">GDQ Notifications</string>
+    <string name="notification_channel_description">Used to notify you when an event you want to watch is about to start</string>
 </resources>
