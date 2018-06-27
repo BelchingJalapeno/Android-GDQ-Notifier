@@ -6,7 +6,7 @@ import com.belchingjalapeno.agdqschedulenotifier.notifications.database.Notifica
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEventDatabase
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.getEvent
 
-class WorkQueueManager(context: Context) {
+class NotificationQueue(context: Context) {
 
     private val database = NotificationEventDatabase.getDatabase(context)
     private val eventsDao = database.notificationEventDao()

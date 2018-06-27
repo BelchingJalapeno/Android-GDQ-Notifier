@@ -54,7 +54,7 @@ class SpeedRunEventsFragment : Fragment() {
         recyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
 
         val mainActivity = activity as MainActivity
-        val workManager = mainActivity.workQueueManager
+        val workManager = mainActivity.notificationQueue
         eventItem = EventItem(events, workManager, mainActivity.subscribeFilter)
         recyclerView.adapter = eventItem
 

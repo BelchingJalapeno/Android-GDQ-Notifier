@@ -6,10 +6,10 @@ import android.view.View
 import android.widget.ImageView
 
 class NotificationUiStateSetter {
-    fun setViewState(workQueueManager: WorkQueueManager, parentView: View, speedRunEvent: SpeedRunEvent, animationTime: Long = 200) {
+    fun setViewState(notificationQueue: NotificationQueue, parentView: View, speedRunEvent: SpeedRunEvent, animationTime: Long = 200) {
         val notificationToggleView = parentView.findViewById<ImageView>(R.id.notification_toggle_button)!!
 
-        val notificationEnabled = workQueueManager.isQueued(speedRunEvent)
+        val notificationEnabled = notificationQueue.isQueued(speedRunEvent)
 
         setNotificationIconState(notificationToggleView, notificationEnabled, animationTime)
     }

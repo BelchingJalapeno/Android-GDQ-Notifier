@@ -11,64 +11,64 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class WorkQueueManagerTest {
+class NotificationQueueTest {
 
-    private lateinit var workQueueManager: WorkQueueManager
+    private lateinit var notificationQueue: NotificationQueue
     private val testEvent1 = SpeedRunEvent(Long.MAX_VALUE - 1, "name1", "Runner, runner2", "3:45:67", "ANY", "caster1, caster2", "0:30:00")
     private val testEvent2 = SpeedRunEvent(Long.MAX_VALUE - 2, "name2", "Runner, runner2", "3:45:67", "ANY", "caster1, caster2", "0:30:00")
     private val testEvent3 = SpeedRunEvent(Long.MAX_VALUE - 3, "name3", "Runner, runner2", "3:45:67", "ANY", "caster1, caster2", "0:30:00")
 
     @Before
     fun setUp() {
-        workQueueManager = WorkQueueManager(InstrumentationRegistry.getTargetContext(), 0, 1, 2)
+        notificationQueue = NotificationQueue(InstrumentationRegistry.getTargetContext())
     }
 
     @After
     fun tearDown() {
-        workQueueManager.clearAll()
+        notificationQueue.clearAll()
     }
 
     @Test
     fun addToQueue() {
-        workQueueManager.addToQueue(testEvent1)
+        notificationQueue.addToQueue(testEvent1)
 
-        assertThat(workQueueManager.size(), equalTo(1))
+        assertThat(notificationQueue.size(), equalTo(1))
 
-        workQueueManager.addToQueue(testEvent2)
-        workQueueManager.addToQueue(testEvent3)
+        notificationQueue.addToQueue(testEvent2)
+        notificationQueue.addToQueue(testEvent3)
 
-        assertThat(workQueueManager.size(), equalTo(3))
+        assertThat(notificationQueue.size(), equalTo(3))
     }
 
     @Test
     fun isQueued() {
-        workQueueManager.addToQueue(testEvent1)
+        notificationQueue.addToQueue(testEvent1)
 
-        assertThat(workQueueManager.isQueued(testEvent1), equalTo(true))
+        assertThat(notificationQueue.isQueued(testEvent1), equalTo(true))
     }
 
     @Test
     fun removeFromQueue() {
-        workQueueManager.addToQueue(testEvent1)
+        notificationQueue.addToQueue(testEvent1)
 
-        assertThat(workQueueManager.isQueued(testEvent1), equalTo(true))
+        assertThat(notificationQueue.isQueued(testEvent1), equalTo(true))
 
-        workQueueManager.removeFromQueue(testEvent1)
-        assertThat(workQueueManager.isQueued(testEvent1), equalTo(false))
+        notificationQueue.removeFromQueue(testEvent1)
+        assertThat(notificationQueue.isQueued(testEvent1), equalTo(false))
 
         val v: AlarmManager = InstrumentationRegistry.getContext().getSystemService(AlarmManager::class.java)
     }
 
     @Test
     fun clearAll() {
-        workQueueManager.addToQueue(testEvent1)
-        workQueueManager.addToQueue(testEvent2)
-        workQueueManager.addToQueue(testEvent3)
+        notificationQueue.addToQueue(testEvent1)
+        notificationQueue.addToQueue(testEvent2)
+        notificationQueue.addToQueue(testEvent3)
 
-        assertThat(workQueueManager.size(), equalTo(3))
+        assertThat(notificationQueue.size(), equalTo(3))
 
-        workQueueManager.clearAll()
+        notificationQueue.clearAll()
 
-        assertThat(workQueueManager.size(), equalTo(0))
+        assertThat(notificationQueue.size(), equalTo(0))
     }
 }

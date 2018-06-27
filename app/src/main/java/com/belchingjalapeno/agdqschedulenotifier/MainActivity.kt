@@ -5,11 +5,9 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
-import android.graphics.Color
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.content.ContextCompat
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.RecyclerView
@@ -32,7 +30,7 @@ const val DONATE_PREFERENCE_KEY = "DONATE_PREFERENCE_KEY"
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var workQueueManager: WorkQueueManager
+    lateinit var notificationQueue: NotificationQueue
     private var searchView: SearchView? = null
     val subscribeFilter = EventFilter()
     val recyclerViewPool = RecyclerView.RecycledViewPool()
@@ -41,7 +39,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        workQueueManager = WorkQueueManager(this)
+        notificationQueue = NotificationQueue(this)
 
         val eventsFile = getEventsFile()
         var events = if (eventsFile.exists()) {
@@ -228,7 +226,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 REQUEST_CODE_REPLACE_EVENTS -> {
-                    workQueueManager.clearAll()
+                    notificationQueue.clearAll()
                     saveEvents(getEventsFile(), newEventData)
                 }
             }
@@ -262,7 +260,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun isSubscribed(event: SpeedRunEvent): Boolean {
-        return workQueueManager.isQueued(event)
+        return notificationQueue.isQueued(event)
     }
 
     fun getSharedPref(): SharedPreferences {
