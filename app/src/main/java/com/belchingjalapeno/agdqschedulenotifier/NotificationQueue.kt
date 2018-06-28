@@ -8,10 +8,10 @@ import com.belchingjalapeno.agdqschedulenotifier.notifications.database.getEvent
 
 class NotificationQueue(context: Context) {
 
-    private val database = NotificationEventDatabase.getDatabase(context)
+    private val database = NotificationEventDatabase.getDatabase(context.applicationContext)
     private val eventsDao = database.notificationEventDao()
 
-    private val alarmManagerNotifier = AlarmManagerNotifier(context)
+    private val alarmManagerNotifier = AlarmManagerNotifier(context.applicationContext)
 
     fun isQueued(event: SpeedRunEvent): Boolean {
         if ((event.startTime) < System.currentTimeMillis()) {

@@ -17,10 +17,10 @@ import android.view.MenuItem
 import android.webkit.WebView
 import android.widget.FrameLayout
 import kotlinx.android.synthetic.main.activity_main.*
-import java.io.*
+import java.io.BufferedReader
+import java.io.InputStreamReader
 import java.text.SimpleDateFormat
 import java.util.*
-
 
 private const val REQUEST_CODE_ADD_EVENTS = 1
 private const val REQUEST_CODE_REPLACE_EVENTS = 2
@@ -31,96 +31,32 @@ const val DONATE_PREFERENCE_KEY = "DONATE_PREFERENCE_KEY"
 class MainActivity : AppCompatActivity() {
 
     lateinit var notificationQueue: NotificationQueue
-    private var searchView: SearchView? = null
     val subscribeFilter = EventFilter()
+    //used by all RecyclerViews in fragments
     val recyclerViewPool = RecyclerView.RecycledViewPool()
+    private lateinit var speedRunEventLoader: SpeedRunEventLoader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         notificationQueue = NotificationQueue(this)
+        speedRunEventLoader = SpeedRunEventLoader(this)
 
-        val eventsFile = getEventsFile()
-        var events = if (eventsFile.exists()) {
-            val fileReader = FileReader(eventsFile)
-            val eventData = getEventData(fileReader)
-            fileReader.close()
-            eventData.speedRunEvents
-        } else {
-            val defaultEventData = getDefaultEventData()
-            saveEvents(eventsFile, defaultEventData)
-            defaultEventData.speedRunEvents
-        }
-
-        val mutableListOf = mutableListOf<SpeedRunEvent>()
-        mutableListOf.addAll(events)
-//        mutableListOf.add(0, SpeedRunEvent(System.currentTimeMillis() + 60 * 1000L, "test1", "test", "0:01:00", "test", "test", "0:01:00"))
-//        mutableListOf.add(1, SpeedRunEvent(System.currentTimeMillis() + 90 * 1000L, "test2", "test", "0:01:00", "test", "test", "0:01:00"))
-        events = mutableListOf.toTypedArray()
+        val events = speedRunEventLoader.getEvents()
 
         setupTabs(events)
         setSupportActionBar(main_toolbar)
         setupDonateFab()
     }
 
-    private fun getEventsFile() = File(filesDir, "events.json")
-
-    private fun saveEvents(eventsFile: File, eventData: EventData) {
-        val fileWriter = FileWriter(eventsFile)
-        fileWriter.write(eventDataToJsonString(eventData))
-        fileWriter.close()
-    }
-
-    private fun getDefaultEventData(): EventData {
-        val resource = resources.openRawResource(R.raw.events)
-        val eventData = getEventData(BufferedReader(InputStreamReader(resource)))
-        resource.close()
-        return eventData
-    }
-
-    private fun setupTabs(events: Array<SpeedRunEvent>) {
-        val eventsByDay = getEventsByDay(events)
-        tab_layout.setupWithViewPager(speedrun_viewpager, false)
-        val fragmentList = eventsByDay.map { SpeedRunEventsFragment.newInstance(it) }
-        speedrun_viewpager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
-
-            override fun getItem(p0: Int): Fragment {
-                return fragmentList[p0]
-            }
-
-            override fun getCount(): Int {
-                return eventsByDay.size
-            }
-
-            override fun getPageTitle(position: Int): CharSequence? {
-                val fromStringStartTimeToLong = eventsByDay[position][0].startTime
-                return SimpleDateFormat("MMMM d", Locale.getDefault()).format(Date(fromStringStartTimeToLong))
-            }
-        }
-    }
-
-    private fun getEventsByDay(events: Array<SpeedRunEvent>): Array<Array<SpeedRunEvent>> {
-        events.sortBy { it.startTime }
-        val groupBy = events.groupBy({
-            val date = Date(it.startTime)
-            SimpleDateFormat.getDateInstance().format(date)
-        })
-        val v = groupBy.values.map { it.toTypedArray() }
-        return v.toTypedArray()
-    }
-
-    private fun setupDonateFab() {
-        donate_fab.setOnClickListener { startActivity(ExternalIntentsBuilder.getDonateIntent(getSharedPref())) }
-    }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.tool_bar_actions, menu)
 
         val searchItem = menu?.findItem(R.id.app_bar_search)
-        searchView = searchItem?.actionView as SearchView
+        val searchView = searchItem?.actionView as SearchView
 
-        setupSearchView(searchView!!)
+        setupSearchView(searchView)
 
         return super.onCreateOptionsMenu(menu)
     }
@@ -138,9 +74,7 @@ class MainActivity : AppCompatActivity() {
 
         R.id.app_bar_subscribed -> {
             item.isChecked = !item.isChecked
-            val query = searchView?.query?.toString() ?: ""
-            subscribeFilter.changeFilter(item.isChecked, query)
-
+            subscribeFilter.changeFilter(item.isChecked)
             true
         }
 
@@ -213,21 +147,19 @@ class MainActivity : AppCompatActivity() {
             eventsFileReader.close()
             when (requestCode) {
                 REQUEST_CODE_ADD_EVENTS -> {
-                    val fileReader = FileReader(getEventsFile())
-                    val oldEvents = getEventData(fileReader)
-                    fileReader.close()
+                    val oldEvents = speedRunEventLoader.getEventData()
 
                     //remove duplicates
                     val events = (oldEvents.speedRunEvents + newEventData.speedRunEvents).toSet().toTypedArray()
 
                     val twitchUrl = newEventData.twitchUrl ?: oldEvents.twitchUrl
                     val donateUrl = newEventData.donateUrl ?: oldEvents.donateUrl
-                    saveEvents(getEventsFile(), EventData(twitchUrl, donateUrl, events))
+                    speedRunEventLoader.saveEvents(EventData(twitchUrl, donateUrl, events))
                 }
 
                 REQUEST_CODE_REPLACE_EVENTS -> {
                     notificationQueue.clearAll()
-                    saveEvents(getEventsFile(), newEventData)
+                    speedRunEventLoader.saveEvents(newEventData)
                 }
             }
             val intent = Intent(this, MainActivity::class.java)
@@ -237,9 +169,42 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun setupTabs(events: Array<SpeedRunEvent>) {
+        val eventsByDay = getEventsByDay(events)
+        tab_layout.setupWithViewPager(speedrun_viewpager, false)
+        val fragmentList = eventsByDay.map { SpeedRunEventsFragment.newInstance(it) }
+        speedrun_viewpager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
+
+            override fun getItem(p0: Int): Fragment {
+                return fragmentList[p0]
+            }
+
+            override fun getCount(): Int {
+                return eventsByDay.size
+            }
+
+            override fun getPageTitle(position: Int): CharSequence? {
+                val fromStringStartTimeToLong = eventsByDay[position][0].startTime
+                return SimpleDateFormat("MMMM d", Locale.getDefault()).format(Date(fromStringStartTimeToLong))
+            }
+        }
+    }
+
+    private fun getEventsByDay(events: Array<SpeedRunEvent>): Array<Array<SpeedRunEvent>> {
+        events.sortBy { it.startTime }
+        val groupBy = events.groupBy({
+            val date = Date(it.startTime)
+            SimpleDateFormat.getDateInstance().format(date)
+        })
+        val v = groupBy.values.map { it.toTypedArray() }
+        return v.toTypedArray()
+    }
+
+    private fun setupDonateFab() {
+        donate_fab.setOnClickListener { startActivity(ExternalIntentsBuilder.getDonateIntent(getSharedPref())) }
+    }
+
     private fun setupSearchView(searchView: SearchView) {
-        //add space for before query, trimmed off durring the filter
-        //used for a work around with the filter not getting called when the string is empty
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query(query)
@@ -259,11 +224,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    fun isSubscribed(event: SpeedRunEvent): Boolean {
-        return notificationQueue.isQueued(event)
-    }
-
-    fun getSharedPref(): SharedPreferences {
-        return applicationContext.getSharedPreferences("enqueued", Context.MODE_PRIVATE)
+    private fun getSharedPref(): SharedPreferences {
+        return applicationContext.getSharedPreferences("prefs", Context.MODE_PRIVATE)
     }
 }
