@@ -40,6 +40,6 @@
         android:layout_margin="16dp"
         app:layout_anchor="@id/speedrun_viewpager"
         app:layout_anchorGravity="bottom|end"
-        app:layout_behavior=".FabScrollBehavior"
+        app:layout_behavior=".ui.FabScrollBehavior"
         app:srcCompat="@drawable/ic_donate_money_white_24dp" />
 </android.support.design.widget.CoordinatorLayout>
