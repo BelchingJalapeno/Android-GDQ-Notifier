@@ -1,1224 +1,1215 @@
 {
   "twitch_url": "https://www.twitch.tv/gamesdonequick",
-  "donate_url": "https://gamesdonequick.com/tracker/ui//donate/sgdq2018",
+  "donate_url": "https://gamesdonequick.com/tracker/ui/donate/sgdq2018",
   "events": [
     {
       "start_time": 1529857800000,
       "game": "Pre-Show",
       "runners": "SpikeVegeta, feasel, Protomagicalgirl, darkman78, JHobz",
-      "est_time": "0:30:00",
+      "est_time": "0:34:00",
       "category": "Pre-Show%",
       "casters": "YellowKillerBee",
       "setup_time": "0:00:00"
     },
     {
-      "start_time": 1529859600000,
+      "start_time": 1529859840000,
       "game": "Banjo-Tooie",
       "runners": "GarageDoorOpener",
-      "est_time": "0:47:00",
-      "category": "Any%",
+      "est_time": "0:44:47",
+      "category": "Any%  N64",
       "casters": "YellowKillerBee",
-      "setup_time": "0:10:00"
+      "setup_time": "0:13:13"
     },
     {
-      "start_time": 1529863020000,
+      "start_time": 1529863320000,
       "game": "Spyro the Dragon",
       "runners": "ChrisLBC",
-      "est_time": "0:45:00",
-      "category": "Any%",
+      "est_time": "0:42:23",
+      "category": "Any%  PSX",
       "casters": "YellowKillerBee",
-      "setup_time": "0:10:00"
+      "setup_time": "0:21:37"
     },
     {
-      "start_time": 1529866320000,
+      "start_time": 1529867160000,
       "game": "Iconoclasts",
       "runners": "RiskyCB",
-      "est_time": "0:50:00",
-      "category": "Any%",
+      "est_time": "0:42:36",
+      "category": "Any%  PC",
       "casters": "theboyks",
-      "setup_time": "0:10:00"
+      "setup_time": "0:17:24"
     },
     {
-      "start_time": 1529869920000,
+      "start_time": 1529870760000,
       "game": "Kirby: Super Star Ultra",
       "runners": "Kinnin11",
-      "est_time": "0:35:00",
-      "category": "Meta Knightmare Ultra",
+      "est_time": "0:31:36",
+      "category": "Meta Knightmare Ultra  DS",
       "casters": "theboyks",
-      "setup_time": "0:15:00"
+      "setup_time": "0:20:24"
     },
     {
-      "start_time": 1529872920000,
-      "game": "Shantae and the Pirate\u0027s Curse",
+      "start_time": 1529873880000,
+      "game": "Shantae and the Pirate's Curse",
       "runners": "tinahacks, JTNoriMaki",
-      "est_time": "1:10:00",
-      "category": "Any% Pirate No-OOB Race",
+      "est_time": "1:05:18",
+      "category": "Any% Pirate No-OOB Race  PC",
       "casters": "theboyks",
-      "setup_time": "0:10:00"
+      "setup_time": "0:13:42"
     },
     {
-      "start_time": 1529877720000,
+      "start_time": 1529878620000,
       "game": "Warcraft III: Reign of Chaos",
       "runners": "CovertMuffin",
-      "est_time": "1:00:00",
-      "category": "Undead Campaign Normal",
+      "est_time": "0:49:53",
+      "category": "Undead Campaign Normal  PC",
       "casters": "musical_daredevil",
-      "setup_time": "0:10:00"
+      "setup_time": "0:27:07"
     },
     {
-      "start_time": 1529881920000,
-      "game": "The Legend of Zelda: Majora\u0027s Mask 3D",
+      "start_time": 1529883240000,
+      "game": "The Legend of Zelda: Majora's Mask 3D",
       "runners": "gymnast86",
-      "est_time": "1:35:00",
-      "category": "Any%",
+      "est_time": "1:32:46",
+      "category": "Any%  3DS",
       "casters": "musical_daredevil",
-      "setup_time": "0:10:00"
+      "setup_time": "0:19:14"
     },
     {
-      "start_time": 1529888220000,
+      "start_time": 1529889960000,
       "game": "DOOM (2016)",
       "runners": "jeromegood",
-      "est_time": "0:50:00",
-      "category": "Any%",
+      "est_time": "0:37:35",
+      "category": "Any%  PC",
       "casters": "AnEternalEnigma",
-      "setup_time": "0:10:00"
+      "setup_time": "0:16:25"
     },
     {
-      "start_time": 1529891820000,
+      "start_time": 1529893200000,
       "game": "Resident Evil 4",
       "runners": "JTB",
-      "est_time": "1:40:00",
-      "category": "New Game, Professional",
+      "est_time": "1:36:28",
+      "category": "New Game, Professional  PC",
       "casters": "AnEternalEnigma",
-      "setup_time": "0:10:00"
+      "setup_time": "0:29:32"
     },
     {
-      "start_time": 1529898420000,
+      "start_time": 1529900760000,
       "game": "Ninja Gaiden Black",
       "runners": "MikeKanis",
-      "est_time": "2:20:00",
-      "category": "Any% Normal",
+      "est_time": "1:55:06",
+      "category": "Any% Normal  Xbox",
       "casters": "Yen24",
-      "setup_time": "0:10:00"
+      "setup_time": "0:16:54"
     },
     {
-      "start_time": 1529907420000,
+      "start_time": 1529908680000,
       "game": "Ninja Gaiden",
       "runners": "Aquas",
-      "est_time": "0:13:00",
-      "category": "Any%",
+      "est_time": "0:12:14",
+      "category": "Any%  NES",
       "casters": "Yen24",
-      "setup_time": "0:10:00"
+      "setup_time": "0:12:46"
     },
     {
-      "start_time": 1529908800000,
+      "start_time": 1529910180000,
       "game": "Gimmick!",
       "runners": "Aquas",
-      "est_time": "0:15:00",
-      "category": "Any% Glitchless",
+      "est_time": "0:10:42",
+      "category": "Any% Glitchless  Famicom",
       "casters": "DarkTwinge",
-      "setup_time": "0:10:00"
+      "setup_time": "0:12:18"
     },
     {
-      "start_time": 1529910300000,
-      "game": "Ghosts \u0027N Goblins",
+      "start_time": 1529911560000,
+      "game": "Ghosts 'N Goblins",
       "runners": "ERROR72",
-      "est_time": "0:25:00",
-      "category": "Any% (2 loops)",
+      "est_time": "0:23:48",
+      "category": "Any% (2 loops)  NES",
       "casters": "DarkTwinge",
-      "setup_time": "0:10:00"
+      "setup_time": "0:09:12"
     },
     {
-      "start_time": 1529912400000,
+      "start_time": 1529913540000,
       "game": "Wacky Races",
       "runners": "The_Kov",
-      "est_time": "0:22:00",
-      "category": "any%",
+      "est_time": "0:19:04",
+      "category": "any%  NES",
       "casters": "DarkTwinge",
-      "setup_time": "0:10:00"
+      "setup_time": "0:06:56"
     },
     {
-      "start_time": 1529914320000,
+      "start_time": 1529915100000,
       "game": "Kid Kool",
       "runners": "Smartball",
-      "est_time": "0:25:00",
-      "category": "any%",
+      "est_time": "0:19:07",
+      "category": "any%  NES",
       "casters": "DarkTwinge",
-      "setup_time": "0:10:00"
+      "setup_time": "0:07:53"
     },
     {
-      "start_time": 1529916420000,
+      "start_time": 1529916720000,
       "game": "Pizza Pop!",
       "runners": "Apollo22237",
-      "est_time": "0:14:00",
-      "category": "any%",
+      "est_time": "0:10:21",
+      "category": "any%  Famicom",
       "casters": "Agama",
-      "setup_time": "0:10:00"
+      "setup_time": "0:09:39"
     },
     {
-      "start_time": 1529917860000,
+      "start_time": 1529917920000,
       "game": "Bangai-O!",
       "runners": "akerasi",
-      "est_time": "0:51:00",
-      "category": "any%",
+      "est_time": "0:46:50",
+      "category": "any%  Dreamcast",
       "casters": "Agama",
-      "setup_time": "0:10:00"
+      "setup_time": "0:10:10"
     },
     {
-      "start_time": 1529921520000,
+      "start_time": 1529921340000,
       "game": "Gunstar Super Heroes",
       "runners": "danray",
-      "est_time": "0:25:00",
-      "category": "Hard Red",
+      "est_time": "0:21:52",
+      "category": "Hard Red  GBA",
       "casters": "Agama",
-      "setup_time": "0:10:00"
+      "setup_time": "0:15:08"
     },
     {
-      "start_time": 1529923620000,
+      "start_time": 1529923560000,
       "game": "Gauntlet Legends",
       "runners": "Boyo003",
-      "est_time": "1:08:00",
-      "category": "any%",
+      "est_time": "1:00:42",
+      "category": "any%  N64",
       "casters": "Agama",
-      "setup_time": "0:10:00"
+      "setup_time": "0:11:18"
     },
     {
-      "start_time": 1529928300000,
+      "start_time": 1529927880000,
       "game": "Dungeon Magic",
       "runners": "iast",
-      "est_time": "0:18:00",
-      "category": "any% (Gren)",
+      "est_time": "0:15:44",
+      "category": "any% (Gren)  Xbox",
       "casters": "TokyoScarab",
-      "setup_time": "0:10:00"
+      "setup_time": "0:16:16"
     },
     {
-      "start_time": 1529929980000,
+      "start_time": 1529929800000,
       "game": "Super Smash TV",
       "runners": "brisulph, JackimusWedge",
-      "est_time": "0:38:00",
-      "category": "Any % Normal 2 Player",
+      "est_time": "0:36:50",
+      "category": "Any % Normal 2 Player  SNES",
       "casters": "TokyoScarab",
-      "setup_time": "0:10:00"
+      "setup_time": "0:08:10"
     },
     {
-      "start_time": 1529932860000,
+      "start_time": 1529932500000,
       "game": "Hagane: The Final Conflict",
       "runners": "Epic",
-      "est_time": "0:22:00",
-      "category": "Any%",
+      "est_time": "0:16:16",
+      "category": "Any%  SNES",
       "casters": "TokyoScarab",
-      "setup_time": "0:10:00"
+      "setup_time": "0:05:44"
     },
     {
-      "start_time": 1529934780000,
+      "start_time": 1529933820000,
       "game": "Animaniacs",
       "runners": "Epic",
-      "est_time": "0:26:00",
-      "category": "Any%",
+      "est_time": "0:23:28",
+      "category": "Any%  SNES",
       "casters": "TokyoScarab",
-      "setup_time": "0:10:00"
+      "setup_time": "0:05:32"
     },
     {
-      "start_time": 1529936940000,
+      "start_time": 1529935560000,
       "game": "Ardy Lightfoot",
       "runners": "giygasblues",
-      "est_time": "0:29:00",
-      "category": "any%",
+      "est_time": "0:23:32",
+      "category": "any%  SNES",
       "casters": "Lizstar",
-      "setup_time": "0:10:00"
+      "setup_time": "0:09:28"
     },
     {
-      "start_time": 1529939280000,
+      "start_time": 1529937540000,
       "game": "Cool Spot",
       "runners": "GlitchCat7",
-      "est_time": "0:15:00",
-      "category": "any% easy",
+      "est_time": "0:10:37",
+      "category": "any% easy  SNES",
       "casters": "Lizstar",
-      "setup_time": "0:10:00"
+      "setup_time": "0:06:23"
     },
     {
-      "start_time": 1529940780000,
+      "start_time": 1529938560000,
       "game": "Sparkster",
       "runners": "Drakodan",
-      "est_time": "0:25:00",
-      "category": "Normal",
+      "est_time": "0:19:11",
+      "category": "Normal  SNES",
       "casters": "Lizstar",
-      "setup_time": "0:10:00"
+      "setup_time": "0:08:49"
     },
     {
-      "start_time": 1529942880000,
+      "start_time": 1529940240000,
       "game": "Rocket Knight Adventures",
       "runners": "d4gr0n",
-      "est_time": "0:35:00",
-      "category": "any% (Easy)",
+      "est_time": "0:28:08",
+      "category": "any% (Easy)  Genesis",
       "casters": "Lizstar",
-      "setup_time": "0:10:00"
+      "setup_time": "0:22:52"
     },
     {
-      "start_time": 1529945580000,
+      "start_time": 1529943300000,
       "game": "Disgaea 5: Alliance of Vengeance",
       "runners": "GreenZSaber",
-      "est_time": "1:27:00",
-      "category": "New Game Any% (No DLC)",
+      "est_time": "1:16:31",
+      "category": "New Game Any% (No DLC)  Switch",
       "casters": "MapleSR",
-      "setup_time": "0:15:00"
+      "setup_time": "0:22:29"
     },
     {
-      "start_time": 1529951700000,
+      "start_time": 1529949240000,
       "game": "Pikmin 3",
       "runners": "360Chrism",
-      "est_time": "1:08:00",
-      "category": "Any%",
+      "est_time": "0:57:06",
+      "category": "Any%  Wii U",
       "casters": "MapleSR",
-      "setup_time": "0:10:00"
+      "setup_time": "0:30:54"
     },
     {
-      "start_time": 1529956380000,
+      "start_time": 1529954520000,
       "game": "Soft Body",
       "runners": "v_input_output",
-      "est_time": "0:35:00",
-      "category": "Soft Game",
+      "est_time": "0:30:06",
+      "category": "Soft Game  PC",
       "casters": "CovertMuffin",
-      "setup_time": "0:10:00"
+      "setup_time": "0:11:54"
     },
     {
-      "start_time": 1529959080000,
+      "start_time": 1529957040000,
       "game": "Monolith",
       "runners": "Studio",
-      "est_time": "0:15:00",
-      "category": "5-Stage, Normal, Intense Lethality",
+      "est_time": "0:11:53",
+      "category": "5-Stage, Normal, Intense Lethality  PC",
       "casters": "CovertMuffin",
-      "setup_time": "0:10:00"
+      "setup_time": "0:11:07"
+    },
+    {
+      "start_time": 1529958420000,
+      "game": "Master Spy",
+      "runners": "Obidobi",
+      "est_time": "0:20:33",
+      "category": "Any% (Optional Developer Commentary)  PC",
+      "casters": "CovertMuffin",
+      "setup_time": "0:15:27"
     },
     {
       "start_time": 1529960580000,
-      "game": "Master Spy",
-      "runners": "Obidobi",
-      "est_time": "0:22:00",
-      "category": "Any% (Optional Developer Commentary)",
-      "casters": "CovertMuffin",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1529962500000,
       "game": "Enter The Gungeon",
       "runners": "teddyras",
-      "est_time": "0:30:00",
-      "category": "1 Character",
+      "est_time": "0:18:08",
+      "category": "1 Character  PC",
       "casters": "DarkTwinge",
-      "setup_time": "0:15:00"
+      "setup_time": "0:38:52"
     },
     {
-      "start_time": 1529965200000,
+      "start_time": 1529964000000,
       "game": "Dustforce DX",
       "runners": "fishmcmuffins, Freshmaniac",
-      "est_time": "0:45:00",
-      "category": "Any% All Levels (NG+) Race",
+      "est_time": "0:35:58",
+      "category": "Any% All Levels (NG+) Race  PC",
       "casters": "DarkTwinge",
-      "setup_time": "0:10:00"
+      "setup_time": "0:21:02"
     },
     {
-      "start_time": 1529968500000,
+      "start_time": 1529967420000,
       "game": "Axiom Verge",
       "runners": "GVirus",
-      "est_time": "0:45:00",
-      "category": "any%",
+      "est_time": "0:39:50",
+      "category": "any%  PC",
       "casters": "DarkTwinge",
-      "setup_time": "0:10:00"
+      "setup_time": "0:31:10"
     },
     {
-      "start_time": 1529971800000,
+      "start_time": 1529971680000,
+      "game": "Mega Man 6",
+      "runners": "DarkTerrex, Chelney, Ppotdot1",
+      "est_time": "0:35:53",
+      "category": "Any%  NES",
+      "casters": "Mike Uyama",
+      "setup_time": "0:13:07"
+    },
+    {
+      "start_time": 1529974620000,
       "game": "Mega Man 9",
       "runners": "The Blacktastic",
-      "est_time": "0:34:00",
-      "category": "Any% (Proto Man)",
+      "est_time": "0:32:50",
+      "category": "Any% (Proto Man)  Wii",
       "casters": "Mike Uyama",
-      "setup_time": "0:10:00"
+      "setup_time": "0:12:40"
     },
     {
-      "start_time": 1529974440000,
+      "start_time": 1529977350000,
       "game": "Mega Man Zero 4",
       "runners": "Nu_",
-      "est_time": "1:00:00",
-      "category": "any%",
+      "est_time": "0:48:39",
+      "category": "any%  GBA",
       "casters": "Mike Uyama",
-      "setup_time": "0:10:00"
+      "setup_time": "0:21:19"
     },
     {
-      "start_time": 1529978640000,
-      "game": "SETUP BLOCK 1",
-      "runners": "Tech Crew",
-      "est_time": "0:45:00",
-      "category": "Tech Things",
+      "start_time": 1529981548000,
+      "game": "Mega Man X2",
+      "runners": "darrenville",
+      "est_time": "0:43:58",
+      "category": "Buster-only  SNES",
       "casters": "Mike Uyama",
-      "setup_time": "0:10:00"
+      "setup_time": "0:08:34"
     },
     {
-      "start_time": 1529981940000,
+      "start_time": 1529984700000,
       "game": "Rise of the Tomb Raider",
       "runners": "Studio",
-      "est_time": "1:20:00",
-      "category": "any%",
+      "est_time": "1:22:40",
+      "category": "any%  PC",
       "casters": "CovertMuffin",
-      "setup_time": "0:10:00"
+      "setup_time": "0:23:20"
     },
     {
-      "start_time": 1529987340000,
+      "start_time": 1529991060000,
       "game": "Tomb Raider",
       "runners": "Beckski93",
-      "est_time": "1:15:00",
-      "category": "any% glitched",
+      "est_time": "1:13:56",
+      "category": "any% glitched  PC",
       "casters": "CovertMuffin",
-      "setup_time": "0:10:00"
+      "setup_time": "0:12:04"
     },
     {
-      "start_time": 1529992440000,
+      "start_time": 1529996220000,
       "game": "Resident Evil HD Remaster",
       "runners": "Pessimism",
-      "est_time": "1:34:00",
-      "category": "New Game 100% (Best Ending)",
+      "est_time": "1:31:00",
+      "category": "New Game 100% (Best Ending)  PC",
       "casters": "FrenchToast",
-      "setup_time": "0:10:00"
+      "setup_time": "0:14:00"
     },
     {
-      "start_time": 1529998680000,
+      "start_time": 1530002520000,
       "game": "F.E.A.R.",
       "runners": "Maxylobes",
-      "est_time": "1:05:00",
-      "category": "Any%",
+      "est_time": "1:03:24",
+      "category": "Any%  PC",
       "casters": "FrenchToast",
-      "setup_time": "0:10:00"
+      "setup_time": "0:09:36"
     },
     {
-      "start_time": 1530003180000,
+      "start_time": 1530006900000,
       "game": "Penumbra: Overture",
       "runners": "Blood_Thunder",
-      "est_time": "0:20:00",
-      "category": "Any% QSA",
+      "est_time": "0:14:14",
+      "category": "Any% QSA  PC",
       "casters": "AnEternalEnigma",
-      "setup_time": "0:10:00"
+      "setup_time": "0:14:46"
     },
     {
-      "start_time": 1530004980000,
+      "start_time": 1530008640000,
       "game": "Amy",
       "runners": "FoldableHuman",
-      "est_time": "1:00:00",
-      "category": "Amy%",
+      "est_time": "0:41:45",
+      "category": "Amy%  PS3",
       "casters": "AnEternalEnigma",
-      "setup_time": "0:10:00"
+      "setup_time": "0:13:15"
     },
     {
-      "start_time": 1530009180000,
+      "start_time": 1530011940000,
       "game": "Pet the Pup at the Party",
       "runners": "Bullets",
-      "est_time": "0:08:00",
-      "category": "10 Pups",
+      "est_time": "0:05:48",
+      "category": "10 Pups  PC",
       "casters": "LLK",
-      "setup_time": "0:10:00"
+      "setup_time": "0:08:12"
     },
     {
-      "start_time": 1530010260000,
+      "start_time": 1530012780000,
       "game": "FreezeMe",
       "runners": "Mildew",
-      "est_time": "0:55:00",
-      "category": "25 Cubes",
+      "est_time": "0:53:59",
+      "category": "25 Cubes  PC",
       "casters": "LLK",
-      "setup_time": "0:10:00"
+      "setup_time": "0:06:01"
     },
     {
-      "start_time": 1530014160000,
+      "start_time": 1530016380000,
       "game": "Legend of Kay Anniversary",
       "runners": "DarkTerrex",
-      "est_time": "0:35:00",
-      "category": "Any%",
+      "est_time": "0:31:02",
+      "category": "Any%  PS4",
       "casters": "LLK",
-      "setup_time": "0:10:00"
+      "setup_time": "0:09:58"
     },
     {
-      "start_time": 1530016860000,
-      "game": "The Simpsons: Hit \u0026 Run",
+      "start_time": 1530018840000,
+      "game": "The Simpsons: Hit & Run",
       "runners": "Sadlybadlyy",
-      "est_time": "1:45:00",
-      "category": "All Story Missions",
+      "est_time": "1:45:45",
+      "category": "All Story Missions  PC",
       "casters": "MisterGameandShout",
-      "setup_time": "0:10:00"
+      "setup_time": "0:15:15"
     },
     {
-      "start_time": 1530023760000,
-      "game": "Bonk\u0027s Revenge",
+      "start_time": 1530026100000,
+      "game": "Bonk's Revenge",
       "runners": "lattmackey",
-      "est_time": "0:30:00",
-      "category": "Expert",
+      "est_time": "0:27:22",
+      "category": "Expert  TG-16",
       "casters": "Yen24",
-      "setup_time": "0:10:00"
+      "setup_time": "0:11:38"
     },
     {
-      "start_time": 1530026160000,
-      "game": "Splatterhouse",
-      "runners": "zallard1",
-      "est_time": "0:16:00",
-      "category": "any%",
-      "casters": "Yen24",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530027720000,
-      "game": "Splatterhouse 2",
-      "runners": "zallard1",
-      "est_time": "0:20:00",
-      "category": "any%",
-      "casters": "Yen24",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530029520000,
-      "game": "Castlevania",
-      "runners": "Komrade",
-      "est_time": "0:15:00",
-      "category": "Any%",
-      "casters": "Yen24",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530031020000,
-      "game": "Castlevania III",
-      "runners": "MikeKanis",
-      "est_time": "0:35:00",
-      "category": "Sypha Route",
-      "casters": "Prolix",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530033720000,
-      "game": "Castlevania: Bloodlines",
-      "runners": "Klaige",
-      "est_time": "0:35:00",
-      "category": "John Morris or Eric Lecarde Any% Expert Difficulty",
-      "casters": "Prolix",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530036420000,
-      "game": "Castlevania: Circle of the Moon",
-      "runners": "darrenvile",
-      "est_time": "0:43:00",
-      "category": "Fighter Mode All Bosses vs Magician Mode All Bosses",
-      "casters": "Prolix",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530039600000,
-      "game": "Dragon Warrior III",
-      "runners": "vaxherd",
-      "est_time": "1:20:00",
-      "category": "Any%",
-      "casters": "Prolix",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530045000000,
-      "game": "Sonic Adventure DX: Director\u0027s Cut",
-      "runners": "JustFlandre",
-      "est_time": "0:36:00",
-      "category": "Sonic\u0027s Story",
-      "casters": "Lizstar",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530047760000,
-      "game": "Sonic Spinball",
-      "runners": "Zaxon96",
-      "est_time": "0:20:00",
-      "category": "any%",
-      "casters": "Lizstar",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530049560000,
-      "game": "Sonic the Hedgehog 2",
-      "runners": "mike89",
-      "est_time": "0:25:00",
-      "category": "Sonic",
-      "casters": "Lizstar",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530051660000,
-      "game": "SETUP BLOCK 2",
-      "runners": "Tech Crew",
-      "est_time": "0:48:00",
-      "category": "Tech Stuff",
-      "casters": "Lizstar",
-      "setup_time": "0:20:00"
-    },
-    {
-      "start_time": 1530055740000,
-      "game": "Metroid: Zero Mission",
-      "runners": "samthedigital, Dragonfangs, john_unfil, CScottyW",
-      "est_time": "1:20:00",
-      "category": "100% Normal Race",
-      "casters": "MapleSR",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530061140000,
-      "game": "Metroid Samus Returns",
-      "runners": "Mr_Shasta",
-      "est_time": "1:55:00",
-      "category": "Any%",
-      "casters": "MapleSR",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530068640000,
-      "game": "Super Metroid",
-      "runners": "oatsngoats",
-      "est_time": "1:25:00",
-      "category": "100% Map Completion",
-      "casters": "Agama",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530074340000,
-      "game": "Halo 2",
-      "runners": "Ranabundana",
-      "est_time": "1:42:00",
-      "category": "Legendary",
-      "casters": "Agama",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530081060000,
-      "game": "The Legend of Zelda: Skyward Sword",
-      "runners": "gymnast86",
-      "est_time": "5:15:00",
-      "category": "Any%",
-      "casters": "Calyrica",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530100560000,
-      "game": "Prince of Persia: Warrior Within",
-      "runners": "catalyst",
-      "est_time": "0:25:00",
-      "category": "any% - normal",
-      "casters": "MisterGameandShout",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530102660000,
+      "start_time": 1530028440000,
       "game": "Kid Chameleon",
       "runners": "peaches",
-      "est_time": "0:30:00",
-      "category": "4 Boss",
-      "casters": "MisterGameandShout",
-      "setup_time": "0:10:00"
+      "est_time": "0:28:05",
+      "category": "4 Boss  Genesis",
+      "casters": "Yen24",
+      "setup_time": "0:22:50"
     },
     {
-      "start_time": 1530105060000,
-      "game": "Wiz \u0027n\u0027 Liz: The Frantic Wabbit Wescue",
+      "start_time": 1530031495000,
+      "game": "Castlevania",
+      "runners": "Komrade",
+      "est_time": "0:12:59",
+      "category": "Any%  NES",
+      "casters": "Yen24",
+      "setup_time": "0:08:07"
+    },
+    {
+      "start_time": 1530032761000,
+      "game": "Castlevania III",
+      "runners": "MikeKanis",
+      "est_time": "0:31:51",
+      "category": "Sypha Route  NES",
+      "casters": "Prolix",
+      "setup_time": "0:08:17"
+    },
+    {
+      "start_time": 1530035169000,
+      "game": "Castlevania: Bloodlines",
+      "runners": "Klaige",
+      "est_time": "0:30:30",
+      "category": "John Morris or Eric Lecarde Any% Expert Difficulty  Genesis",
+      "casters": "Prolix",
+      "setup_time": "0:09:51"
+    },
+    {
+      "start_time": 1530037590000,
+      "game": "Castlevania: Circle of the Moon",
+      "runners": "darrenville",
+      "est_time": "0:28:10",
+      "category": "All Bosses  GBA",
+      "casters": "Prolix",
+      "setup_time": "0:22:10"
+    },
+    {
+      "start_time": 1530040610000,
+      "game": "Dragon Warrior III",
+      "runners": "vaxherd",
+      "est_time": "1:09:55",
+      "category": "Any%  NES",
+      "casters": "Prolix",
+      "setup_time": "0:13:45"
+    },
+    {
+      "start_time": 1530045630000,
+      "game": "Sonic Adventure DX: Director's Cut",
+      "runners": "JustFlandre",
+      "est_time": "0:33:32",
+      "category": "Sonic's Story  PC",
+      "casters": "Lizstar",
+      "setup_time": "0:16:28"
+    },
+    {
+      "start_time": 1530048630000,
+      "game": "Sonic Spinball",
+      "runners": "Zaxon96",
+      "est_time": "0:16:53",
+      "category": "any%  Genesis",
+      "casters": "Lizstar",
+      "setup_time": "0:08:37"
+    },
+    {
+      "start_time": 1530050160000,
+      "game": "Sonic the Hedgehog 2",
+      "runners": "mike89",
+      "est_time": "0:23:37",
+      "category": "Sonic  Genesis",
+      "casters": "Lizstar",
+      "setup_time": "0:04:23"
+    },
+    {
+      "start_time": 1530051840000,
+      "game": "Sonic 3 and Knuckles",
+      "runners": "mike89",
+      "est_time": "0:45:22",
+      "category": "Sonic any%  Genesis",
+      "casters": "Lizstar",
+      "setup_time": "0:48:16"
+    },
+    {
+      "start_time": 1530057458000,
+      "game": "Metroid: Zero Mission",
+      "runners": "samthedigital, Dragonfangs, john_unfil, CScottyW",
+      "est_time": "1:12:17",
+      "category": "100% Normal Race  GBA",
+      "casters": "MapleSR",
+      "setup_time": "0:30:48"
+    },
+    {
+      "start_time": 1530063643000,
+      "game": "Metroid Samus Returns",
+      "runners": "Mr_Shasta",
+      "est_time": "1:47:35",
+      "category": "Any%  3DS",
+      "casters": "MapleSR",
+      "setup_time": "0:11:07"
+    },
+    {
+      "start_time": 1530070765000,
+      "game": "Super Metroid",
+      "runners": "oatsngoats",
+      "est_time": "1:24:16",
+      "category": "100% Map Completion  SNES",
+      "casters": "Agama",
+      "setup_time": "0:16:19"
+    },
+    {
+      "start_time": 1530076800000,
+      "game": "Halo 2",
+      "runners": "Ranabundana",
+      "est_time": "1:40:39",
+      "category": "Legendary  Xbox",
+      "casters": "Agama",
+      "setup_time": "0:12:21"
+    },
+    {
+      "start_time": 1530083580000,
+      "game": "The Legend of Zelda: Skyward Sword",
+      "runners": "gymnast86",
+      "est_time": "5:04:42",
+      "category": "Any%  Wii",
+      "casters": "Calyrica",
+      "setup_time": "0:15:18"
+    },
+    {
+      "start_time": 1530102780000,
+      "game": "Splatterhouse",
+      "runners": "zallard1",
+      "est_time": "0:13:31",
+      "category": "any%  TG-16",
+      "casters": "MisterGameandShout",
+      "setup_time": "0:08:29"
+    },
+    {
+      "start_time": 1530104100000,
+      "game": "Splatterhouse 2",
+      "runners": "zallard1",
+      "est_time": "0:17:41",
+      "category": "any%  Genesis",
+      "casters": "MisterGameandShout",
+      "setup_time": "0:17:19"
+    },
+    {
+      "start_time": 1530106200000,
+      "game": "Wiz 'n' Liz: The Frantic Wabbit Wescue",
       "runners": "SilverDile",
-      "est_time": "0:20:00",
-      "category": "Wizard",
+      "est_time": "0:11:56",
+      "category": "Wizard  Genesis",
       "casters": "MisterGameandShout",
-      "setup_time": "0:10:00"
+      "setup_time": "0:15:04"
     },
     {
-      "start_time": 1530106860000,
+      "start_time": 1530107820000,
       "game": "Sylvan Tale",
       "runners": "Omnigamer",
-      "est_time": "1:06:00",
-      "category": "100%",
+      "est_time": "1:01:18",
+      "category": "100%  Game Gear",
       "casters": "Sooraya",
-      "setup_time": "0:10:00"
+      "setup_time": "0:12:42"
     },
     {
-      "start_time": 1530111420000,
-      "game": "SETUP BLOCK 3",
-      "runners": "Tech Crew",
-      "est_time": "0:35:00",
-      "category": "Tech Stuff",
-      "casters": "Protomagicalgirl",
-      "setup_time": "0:10:00"
+      "start_time": 1530112260000,
+      "game": "Super Monkey Ball 2",
+      "runners": "Yutori",
+      "est_time": "0:33:18",
+      "category": "Story Mode All Levels  Wii",
+      "casters": "Sooraya",
+      "setup_time": "0:11:42"
     },
     {
-      "start_time": 1530114120000,
+      "start_time": 1530114960000,
+      "game": "Super Monkey Ball 2: Monkeyed Ball",
+      "runners": "Yutori, Geoff",
+      "est_time": "0:26:10",
+      "category": "Story Mode All Levels Race  Wii",
+      "casters": "Sooraya",
+      "setup_time": "0:13:50"
+    },
+    {
+      "start_time": 1530117360000,
       "game": "Spider-Man: Web of Fire",
       "runners": "PeteDorr",
-      "est_time": "0:13:00",
-      "category": "Beat the Game",
+      "est_time": "0:08:26",
+      "category": "Beat the Game  32X",
       "casters": "Sooraya",
-      "setup_time": "0:10:00"
+      "setup_time": "0:19:34"
     },
     {
-      "start_time": 1530115500000,
-      "game": "Spider-Man \u0026 Venom\u0027s Maximum Carnage",
+      "start_time": 1530119040000,
+      "game": "Spider-Man & Venom's Maximum Carnage",
       "runners": "Ninjaofsorts",
-      "est_time": "0:22:00",
-      "category": "any%",
+      "est_time": "0:19:19",
+      "category": "any%  SNES",
       "casters": "Sooraya",
-      "setup_time": "0:10:00"
+      "setup_time": "0:08:41"
     },
     {
-      "start_time": 1530117420000,
+      "start_time": 1530120720000,
       "game": "Batman Returns",
       "runners": "LRock",
-      "est_time": "0:26:00",
-      "category": "Mania%",
+      "est_time": "0:25:20",
+      "category": "Mania  SNES",
       "casters": "Arlynia",
-      "setup_time": "0:15:00"
+      "setup_time": "0:22:40"
     },
     {
-      "start_time": 1530119880000,
+      "start_time": 1530123600000,
       "game": "Contra: Shattered Soldier",
       "runners": "Aquas, TheDrifter18, Crak Atak",
-      "est_time": "0:35:00",
-      "category": "Any% All Stages Race",
+      "est_time": "0:30:37",
+      "category": "Any% All Stages Race  PS2",
       "casters": "Arlynia",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530122580000,
-      "game": "High Hell",
-      "runners": "SNeaky",
-      "est_time": "0:25:00",
-      "category": "Any%",
-      "casters": "Arlynia",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530124680000,
-      "game": "Shadow Warrior Classic Redux",
-      "runners": "Ignite",
-      "est_time": "0:25:00",
-      "category": "Any% no ssl",
-      "casters": "CovertMuffin",
-      "setup_time": "0:10:00"
+      "setup_time": "0:22:23"
     },
     {
       "start_time": 1530126780000,
+      "game": "High Hell",
+      "runners": "SNeaky",
+      "est_time": "0:09:29",
+      "category": "Any%  PC",
+      "casters": "Arlynia",
+      "setup_time": "0:10:31"
+    },
+    {
+      "start_time": 1530127980000,
+      "game": "Shadow Warrior Classic Redux",
+      "runners": "Ignite",
+      "est_time": "0:15:37",
+      "category": "Any% no ssl  PC",
+      "casters": "CovertMuffin",
+      "setup_time": "0:08:23"
+    },
+    {
+      "start_time": 1530129420000,
       "game": "Sublevel Zero Redux",
       "runners": "roncli",
-      "est_time": "0:30:00",
-      "category": "Normal Any%",
+      "est_time": "0:25:25",
+      "category": "Normal Any%  PC",
       "casters": "CovertMuffin",
-      "setup_time": "0:10:00"
+      "setup_time": "0:15:35"
     },
     {
-      "start_time": 1530129180000,
+      "start_time": 1530131880000,
       "game": "Thief: The Dark Project",
       "runners": "Psych0sis",
-      "est_time": "0:42:00",
-      "category": "Any% Normal",
+      "est_time": "0:33:23",
+      "category": "Any% Normal OldDark  PC",
       "casters": "CovertMuffin",
-      "setup_time": "0:10:00"
+      "setup_time": "0:16:37"
     },
     {
-      "start_time": 1530132300000,
+      "start_time": 1530134880000,
       "game": "Metal Gear Solid: The Twin Snakes",
       "runners": "plywood",
       "est_time": "1:12:00",
-      "category": "Extreme",
+      "category": "Extreme  Gamecube",
       "casters": "SakuraTsubasa",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530137220000,
+      "start_time": 1530139800000,
       "game": "The Legend of Zelda: Four Swords Adventures",
       "runners": "Zmaster91",
       "est_time": "2:17:00",
-      "category": "Any%",
+      "category": "Any%  Gamecube",
       "casters": "SakuraTsubasa",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530146040000,
+      "start_time": 1530148620000,
       "game": "Super Mario 3D Land",
       "runners": "zeldacubed1",
       "est_time": "1:10:00",
-      "category": "warpless",
+      "category": "warpless  3DS",
       "casters": "YellowKillerBee",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530150840000,
+      "start_time": 1530153420000,
       "game": "Cuphead",
       "runners": "TheMexicanRunner",
       "est_time": "0:55:00",
-      "category": "All Flags (Regular, Legacy)",
-      "casters": "Mike Uyama",
-      "setup_time": "0:15:00"
-    },
-    {
-      "start_time": 1530155040000,
-      "game": "A Hat in Time",
-      "runners": "flarebear, ConnorAce",
-      "est_time": "1:00:00",
-      "category": "Any% Race",
+      "category": "All Flags (Regular, Legacy)  PC",
       "casters": "YellowKillerBee",
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530159540000,
+      "start_time": 1530157620000,
+      "game": "A Hat in Time",
+      "runners": "flarebear, ConnorAce",
+      "est_time": "1:00:00",
+      "category": "Any% Race  PC",
+      "casters": "Mike Uyama",
+      "setup_time": "0:15:00"
+    },
+    {
+      "start_time": 1530162120000,
       "game": "Celeste",
       "runners": "TGH, yoshipro",
       "est_time": "0:40:00",
-      "category": "Any% race",
+      "category": "Any% race  PC",
       "casters": "Mike Uyama",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530162540000,
-      "game": "SETUP BLOCK 4",
-      "runners": "Tech Crew",
+      "start_time": 1530165120000,
+      "game": "Pepsiman",
+      "runners": "theboyks",
       "est_time": "0:26:00",
-      "category": "Tech Stuff",
+      "category": "Any% with Cutscenes",
       "casters": "Mike Uyama",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530164700000,
+      "start_time": 1530167280000,
       "game": "Getting Over It with Bennett Foddy",
       "runners": "MONTYvsTHEWORLD",
       "est_time": "0:05:00",
-      "category": "Glitchless%",
+      "category": "Glitchless%  PC",
       "casters": "FrenchToast",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530165600000,
+      "start_time": 1530168180000,
       "game": "Miner Ultra Adventures",
       "runners": "Konasumi",
       "est_time": "0:15:00",
-      "category": "Any%",
+      "category": "Any%  PC",
       "casters": "FrenchToast",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530167100000,
+      "start_time": 1530169680000,
       "game": "Roundabout",
       "runners": "GNU Order",
       "est_time": "0:11:00",
-      "category": "ESports Speedrun Mode",
+      "category": "ESports Speedrun Mode  PC",
       "casters": "FrenchToast",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530168360000,
+      "start_time": 1530170940000,
       "game": "Live",
       "runners": "LifeL1ke",
       "est_time": "0:11:00",
-      "category": "Beat the Game",
+      "category": "Beat the Game  PC",
       "casters": "FrenchToast",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530169620000,
+      "start_time": 1530172200000,
       "game": "Stilt Fella",
       "runners": "PHatHome666",
       "est_time": "0:20:00",
-      "category": "Any%",
+      "category": "Any%  PC",
       "casters": "FrenchToast",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530171420000,
+      "start_time": 1530174000000,
       "game": "Club Drive",
       "runners": "PeteDorr",
       "est_time": "0:13:00",
-      "category": "All Races (2 Laps)",
+      "category": "All Races (2 Laps)  Jaguar",
       "casters": "FrenchToast",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530172800000,
+      "start_time": 1530175380000,
       "game": "Bio Miracle Bokutte Upa",
       "runners": "EnchantressOfNumbers",
       "est_time": "0:30:00",
-      "category": "Normal Difficulty",
+      "category": "Normal Difficulty  Famicom",
       "casters": "Calyrica",
       "setup_time": "0:11:00"
     },
     {
-      "start_time": 1530175260000,
+      "start_time": 1530177840000,
       "game": "Yo! Noid 2",
       "runners": "AlucardX60",
       "est_time": "0:12:00",
-      "category": "Any%",
+      "category": "Any%  PC",
       "casters": "Calyrica",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530176580000,
+      "start_time": 1530179160000,
       "game": "Jungle King Tar-chan: World Tour Rumble",
       "runners": "Aweglib",
       "est_time": "0:30:00",
-      "category": "Any%",
+      "category": "Any%  SNES",
       "casters": "Calyrica",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530178980000,
+      "start_time": 1530181560000,
       "game": "Pac-Man 2: The New Adventures",
       "runners": "PARTY MAN X",
       "est_time": "0:30:00",
-      "category": "any%",
+      "category": "any%  Genesis",
       "casters": "Calyrica",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530181380000,
-      "game": "Pac \u0027n Roll Remix",
-      "runners": "SuperViperT302",
-      "est_time": "0:27:00",
-      "category": "Any%",
-      "casters": "Calyrica",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530183600000,
-      "game": "Don Doko Don 2",
-      "runners": "pip_johnson",
-      "est_time": "0:25:00",
-      "category": "any%",
-      "casters": "LLK",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530185700000,
+      "start_time": 1530183960000,
       "game": "Silver Grapple",
       "runners": "Ivan",
       "est_time": "0:20:00",
-      "category": "any% good ending",
+      "category": "any% good ending  PC",
       "casters": "LLK",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530187500000,
+      "start_time": 1530185760000,
       "game": "Gift",
       "runners": "SecksWrecks",
       "est_time": "0:10:00",
-      "category": "any%",
+      "category": "any%  PC",
       "casters": "LLK",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530188700000,
+      "start_time": 1530186960000,
       "game": "El Viento",
       "runners": "belthegor",
       "est_time": "0:14:00",
-      "category": "any%",
+      "category": "any%  Genesis",
       "casters": "LLK",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530190140000,
+      "start_time": 1530188400000,
       "game": "Xeodrifter",
       "runners": "JBuzzyBee",
       "est_time": "0:18:00",
-      "category": "Any%",
+      "category": "Any%  PC",
       "casters": "Protomagicalgirl",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530191820000,
+      "start_time": 1530190080000,
       "game": "Titan Souls",
       "runners": "Zic3",
       "est_time": "0:24:00",
-      "category": "Hard Mode 100%",
+      "category": "Hard Mode 100%  PS4",
       "casters": "Protomagicalgirl",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530193860000,
+      "start_time": 1530192120000,
       "game": "A Story About my Uncle",
       "runners": "TheRealVincentio",
       "est_time": "0:35:00",
-      "category": "any% No Fling",
+      "category": "any% No Fling  PC",
       "casters": "Protomagicalgirl",
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530196860000,
+      "start_time": 1530195120000,
       "game": "Strider",
       "runners": "NME, Elipsis, Mr Magnificent",
       "est_time": "0:05:00",
-      "category": "any% race",
+      "category": "any% race  NES",
       "casters": "Protomagicalgirl",
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530198060000,
+      "start_time": 1530196320000,
       "game": "The Legend of Zelda",
-      "runners": "LackAttack24, BT, Eunos",
+      "runners": "LackAttack24, beeteas, Eunos",
       "est_time": "1:00:00",
-      "category": "low% Race",
+      "category": "low% Race  NES",
       "casters": "Sooraya",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530202260000,
+      "start_time": 1530200520000,
       "game": "The Legend of Zelda: Oracle of Seasons",
       "runners": "mghtymth",
       "est_time": "2:03:00",
-      "category": "Any%",
+      "category": "Any%  GBC",
       "casters": "Sooraya",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530210240000,
+      "start_time": 1530208500000,
       "game": "Paper Mario",
       "runners": "imglower",
       "est_time": "1:55:00",
-      "category": "Any%",
+      "category": "Any%  Wii U VC",
       "casters": "MapleSR",
       "setup_time": "0:16:00"
     },
     {
-      "start_time": 1530218100000,
+      "start_time": 1530216360000,
       "game": "DeadCore",
       "runners": "imawakka",
       "est_time": "0:25:00",
-      "category": "NWNM NG (No Wall Clips No Mega Jumps New Game)",
+      "category": "NWNM NG (No Wall Clips No Mega Jumps New Game)  PC",
       "casters": "Agama",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530220200000,
+      "start_time": 1530218460000,
       "game": "Deus Ex",
       "runners": "Heinki",
       "est_time": "0:52:00",
-      "category": "any%",
+      "category": "any%  PC",
       "casters": "Agama",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530223920000,
+      "start_time": 1530222180000,
       "game": "Deus Ex Mankind Divided",
       "runners": "Heinki",
       "est_time": "1:05:00",
-      "category": "any%",
+      "category": "any%  PC",
       "casters": "Agama",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530228420000,
+      "start_time": 1530226680000,
       "game": "Prey (2017)",
       "runners": "LifeL1ke",
       "est_time": "0:50:00",
-      "category": "No OoB",
+      "category": "No OoB  PC",
       "casters": "theboyks",
+      "setup_time": "0:20:00"
+    },
+    {
+      "start_time": 1530230880000,
+      "game": "Super Mario Bros.",
+      "runners": "SuperSonic71087, RetroBob_, Kosmic, RoyLGamer",
+      "est_time": "0:32:00",
+      "category": "warpless  NES",
+      "casters": "Skybilz",
+      "setup_time": "0:15:00"
+    },
+    {
+      "start_time": 1530233700000,
+      "game": "Super Mario Bros. 3",
+      "runners": "mitchflowerpower, grandpoobear",
+      "est_time": "1:00:00",
+      "category": "All Forts Race  NES",
+      "casters": "Skybilz",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530232020000,
+      "start_time": 1530237900000,
+      "game": "Super Mario World",
+      "runners": "rezephos",
+      "est_time": "1:12:00",
+      "category": "All Castles & Forts, Small Only  SNES",
+      "casters": "Skybilz",
+      "setup_time": "0:10:00"
+    },
+    {
+      "start_time": 1530242820000,
+      "game": "Mario Kart 8 Deluxe",
+      "runners": "AeonFrodo",
+      "est_time": "1:37:00",
+      "category": "32 Tracks, 200cc, Items  Switch",
+      "casters": "Arlynia",
+      "setup_time": "0:10:00"
+    },
+    {
+      "start_time": 1530249240000,
       "game": "SETUP BLOCK 5",
       "runners": "Tech Crew",
       "est_time": "0:35:00",
       "category": "Tech Stuff",
       "casters": "theboyks",
-      "setup_time": "0:20:00"
-    },
-    {
-      "start_time": 1530235320000,
-      "game": "Super Mario Bros.",
-      "runners": "SuperSonic71087, RetroBob_, Kosmic, RoyLGamer",
-      "est_time": "0:32:00",
-      "category": "warpless",
-      "casters": "Skybilz",
-      "setup_time": "0:15:00"
-    },
-    {
-      "start_time": 1530238140000,
-      "game": "Super Mario Bros. 3",
-      "runners": "mitchflowerpower, grandpoobear",
-      "est_time": "1:00:00",
-      "category": "All Forts Race",
-      "casters": "Skybilz",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530242340000,
-      "game": "Super Mario World",
-      "runners": "rezephos",
-      "est_time": "1:12:00",
-      "category": "All Castles \u0026 Forts, Small Only",
-      "casters": "Skybilz",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530247260000,
-      "game": "Mario Kart 8 Deluxe",
-      "runners": "AeonFrodo",
-      "est_time": "1:37:00",
-      "category": "32 Tracks, 200cc, Items",
-      "casters": "Arlynia",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530253680000,
+      "start_time": 1530251940000,
       "game": "Wave Race: Blue Storm",
       "runners": "Pearstrike",
       "est_time": "0:15:00",
-      "category": "Normal Circuit (No Retire)",
+      "category": "Normal Circuit (No Retire)  Gamecube",
       "casters": "Arlynia",
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530255480000,
+      "start_time": 1530253740000,
       "game": "Runbow",
       "runners": "MooMooAkai, MunchaKoopas",
       "est_time": "0:25:00",
-      "category": "Bowhemoth",
+      "category": "Bowhemoth  Wii U",
       "casters": "Arlynia",
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530257880000,
+      "start_time": 1530256140000,
       "game": "Borderlands: the Pre-Sequel!",
       "runners": "Shockwve, Amyrlinn",
       "est_time": "2:20:00",
-      "category": "Co-op Any%",
+      "category": "Co-op Any%  PC",
       "casters": "Prolix",
       "setup_time": "0:20:00"
     },
     {
-      "start_time": 1530267480000,
+      "start_time": 1530265740000,
       "game": "Bionic Commando",
       "runners": "MURPHAGATOR!",
       "est_time": "1:05:00",
-      "category": "any%",
+      "category": "any%  PC",
       "casters": "DarkTwinge",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530271980000,
+      "start_time": 1530270240000,
       "game": "Bound",
       "runners": "chuckles825",
       "est_time": "0:35:00",
-      "category": "Any%",
+      "category": "Any%  PS4",
       "casters": "DarkTwinge",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530274680000,
+      "start_time": 1530272940000,
       "game": "Catherine",
       "runners": "Ghoul02",
       "est_time": "0:30:00",
-      "category": "Babel Pairs 1 Player 2 Controllers",
+      "category": "Babel Pairs 1 Player 2 Controllers  PS3",
       "casters": "DarkTwinge",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530277080000,
+      "start_time": 1530275340000,
       "game": "Double Dragon",
       "runners": "LRock",
       "est_time": "0:14:00",
-      "category": "Any%",
+      "category": "Any%  NES",
       "casters": "TokyoScarab",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530278520000,
+      "start_time": 1530276780000,
       "game": "Double Dragon II: The Revenge",
       "runners": "sinister1",
       "est_time": "0:14:00",
-      "category": "any%",
+      "category": "any%  NES",
       "casters": "TokyoScarab",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530279960000,
+      "start_time": 1530278220000,
       "game": "Golden Axe",
       "runners": "InTheMug",
       "est_time": "0:15:00",
-      "category": "Tyris Flare",
+      "category": "Tyris Flare  Genesis",
       "casters": "TokyoScarab",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530281460000,
+      "start_time": 1530279720000,
       "game": "Streets of Rage 2",
       "runners": "Anthopants",
       "est_time": "0:57:00",
-      "category": "Mania%",
+      "category": "Mania%  Genesis",
       "casters": "TokyoScarab",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530285480000,
-      "game": "Battletoads \u0026 Double Dragon",
-      "runners": "PJ, Mecha Richter",
-      "est_time": "0:25:00",
-      "category": "Any% co-op",
-      "casters": "TokyoScarab",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530287580000,
+      "start_time": 1530283740000,
       "game": "Rockman No-Constancy",
       "runners": "Kuumba",
       "est_time": "0:40:00",
-      "category": "any% normal",
+      "category": "any% normal  NES",
       "casters": "Protomagicalgirl",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530290580000,
+      "start_time": 1530286740000,
       "game": "Mega Man 7",
       "runners": "almondcity",
       "est_time": "0:45:00",
-      "category": "any%",
+      "category": "any%  SNES",
       "casters": "Protomagicalgirl",
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530294180000,
+      "start_time": 1530290340000,
       "game": "Mega Man 8",
-      "runners": "orsa, cleartonic, maple",
+      "runners": "orsa, cleartonic",
       "est_time": "0:55:00",
-      "category": "Any% Race",
+      "category": "Any% Race  PSX",
       "casters": "Protomagicalgirl",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530298080000,
-      "game": "Goof Troop",
-      "runners": "swordsmankirby, Bbforky",
-      "est_time": "0:24:00",
-      "category": "Co-Op",
-      "casters": "SakuraTsubasa",
+      "start_time": 1530294240000,
+      "game": "Bionic Commando Rearmed 2",
+      "runners": "PJ",
+      "est_time": "1:00:00",
+      "category": "Any%  Xbox One",
+      "casters": "LLK",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530300120000,
+      "start_time": 1530298440000,
+      "game": "Goof Troop",
+      "runners": "swordsmankirby, Bbforky",
+      "est_time": "0:24:00",
+      "category": "Co-Op  SNES",
+      "casters": "LLK",
+      "setup_time": "0:10:00"
+    },
+    {
+      "start_time": 1530300480000,
       "game": "Kingdom Hearts HD 1.5 ReMix (KH1FM)",
       "runners": "mistmaster1",
       "est_time": "3:05:00",
-      "category": "Any% (Level 1 Proud Mode)",
+      "category": "Any% (Level 1 Proud Mode)  PS4",
       "casters": "SakuraTsubasa",
       "setup_time": "0:35:00"
     },
     {
-      "start_time": 1530313320000,
+      "start_time": 1530313680000,
       "game": "Super Mario 64",
       "runners": "Puncayshun, cheese05",
       "est_time": "1:00:00",
-      "category": "70 star race",
+      "category": "70 star race  N64",
       "casters": "YellowKillerBee",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530317520000,
+      "start_time": 1530317880000,
       "game": "The Legend of Zelda: The Wind Waker HD",
       "runners": "Linkus7",
       "est_time": "1:15:00",
-      "category": "Any%",
+      "category": "Any%  Wii U",
       "casters": "YellowKillerBee",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530322620000,
+      "start_time": 1530322980000,
       "game": "SETUP BLOCK 6",
       "runners": "Tech Crew",
       "est_time": "0:37:00",
@@ -1227,189 +1218,180 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530325440000,
+      "start_time": 1530325800000,
       "game": "TASBot plays F-Zero GX by talented authors",
       "runners": "dwangoAC",
       "est_time": "0:10:00",
-      "category": "TASBot%",
+      "category": "TASBot%  Gamecube",
       "casters": "Raelcun",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530326640000,
+      "start_time": 1530327000000,
       "game": "TASBot plays Super Metroid 0% by Sniq and total",
       "runners": "dwangoAC",
       "est_time": "0:07:07",
-      "category": "0% while running past audible invisible animals",
+      "category": "0% while running past audible invisible animals  SNES",
       "casters": "Raelcun",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530327667000,
-      "game": "Dark Souls",
-      "runners": "catalyst",
-      "est_time": "1:35:00",
-      "category": "All Bosses",
-      "casters": "musical_daredevil",
-      "setup_time": "0:10:00"
-    },
-    {
-      "start_time": 1530333967000,
+      "start_time": 1530328027000,
       "game": "Pokemon Yellow/Red",
       "runners": "MeGotsThis",
       "est_time": "2:47:00",
-      "category": "Any% Glitchless 2 Games 1 Controller",
+      "category": "Any% Glitchless 2 Games 1 Controller  Game Boy",
       "casters": "Yen24",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530344587000,
+      "start_time": 1530338647000,
       "game": "Star Wars Jedi Knight: Dark Forces II",
       "runners": "ysalamiri",
       "est_time": "0:30:00",
-      "category": "any%",
+      "category": "any%  PC",
       "casters": "Calyrica",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530346987000,
+      "start_time": 1530341047000,
       "game": "Star Wars Jedi Knight: Mysteries of the Sith",
       "runners": "ysalamiri",
       "est_time": "0:25:00",
-      "category": "any%",
+      "category": "any%  PC",
       "casters": "Calyrica",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530349087000,
+      "start_time": 1530343147000,
       "game": "Super Star Wars: The Empire Strikes Back",
       "runners": "Indy",
       "est_time": "0:45:00",
-      "category": "any%",
+      "category": "any%  SNES",
       "casters": "Calyrica",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530352387000,
+      "start_time": 1530346447000,
       "game": "Hob",
       "runners": "halfcoordinated",
       "est_time": "0:55:00",
-      "category": "Any% No Clip (One-Handed)",
+      "category": "Any% No Clip (One-Handed)  PC",
       "casters": "theboyks",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530356287000,
+      "start_time": 1530350347000,
       "game": "I Am Bread",
       "runners": "Nerd_Squared",
       "est_time": "0:10:00",
-      "category": "Bagel Race",
+      "category": "Bagel Race  PC",
       "casters": "theboyks",
       "setup_time": "0:13:00"
     },
     {
-      "start_time": 1530357667000,
+      "start_time": 1530351727000,
       "game": "Ratchet: Deadlocked",
       "runners": "Davie",
       "est_time": "0:50:00",
-      "category": "NG+ No EGS",
+      "category": "NG+ No EGS  PS3",
       "casters": "Nikasaur",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530361267000,
-      "game": "Spyro 2: Ripto\u0027s Rage",
+      "start_time": 1530355327000,
+      "game": "Spyro 2: Ripto's Rage",
       "runners": "AlexDest",
       "est_time": "0:32:00",
-      "category": "14 Talisman",
+      "category": "14 Talisman  PSX",
       "casters": "Nikasaur",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530363787000,
+      "start_time": 1530357847000,
       "game": "Crash Bandicoot: N. Sane Trilogy",
       "runners": "CameronVengenz",
       "est_time": "1:02:00",
-      "category": "Crash Bandicoot 1 Any%",
+      "category": "Crash Bandicoot 1 Any%  PS4",
       "casters": "Nikasaur",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530368107000,
-      "game": "Kirby\u0027s Dream Land",
+      "start_time": 1530362167000,
+      "game": "Kirby's Dream Land",
       "runners": "eBloodyCandy",
       "est_time": "0:15:00",
-      "category": "Beat Extra Mode",
+      "category": "Beat Extra Mode  Game Boy",
       "casters": "Protomagicalgirl",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530369607000,
-      "game": "Kirby\u0027s Adventure",
+      "start_time": 1530363667000,
+      "game": "Kirby's Adventure",
       "runners": "swordsmankirby",
       "est_time": "0:50:00",
-      "category": "Any% No Major Glitches",
+      "category": "Any% No Major Glitches  NES",
       "casters": "Protomagicalgirl",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530373207000,
+      "start_time": 1530367267000,
       "game": "New Super Mario Bros. 2",
       "runners": "eddaket",
       "est_time": "1:00:00",
-      "category": "Warpless",
+      "category": "Warpless  3DS",
       "casters": "Protomagicalgirl",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530377407000,
+      "start_time": 1530371467000,
       "game": "Undertale",
       "runners": "SnowieY101",
       "est_time": "1:35:00",
-      "category": "True Pacifist Ending",
+      "category": "True Pacifist Ending  PC",
       "casters": "SakuraTsubasa",
       "setup_time": "0:20:00"
     },
     {
-      "start_time": 1530384307000,
+      "start_time": 1530378367000,
       "game": "Super Mario Maker",
       "runners": "Carl Sagan, grandpoobear, GlitchCat7, failstream, jaku, Cliffy",
       "est_time": "1:30:00",
-      "category": "3v3 Blind Level Race",
+      "category": "3v3 Blind Level Race  Wii U",
       "casters": "SakuraTsubasa",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530390307000,
+      "start_time": 1530384367000,
       "game": "The Legend of Zelda: Ocarina of Time",
       "runners": "Runnerguy2489",
       "est_time": "1:30:00",
-      "category": "Bingo",
+      "category": "Bingo  N64",
       "casters": "Prolix",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530396307000,
+      "start_time": 1530390367000,
       "game": "SETUP BLOCK 7",
       "runners": "Tech Crew",
       "est_time": "1:07:00",
-      "category": "We\u0027re getting close to the end",
+      "category": "We're getting close to the end",
       "casters": "Prolix",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530400927000,
+      "start_time": 1530394987000,
       "game": "Final Fantasy VI",
       "runners": "puwexil",
       "est_time": "7:02:00",
-      "category": "Glitchless Any%",
+      "category": "Glitchless Any%  SNES",
       "casters": "CovertMuffin/Nikasaur",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530426847000,
+      "start_time": 1530420907000,
       "game": "FINALE",
-      "runners": "None",
+      "runners": "Sent",
       "est_time": "0:10:00",
       "category": "post-GDQ blues",
       "casters": "STAFF",
