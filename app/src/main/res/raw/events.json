@@ -726,49 +726,49 @@
       "start_time": 1530134880000,
       "game": "Metal Gear Solid: The Twin Snakes",
       "runners": "plywood",
-      "est_time": "1:12:00",
+      "est_time": "1:04:39",
       "category": "Extreme  Gamecube",
       "casters": "SakuraTsubasa",
-      "setup_time": "0:10:00"
+      "setup_time": "0:15:21"
     },
     {
-      "start_time": 1530139800000,
+      "start_time": 1530139680000,
       "game": "The Legend of Zelda: Four Swords Adventures",
       "runners": "Zmaster91",
-      "est_time": "2:17:00",
+      "est_time": "2:08:59",
       "category": "Any%  Gamecube",
       "casters": "SakuraTsubasa",
-      "setup_time": "0:10:00"
+      "setup_time": "0:20:01"
     },
     {
       "start_time": 1530148620000,
       "game": "Super Mario 3D Land",
       "runners": "zeldacubed1",
-      "est_time": "1:10:00",
+      "est_time": "1:06:14",
       "category": "warpless  3DS",
       "casters": "YellowKillerBee",
-      "setup_time": "0:10:00"
+      "setup_time": "0:24:46"
     },
     {
-      "start_time": 1530153420000,
+      "start_time": 1530154080000,
       "game": "Cuphead",
       "runners": "TheMexicanRunner",
-      "est_time": "0:55:00",
-      "category": "All Flags (Regular, Legacy)  PC",
+      "est_time": "0:50:14",
+      "category": "100% (Regular, Legacy)  PC",
       "casters": "YellowKillerBee",
-      "setup_time": "0:15:00"
+      "setup_time": "0:29:29"
     },
     {
-      "start_time": 1530157620000,
+      "start_time": 1530158863000,
       "game": "A Hat in Time",
       "runners": "flarebear, ConnorAce",
-      "est_time": "1:00:00",
+      "est_time": "0:55:06",
       "category": "Any% Race  PC",
       "casters": "Mike Uyama",
-      "setup_time": "0:15:00"
+      "setup_time": "0:19:54"
     },
     {
-      "start_time": 1530162120000,
+      "start_time": 1530163363000,
       "game": "Celeste",
       "runners": "TGH, yoshipro",
       "est_time": "0:40:00",
@@ -777,16 +777,16 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530165120000,
+      "start_time": 1530166363000,
       "game": "Pepsiman",
       "runners": "theboyks",
       "est_time": "0:26:00",
-      "category": "Any% with Cutscenes",
+      "category": "Cutscene%  PSX",
       "casters": "Mike Uyama",
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530167280000,
+      "start_time": 1530168523000,
       "game": "Getting Over It with Bennett Foddy",
       "runners": "MONTYvsTHEWORLD",
       "est_time": "0:05:00",
@@ -795,7 +795,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530168180000,
+      "start_time": 1530169423000,
       "game": "Miner Ultra Adventures",
       "runners": "Konasumi",
       "est_time": "0:15:00",
@@ -804,7 +804,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530169680000,
+      "start_time": 1530170923000,
       "game": "Roundabout",
       "runners": "GNU Order",
       "est_time": "0:11:00",
@@ -813,7 +813,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530170940000,
+      "start_time": 1530172183000,
       "game": "Live",
       "runners": "LifeL1ke",
       "est_time": "0:11:00",
@@ -822,7 +822,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530172200000,
+      "start_time": 1530173443000,
       "game": "Stilt Fella",
       "runners": "PHatHome666",
       "est_time": "0:20:00",
@@ -831,7 +831,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530174000000,
+      "start_time": 1530175243000,
       "game": "Club Drive",
       "runners": "PeteDorr",
       "est_time": "0:13:00",
@@ -840,7 +840,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530175380000,
+      "start_time": 1530176623000,
       "game": "Bio Miracle Bokutte Upa",
       "runners": "EnchantressOfNumbers",
       "est_time": "0:30:00",
@@ -849,7 +849,7 @@
       "setup_time": "0:11:00"
     },
     {
-      "start_time": 1530177840000,
+      "start_time": 1530179083000,
       "game": "Yo! Noid 2",
       "runners": "AlucardX60",
       "est_time": "0:12:00",
@@ -858,7 +858,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530179160000,
+      "start_time": 1530180403000,
       "game": "Jungle King Tar-chan: World Tour Rumble",
       "runners": "Aweglib",
       "est_time": "0:30:00",
@@ -867,7 +867,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530181560000,
+      "start_time": 1530182803000,
       "game": "Pac-Man 2: The New Adventures",
       "runners": "PARTY MAN X",
       "est_time": "0:30:00",
@@ -876,7 +876,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530183960000,
+      "start_time": 1530185203000,
       "game": "Silver Grapple",
       "runners": "Ivan",
       "est_time": "0:20:00",
@@ -885,7 +885,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530185760000,
+      "start_time": 1530187003000,
       "game": "Gift",
       "runners": "SecksWrecks",
       "est_time": "0:10:00",
@@ -894,7 +894,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530186960000,
+      "start_time": 1530188203000,
       "game": "El Viento",
       "runners": "belthegor",
       "est_time": "0:14:00",
@@ -903,7 +903,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530188400000,
+      "start_time": 1530189643000,
       "game": "Xeodrifter",
       "runners": "JBuzzyBee",
       "est_time": "0:18:00",
@@ -912,7 +912,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530190080000,
+      "start_time": 1530191323000,
       "game": "Titan Souls",
       "runners": "Zic3",
       "est_time": "0:24:00",
@@ -921,7 +921,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530192120000,
+      "start_time": 1530193363000,
       "game": "A Story About my Uncle",
       "runners": "TheRealVincentio",
       "est_time": "0:35:00",
@@ -930,7 +930,7 @@
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530195120000,
+      "start_time": 1530196363000,
       "game": "Strider",
       "runners": "NME, Elipsis, Mr Magnificent",
       "est_time": "0:05:00",
@@ -939,7 +939,7 @@
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530196320000,
+      "start_time": 1530197563000,
       "game": "The Legend of Zelda",
       "runners": "LackAttack24, beeteas, Eunos",
       "est_time": "1:00:00",
@@ -948,7 +948,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530200520000,
+      "start_time": 1530201763000,
       "game": "The Legend of Zelda: Oracle of Seasons",
       "runners": "mghtymth",
       "est_time": "2:03:00",
@@ -957,7 +957,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530208500000,
+      "start_time": 1530209743000,
       "game": "Paper Mario",
       "runners": "imglower",
       "est_time": "1:55:00",
@@ -966,7 +966,7 @@
       "setup_time": "0:16:00"
     },
     {
-      "start_time": 1530216360000,
+      "start_time": 1530217603000,
       "game": "DeadCore",
       "runners": "imawakka",
       "est_time": "0:25:00",
@@ -975,7 +975,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530218460000,
+      "start_time": 1530219703000,
       "game": "Deus Ex",
       "runners": "Heinki",
       "est_time": "0:52:00",
@@ -984,7 +984,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530222180000,
+      "start_time": 1530223423000,
       "game": "Deus Ex Mankind Divided",
       "runners": "Heinki",
       "est_time": "1:05:00",
@@ -993,7 +993,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530226680000,
+      "start_time": 1530227923000,
       "game": "Prey (2017)",
       "runners": "LifeL1ke",
       "est_time": "0:50:00",
@@ -1002,7 +1002,7 @@
       "setup_time": "0:20:00"
     },
     {
-      "start_time": 1530230880000,
+      "start_time": 1530232123000,
       "game": "Super Mario Bros.",
       "runners": "SuperSonic71087, RetroBob_, Kosmic, RoyLGamer",
       "est_time": "0:32:00",
@@ -1011,7 +1011,7 @@
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530233700000,
+      "start_time": 1530234943000,
       "game": "Super Mario Bros. 3",
       "runners": "mitchflowerpower, grandpoobear",
       "est_time": "1:00:00",
@@ -1020,7 +1020,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530237900000,
+      "start_time": 1530239143000,
       "game": "Super Mario World",
       "runners": "rezephos",
       "est_time": "1:12:00",
@@ -1029,7 +1029,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530242820000,
+      "start_time": 1530244063000,
       "game": "Mario Kart 8 Deluxe",
       "runners": "AeonFrodo",
       "est_time": "1:37:00",
@@ -1038,7 +1038,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530249240000,
+      "start_time": 1530250483000,
       "game": "SETUP BLOCK 5",
       "runners": "Tech Crew",
       "est_time": "0:35:00",
@@ -1047,7 +1047,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530251940000,
+      "start_time": 1530253183000,
       "game": "Wave Race: Blue Storm",
       "runners": "Pearstrike",
       "est_time": "0:15:00",
@@ -1056,7 +1056,7 @@
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530253740000,
+      "start_time": 1530254983000,
       "game": "Runbow",
       "runners": "MooMooAkai, MunchaKoopas",
       "est_time": "0:25:00",
@@ -1065,7 +1065,7 @@
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530256140000,
+      "start_time": 1530257383000,
       "game": "Borderlands: the Pre-Sequel!",
       "runners": "Shockwve, Amyrlinn",
       "est_time": "2:20:00",
@@ -1074,7 +1074,7 @@
       "setup_time": "0:20:00"
     },
     {
-      "start_time": 1530265740000,
+      "start_time": 1530266983000,
       "game": "Bionic Commando",
       "runners": "MURPHAGATOR!",
       "est_time": "1:05:00",
@@ -1083,7 +1083,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530270240000,
+      "start_time": 1530271483000,
       "game": "Bound",
       "runners": "chuckles825",
       "est_time": "0:35:00",
@@ -1092,7 +1092,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530272940000,
+      "start_time": 1530274183000,
       "game": "Catherine",
       "runners": "Ghoul02",
       "est_time": "0:30:00",
@@ -1101,7 +1101,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530275340000,
+      "start_time": 1530276583000,
       "game": "Double Dragon",
       "runners": "LRock",
       "est_time": "0:14:00",
@@ -1110,7 +1110,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530276780000,
+      "start_time": 1530278023000,
       "game": "Double Dragon II: The Revenge",
       "runners": "sinister1",
       "est_time": "0:14:00",
@@ -1119,7 +1119,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530278220000,
+      "start_time": 1530279463000,
       "game": "Golden Axe",
       "runners": "InTheMug",
       "est_time": "0:15:00",
@@ -1128,7 +1128,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530279720000,
+      "start_time": 1530280963000,
       "game": "Streets of Rage 2",
       "runners": "Anthopants",
       "est_time": "0:57:00",
@@ -1137,7 +1137,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530283740000,
+      "start_time": 1530284983000,
       "game": "Rockman No-Constancy",
       "runners": "Kuumba",
       "est_time": "0:40:00",
@@ -1146,7 +1146,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530286740000,
+      "start_time": 1530287983000,
       "game": "Mega Man 7",
       "runners": "almondcity",
       "est_time": "0:45:00",
@@ -1155,7 +1155,7 @@
       "setup_time": "0:15:00"
     },
     {
-      "start_time": 1530290340000,
+      "start_time": 1530291583000,
       "game": "Mega Man 8",
       "runners": "orsa, cleartonic",
       "est_time": "0:55:00",
@@ -1164,7 +1164,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530294240000,
+      "start_time": 1530295483000,
       "game": "Bionic Commando Rearmed 2",
       "runners": "PJ",
       "est_time": "1:00:00",
@@ -1173,7 +1173,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530298440000,
+      "start_time": 1530299683000,
       "game": "Goof Troop",
       "runners": "swordsmankirby, Bbforky",
       "est_time": "0:24:00",
@@ -1182,7 +1182,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530300480000,
+      "start_time": 1530301723000,
       "game": "Kingdom Hearts HD 1.5 ReMix (KH1FM)",
       "runners": "mistmaster1",
       "est_time": "3:05:00",
@@ -1191,7 +1191,7 @@
       "setup_time": "0:35:00"
     },
     {
-      "start_time": 1530313680000,
+      "start_time": 1530314923000,
       "game": "Super Mario 64",
       "runners": "Puncayshun, cheese05",
       "est_time": "1:00:00",
@@ -1200,7 +1200,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530317880000,
+      "start_time": 1530319123000,
       "game": "The Legend of Zelda: The Wind Waker HD",
       "runners": "Linkus7",
       "est_time": "1:15:00",
@@ -1209,7 +1209,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530322980000,
+      "start_time": 1530324223000,
       "game": "SETUP BLOCK 6",
       "runners": "Tech Crew",
       "est_time": "0:37:00",
@@ -1218,7 +1218,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530325800000,
+      "start_time": 1530327043000,
       "game": "TASBot plays F-Zero GX by talented authors",
       "runners": "dwangoAC",
       "est_time": "0:10:00",
@@ -1227,7 +1227,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530327000000,
+      "start_time": 1530328243000,
       "game": "TASBot plays Super Metroid 0% by Sniq and total",
       "runners": "dwangoAC",
       "est_time": "0:07:07",
@@ -1236,7 +1236,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530328027000,
+      "start_time": 1530329270000,
       "game": "Pokemon Yellow/Red",
       "runners": "MeGotsThis",
       "est_time": "2:47:00",
@@ -1245,7 +1245,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530338647000,
+      "start_time": 1530339890000,
       "game": "Star Wars Jedi Knight: Dark Forces II",
       "runners": "ysalamiri",
       "est_time": "0:30:00",
@@ -1254,7 +1254,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530341047000,
+      "start_time": 1530342290000,
       "game": "Star Wars Jedi Knight: Mysteries of the Sith",
       "runners": "ysalamiri",
       "est_time": "0:25:00",
@@ -1263,7 +1263,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530343147000,
+      "start_time": 1530344390000,
       "game": "Super Star Wars: The Empire Strikes Back",
       "runners": "Indy",
       "est_time": "0:45:00",
@@ -1272,7 +1272,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530346447000,
+      "start_time": 1530347690000,
       "game": "Hob",
       "runners": "halfcoordinated",
       "est_time": "0:55:00",
@@ -1281,7 +1281,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530350347000,
+      "start_time": 1530351590000,
       "game": "I Am Bread",
       "runners": "Nerd_Squared",
       "est_time": "0:10:00",
@@ -1290,7 +1290,7 @@
       "setup_time": "0:13:00"
     },
     {
-      "start_time": 1530351727000,
+      "start_time": 1530352970000,
       "game": "Ratchet: Deadlocked",
       "runners": "Davie",
       "est_time": "0:50:00",
@@ -1299,7 +1299,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530355327000,
+      "start_time": 1530356570000,
       "game": "Spyro 2: Ripto's Rage",
       "runners": "AlexDest",
       "est_time": "0:32:00",
@@ -1308,7 +1308,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530357847000,
+      "start_time": 1530359090000,
       "game": "Crash Bandicoot: N. Sane Trilogy",
       "runners": "CameronVengenz",
       "est_time": "1:02:00",
@@ -1317,7 +1317,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530362167000,
+      "start_time": 1530363410000,
       "game": "Kirby's Dream Land",
       "runners": "eBloodyCandy",
       "est_time": "0:15:00",
@@ -1326,7 +1326,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530363667000,
+      "start_time": 1530364910000,
       "game": "Kirby's Adventure",
       "runners": "swordsmankirby",
       "est_time": "0:50:00",
@@ -1335,7 +1335,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530367267000,
+      "start_time": 1530368510000,
       "game": "New Super Mario Bros. 2",
       "runners": "eddaket",
       "est_time": "1:00:00",
@@ -1344,7 +1344,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530371467000,
+      "start_time": 1530372710000,
       "game": "Undertale",
       "runners": "SnowieY101",
       "est_time": "1:35:00",
@@ -1353,7 +1353,7 @@
       "setup_time": "0:20:00"
     },
     {
-      "start_time": 1530378367000,
+      "start_time": 1530379610000,
       "game": "Super Mario Maker",
       "runners": "Carl Sagan, grandpoobear, GlitchCat7, failstream, jaku, Cliffy",
       "est_time": "1:30:00",
@@ -1362,7 +1362,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530384367000,
+      "start_time": 1530385610000,
       "game": "The Legend of Zelda: Ocarina of Time",
       "runners": "Runnerguy2489",
       "est_time": "1:30:00",
@@ -1371,7 +1371,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530390367000,
+      "start_time": 1530391610000,
       "game": "SETUP BLOCK 7",
       "runners": "Tech Crew",
       "est_time": "1:07:00",
@@ -1380,7 +1380,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530394987000,
+      "start_time": 1530396230000,
       "game": "Final Fantasy VI",
       "runners": "puwexil",
       "est_time": "7:02:00",
@@ -1389,7 +1389,7 @@
       "setup_time": "0:10:00"
     },
     {
-      "start_time": 1530420907000,
+      "start_time": 1530422150000,
       "game": "FINALE",
       "runners": "Sent",
       "est_time": "0:10:00",
