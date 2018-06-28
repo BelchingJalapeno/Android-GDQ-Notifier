@@ -1,4 +1,4 @@
-package com.belchingjalapeno.agdqschedulenotifier
+package com.belchingjalapeno.agdqschedulenotifier.ui
 
 import android.content.Context
 import android.support.design.widget.CoordinatorLayout

@@ -1,9 +1,12 @@
-package com.belchingjalapeno.agdqschedulenotifier
+package com.belchingjalapeno.agdqschedulenotifier.ui
 
 import android.graphics.Color
 import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.ImageView
+import com.belchingjalapeno.agdqschedulenotifier.NotificationQueue
+import com.belchingjalapeno.agdqschedulenotifier.R
+import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
 
 class NotificationUiStateSetter {
     fun setViewState(notificationQueue: NotificationQueue, parentView: View, speedRunEvent: SpeedRunEvent, animationTime: Long = 200) {

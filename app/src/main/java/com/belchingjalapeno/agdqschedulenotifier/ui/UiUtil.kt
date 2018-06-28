@@ -1,4 +1,4 @@
-package com.belchingjalapeno.agdqschedulenotifier
+package com.belchingjalapeno.agdqschedulenotifier.ui
 
 import android.support.v4.graphics.ColorUtils
 import android.view.View

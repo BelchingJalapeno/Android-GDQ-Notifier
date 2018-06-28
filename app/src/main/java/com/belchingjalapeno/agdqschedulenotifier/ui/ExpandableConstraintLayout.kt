@@ -1,4 +1,4 @@
-package com.belchingjalapeno.agdqschedulenotifier
+package com.belchingjalapeno.agdqschedulenotifier.ui
 
 import android.content.Context
 import android.graphics.Color
@@ -11,6 +11,7 @@ import android.view.View
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
+import com.belchingjalapeno.agdqschedulenotifier.R
 import kotlin.math.max
 import kotlin.math.min
 

@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
+import com.belchingjalapeno.agdqschedulenotifier.ui.ExpandableConstraintLayout
+import com.belchingjalapeno.agdqschedulenotifier.ui.NotificationUiStateSetter
 
 class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val notificationQueue: NotificationQueue, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItemAdapter.ViewHolder>() {
 
