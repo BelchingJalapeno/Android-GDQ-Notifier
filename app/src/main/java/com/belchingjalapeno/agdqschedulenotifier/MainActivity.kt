@@ -170,10 +170,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupTabs(events: Array<SpeedRunEvent>) {
-        val eventsByDay = getEventsByDay(events)
-        tab_layout.setupWithViewPager(speedrun_viewpager, false)
-        val fragmentList = eventsByDay.map { SpeedRunEventsFragment.newInstance(it) }
+        val eventsByDay = speedRunEventLoader.getEventsByDay(events)
+
         speedrun_viewpager.adapter = object : FragmentPagerAdapter(supportFragmentManager) {
+
+            private val fragmentList = eventsByDay.map { SpeedRunEventsFragment.newInstance(it) }
+            private val simpleDateFormat = SimpleDateFormat("MMMM d", Locale.getDefault())
 
             override fun getItem(p0: Int): Fragment {
                 return fragmentList[p0]
@@ -185,17 +187,21 @@ class MainActivity : AppCompatActivity() {
 
             override fun getPageTitle(position: Int): CharSequence? {
                 val fromStringStartTimeToLong = eventsByDay[position][0].startTime
-                return SimpleDateFormat("MMMM d", Locale.getDefault()).format(Date(fromStringStartTimeToLong))
+                return simpleDateFormat.format(Date(fromStringStartTimeToLong))
             }
         }
 
         val clamp = { value: Int -> Math.min(Math.max(eventsByDay.size - 1, value), 0) }
 
-        val tabToSwitchTo = clamp(switchToCurrentDayTab(eventsByDay))
+        val tabToSwitchTo = clamp(findCurrentDayTab(eventsByDay))
         speedrun_viewpager.setCurrentItem(tabToSwitchTo, false)
+
+        tab_layout.setupWithViewPager(speedrun_viewpager, false)
     }
 
-    private fun switchToCurrentDayTab(eventsByDay: Array<Array<SpeedRunEvent>>): Int {
+    //might get the day before current day if currently the next day but < first event startTime
+    //but close enough for now
+    private fun findCurrentDayTab(eventsByDay: Array<Array<SpeedRunEvent>>): Int {
         if (eventsByDay.isEmpty()) {
             return 0
         }
@@ -217,16 +223,6 @@ class MainActivity : AppCompatActivity() {
 
         //if all the events have already happened, return the last day
         return eventsByDay.size
-    }
-
-    private fun getEventsByDay(events: Array<SpeedRunEvent>): Array<Array<SpeedRunEvent>> {
-        events.sortBy { it.startTime }
-        val groupBy = events.groupBy({
-            val date = Date(it.startTime)
-            SimpleDateFormat.getDateInstance().format(date)
-        })
-        val v = groupBy.values.map { it.toTypedArray() }
-        return v.toTypedArray()
     }
 
     private fun setupDonateFab() {
