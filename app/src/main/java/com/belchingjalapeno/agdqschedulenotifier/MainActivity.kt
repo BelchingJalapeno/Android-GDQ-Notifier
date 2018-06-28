@@ -191,7 +191,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val clamp = { value: Int -> Math.min(Math.max(eventsByDay.size - 1, value), 0) }
+        val clamp = { value: Int -> Math.max(Math.min(eventsByDay.size - 1, value), 0) }
 
         val tabToSwitchTo = clamp(findCurrentDayTab(eventsByDay))
         speedrun_viewpager.setCurrentItem(tabToSwitchTo, false)
