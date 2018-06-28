@@ -45,9 +45,13 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val not
             val targetTime = item.startTime
             val timeDifference = timeFormatter.getTimeDiff(currentTime, targetTime)
             //show more precise time as we get closer to the event
-            val time: String = if (timeFormatter.getDays(timeDifference) <= 0) {
-                if (timeFormatter.getHours(timeDifference) <= 0) {
-                    timeFormatter.getFormattedTime(timeDifference, showMinutes = true, showSeconds = true)
+            val time: String = if (Math.abs(timeFormatter.getDays(timeDifference)) <= 0) {
+                if (Math.abs(timeFormatter.getHours(timeDifference)) <= 0) {
+                    if (Math.abs(timeFormatter.getMinutes(timeDifference)) <= 0) {
+                        timeFormatter.getFormattedTime(timeDifference, showMinutes = false, showSeconds = true)
+                    } else {
+                        timeFormatter.getFormattedTime(timeDifference, showMinutes = true, showSeconds = false)
+                    }
                 } else {
                     timeFormatter.getFormattedTime(timeDifference, showHours = true, showMinutes = true)
                 }
@@ -58,7 +62,7 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val not
             startTimeView.text = "When   $time"
 
             val expectedLengthInMillis = timeFormatter.fromStringExpectedLengthToLong(item.estimatedTime)
-            val time2 = timeFormatter.getFormattedTime(expectedLengthInMillis, showHours = true, showMinutes = true, showSeconds = true)
+            val time2 = timeFormatter.getFormattedTime(expectedLengthInMillis, showHours = true, showMinutes = true, showSeconds = false)
 
             runLengthView.text = "Length   $time2"
 
