@@ -188,6 +188,35 @@ class MainActivity : AppCompatActivity() {
                 return SimpleDateFormat("MMMM d", Locale.getDefault()).format(Date(fromStringStartTimeToLong))
             }
         }
+
+        val clamp = { value: Int -> Math.min(Math.max(eventsByDay.size - 1, value), 0) }
+
+        val tabToSwitchTo = clamp(switchToCurrentDayTab(eventsByDay))
+        speedrun_viewpager.setCurrentItem(tabToSwitchTo, false)
+    }
+
+    private fun switchToCurrentDayTab(eventsByDay: Array<Array<SpeedRunEvent>>): Int {
+        if (eventsByDay.isEmpty()) {
+            return 0
+        }
+        val currentTime = System.currentTimeMillis()
+        val day1 = eventsByDay[0]
+        //if it isnt even the first day yet, return first day index
+        if (day1[0].startTime > currentTime) {
+            return 0
+        }
+
+        //find day we are currently on by seeing if the next day is > than the current time but
+        // the current day is <= to the current time
+        eventsByDay.fold(day1[0].startTime, { acc, arrayOfSpeedRunEvents ->
+            if (acc <= currentTime && arrayOfSpeedRunEvents[0].startTime > currentTime) {
+                return eventsByDay.indexOf(arrayOfSpeedRunEvents) - 1
+            }
+            arrayOfSpeedRunEvents[0].startTime
+        })
+
+        //if all the events have already happened, return the last day
+        return eventsByDay.size
     }
 
     private fun getEventsByDay(events: Array<SpeedRunEvent>): Array<Array<SpeedRunEvent>> {
