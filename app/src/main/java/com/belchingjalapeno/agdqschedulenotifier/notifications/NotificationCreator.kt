@@ -44,7 +44,7 @@ class NotificationCreator(private val context: Context) {
                                    bigText: String): Notification {
 
         val mBuilder = NotificationCompat.Builder(context.applicationContext, CHANNEL_ID)
-                .setSmallIcon(R.drawable.glitch_icon_white_128px)
+                .setSmallIcon(R.drawable.ic_notification_app_icon)
                 .setContentTitle(contentTitle)
                 .setContentText(contentText)
                 .setStyle(NotificationCompat.BigTextStyle()
