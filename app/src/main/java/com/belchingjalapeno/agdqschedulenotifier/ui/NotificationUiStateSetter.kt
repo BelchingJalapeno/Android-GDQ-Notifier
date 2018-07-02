@@ -1,7 +1,7 @@
 package com.belchingjalapeno.agdqschedulenotifier.ui
 
 import android.graphics.Color
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.view.View
 import android.widget.ImageView
 import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
