@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.belchingjalapeno.agdqschedulenotifier.ui.EventItemAdapter
 import com.google.gson.Gson
 
 private const val ARG_EVENTS = "arg_events"

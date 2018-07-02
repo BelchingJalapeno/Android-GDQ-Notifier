@@ -1,4 +1,4 @@
-package com.belchingjalapeno.agdqschedulenotifier
+package com.belchingjalapeno.agdqschedulenotifier.ui
 
 import android.graphics.Color
 import android.support.v7.util.DiffUtil
@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
+import com.belchingjalapeno.agdqschedulenotifier.EventFilter
+import com.belchingjalapeno.agdqschedulenotifier.R
+import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
+import com.belchingjalapeno.agdqschedulenotifier.TimeFormatter
 import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
-import com.belchingjalapeno.agdqschedulenotifier.ui.ExpandableConstraintLayout
-import com.belchingjalapeno.agdqschedulenotifier.ui.NotificationUiStateSetter
 
 class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val notificationQueue: NotificationQueue, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItemAdapter.ViewHolder>() {
 
