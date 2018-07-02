@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
+import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
 import com.belchingjalapeno.agdqschedulenotifier.ui.ExpandableConstraintLayout
 import com.belchingjalapeno.agdqschedulenotifier.ui.NotificationUiStateSetter
 

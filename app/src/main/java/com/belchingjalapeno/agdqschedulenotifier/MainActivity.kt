@@ -16,6 +16,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebView
 import android.widget.FrameLayout
+import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
 import java.io.InputStreamReader

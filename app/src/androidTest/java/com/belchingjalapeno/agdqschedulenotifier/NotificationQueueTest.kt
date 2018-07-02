@@ -3,6 +3,7 @@ package com.belchingjalapeno.agdqschedulenotifier
 import android.app.AlarmManager
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
+import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.After

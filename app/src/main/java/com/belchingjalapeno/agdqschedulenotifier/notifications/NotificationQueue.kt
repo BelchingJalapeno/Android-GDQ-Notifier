@@ -1,7 +1,7 @@
-package com.belchingjalapeno.agdqschedulenotifier
+package com.belchingjalapeno.agdqschedulenotifier.notifications
 
 import android.content.Context
-import com.belchingjalapeno.agdqschedulenotifier.notifications.AlarmManagerNotifier
+import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEvent
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEventDatabase
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.getEvent

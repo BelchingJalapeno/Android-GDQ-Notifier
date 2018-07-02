@@ -4,7 +4,7 @@ import android.graphics.Color
 import android.support.v4.content.ContextCompat
 import android.view.View
 import android.widget.ImageView
-import com.belchingjalapeno.agdqschedulenotifier.NotificationQueue
+import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
 import com.belchingjalapeno.agdqschedulenotifier.R
 import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
 
