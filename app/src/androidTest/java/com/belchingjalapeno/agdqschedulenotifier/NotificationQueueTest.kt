@@ -1,6 +1,5 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
-import android.app.AlarmManager
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4
 import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
