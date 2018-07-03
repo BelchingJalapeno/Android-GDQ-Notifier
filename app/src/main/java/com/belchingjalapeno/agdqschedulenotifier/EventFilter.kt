@@ -36,6 +36,15 @@ class EventFilter {
     fun removeListener(listener: FilterChangedListener) {
         this.changeListeners.remove(listener)
     }
+
+    fun clearFilters() {
+        this.changeListeners.clear()
+    }
+
+    fun reset() {
+        this.query = ""
+        this.notificationOnly = false
+    }
 }
 
 interface FilterChangedListener {
