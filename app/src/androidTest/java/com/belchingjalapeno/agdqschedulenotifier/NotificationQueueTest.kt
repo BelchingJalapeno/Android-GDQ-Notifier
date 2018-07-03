@@ -56,8 +56,6 @@ class NotificationQueueTest {
 
         notificationQueue.removeFromQueue(testEvent1)
         assertThat(notificationQueue.isQueued(testEvent1), equalTo(false))
-
-        val v: AlarmManager = InstrumentationRegistry.getContext().getSystemService(AlarmManager::class.java)
     }
 
     @Test
