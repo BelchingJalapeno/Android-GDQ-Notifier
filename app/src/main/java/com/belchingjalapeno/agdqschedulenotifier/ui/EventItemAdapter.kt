@@ -1,21 +1,30 @@
 package com.belchingjalapeno.agdqschedulenotifier.ui
 
 import android.graphics.Color
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.RecyclerView
 import com.belchingjalapeno.agdqschedulenotifier.EventFilter
 import com.belchingjalapeno.agdqschedulenotifier.R
 import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
 import com.belchingjalapeno.agdqschedulenotifier.TimeFormatter
 import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
+import java.util.concurrent.SynchronousQueue
+import java.util.concurrent.ThreadPoolExecutor
+import java.util.concurrent.TimeUnit
 
-class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val notificationQueue: NotificationQueue, private val eventFilter: EventFilter) : RecyclerView.Adapter<EventItemAdapter.ViewHolder>() {
+class EventItemAdapter(private val events: Array<SpeedRunEvent>,
+                       private val notificationQueue: NotificationQueue,
+                       private val eventFilter: EventFilter,
+                       private val fragment: LifecycleOwner) : RecyclerView.Adapter<EventItemAdapter.ViewHolder>() {
 
     private val timeFormatter = TimeFormatter()
     private val notificationUiStateSetter = NotificationUiStateSetter()
@@ -27,6 +36,10 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val not
 
     private val oldEventBackgroundColor = Color.LTGRAY
     private val futureEventBackgroundColor = Color.WHITE
+
+    companion object {
+        private val backgroundExecutor = ThreadPoolExecutor(0, 8, 5L, TimeUnit.SECONDS, SynchronousQueue())
+    }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         val expandableView = LayoutInflater.from(p0.context)
@@ -44,6 +57,8 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val not
 
     private fun bind(viewHolder: ViewHolder, item: SpeedRunEvent) {
         viewHolder.apply {
+            notificationQueuedLiveData?.removeObservers(fragment)
+            notificationQueuedLiveData = notificationQueue.isQueued(item)
             val currentTime = System.currentTimeMillis()
             val targetTime = item.startTime
             val timeDifference = timeFormatter.getTimeDiff(currentTime, targetTime)
@@ -96,8 +111,15 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val not
             }
 
             setBackgroundColorState(itemView, item)
+            notificationUiStateSetter.setViewState(false, notificationIcon, 0)
 
-            notificationUiStateSetter.setViewState(notificationQueue, itemView, item, 0)
+            notificationQueuedLiveData?.observe(fragment, object : Observer<Boolean?> {
+                override fun onChanged(value: Boolean?) {
+                    val isQueued = value ?: false
+                    notificationUiStateSetter.setViewState(isQueued, notificationIcon, 0)
+                    notificationQueuedLiveData?.removeObserver(this)
+                }
+            })
 
             notificationIcon.setOnClickListener {
                 //don't allow subscribing / unsubscribing if the filter is enabled
@@ -105,51 +127,58 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val not
                     return@setOnClickListener
                 }
 
-                if (notificationQueue.isQueued(item)) {
-                    notificationQueue.removeFromQueue(item)
-                } else {
-                    notificationQueue.addToQueue(item)
-                }
+                notificationQueue.toggleNotification(item)
 
                 setBackgroundColorState(notificationIcon, item)
 
-                notificationUiStateSetter.setViewState(notificationQueue, notificationIcon, item)
+                notificationQueuedLiveData?.observe(fragment, object : Observer<Boolean?> {
+                    override fun onChanged(value: Boolean?) {
+                        val isQueued = value ?: false
+                        notificationUiStateSetter.setViewState(isQueued, notificationIcon)
+                        notificationQueuedLiveData?.removeObserver(this)
+                    }
+                })
             }
         }
     }
 
-    fun filter(notificationEnabled: Boolean, query: String) {
-        val backingListCopy = visibleEventList.toList()
-        val filteredEvents = events.filter {
-            if (notificationEnabled) {
-                notificationQueue.isQueued(it)
-            } else {
-                true
+    fun filter(notificationEnabled: Boolean, query: String, runOnUiThread: (Runnable) -> Unit) {
+        backgroundExecutor.submit {
+            val backingListCopy = visibleEventList.toList()
+
+            val filteredEvents = events.filter {
+                if (notificationEnabled) {
+                    notificationQueue.isQueuedNow(it)
+                } else {
+                    true
+                }
+            }.filter {
+                it.game.contains(query, ignoreCase = true)
             }
-        }.filter {
-            it.game.contains(query, ignoreCase = true)
+            val calculatedDiff = DiffUtil.calculateDiff(object : DiffUtil.Callback() {
+                override fun areItemsTheSame(p0: Int, p1: Int): Boolean {
+                    return backingListCopy[p0] === filteredEvents[p1]
+                }
+
+                override fun getOldListSize(): Int {
+                    return backingListCopy.size
+                }
+
+                override fun getNewListSize(): Int {
+                    return filteredEvents.size
+                }
+
+                override fun areContentsTheSame(p0: Int, p1: Int): Boolean {
+                    return backingListCopy[p0] == filteredEvents[p1]
+                }
+            })
+            runOnUiThread(Runnable {
+                calculatedDiff
+                        .dispatchUpdatesTo(this)
+                visibleEventList.clear()
+                visibleEventList.addAll(filteredEvents)
+            })
         }
-        DiffUtil.calculateDiff(object : DiffUtil.Callback() {
-            override fun areItemsTheSame(p0: Int, p1: Int): Boolean {
-                return backingListCopy[p0] === filteredEvents[p1]
-            }
-
-            override fun getOldListSize(): Int {
-                return backingListCopy.size
-            }
-
-            override fun getNewListSize(): Int {
-                return filteredEvents.size
-            }
-
-            override fun areContentsTheSame(p0: Int, p1: Int): Boolean {
-                return backingListCopy[p0] == filteredEvents[p1]
-            }
-        })
-                .dispatchUpdatesTo(this)
-
-        visibleEventList.clear()
-        visibleEventList.addAll(filteredEvents)
     }
 
     private fun setBackgroundColorState(v: View?, event: SpeedRunEvent) {
@@ -172,5 +201,7 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>, private val not
         val castersTextView: TextView = itemView.findViewById(R.id.castersTextView)
         val expandableView: ExpandableConstraintLayout = itemView as ExpandableConstraintLayout
         val notificationIcon: ImageView = itemView.findViewById(R.id.notification_toggle_button)
+
+        var notificationQueuedLiveData: LiveData<Boolean>? = null
     }
 }

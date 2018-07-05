@@ -1,13 +1,13 @@
 package com.belchingjalapeno.agdqschedulenotifier
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.belchingjalapeno.agdqschedulenotifier.ui.EventItemAdapter
 import com.google.gson.Gson
 
@@ -17,7 +17,10 @@ class SpeedRunEventsFragment : Fragment() {
 
     private val changeListener = object : FilterChangedListener {
         override fun changed(notificationOnly: Boolean, query: String) {
-            eventItemAdapter.filter(notificationOnly, query)
+            val activity = this@SpeedRunEventsFragment.activity
+            if (activity != null) {
+                eventItemAdapter.filter(notificationOnly, query, activity::runOnUiThread)
+            }
         }
     }
     private lateinit var eventItemAdapter: EventItemAdapter
@@ -45,7 +48,7 @@ class SpeedRunEventsFragment : Fragment() {
         recyclerView.addItemDecoration(DividerItemDecoration(activity, DividerItemDecoration.VERTICAL))
 
         val mainActivity = activity as MainActivity
-        eventItemAdapter = EventItemAdapter(events, mainActivity.notificationQueue, mainActivity.subscribeFilter)
+        eventItemAdapter = EventItemAdapter(events, mainActivity.notificationQueue, mainActivity.subscribeFilter, this)
         recyclerView.adapter = eventItemAdapter
 
         recyclerView.setRecycledViewPool(mainActivity.recyclerViewPool)

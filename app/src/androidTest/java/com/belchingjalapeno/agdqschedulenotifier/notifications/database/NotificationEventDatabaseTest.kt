@@ -1,17 +1,20 @@
 package com.belchingjalapeno.agdqschedulenotifier.notifications.database
 
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.room.Room
 import androidx.test.InstrumentationRegistry
 import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.CoreMatchers.nullValue
 import org.hamcrest.MatcherAssert.assertThat
-import org.junit.AfterClass
-import org.junit.Before
-import org.junit.BeforeClass
-import org.junit.Test
+import org.junit.*
 
 class NotificationEventDatabaseTest {
+
+    @get:Rule
+    val instantRule = InstantTaskExecutorRule()
 
     companion object {
 
@@ -30,6 +33,7 @@ class NotificationEventDatabaseTest {
         @BeforeClass
         fun setUpClass() {
             database = Room.inMemoryDatabaseBuilder(InstrumentationRegistry.getTargetContext(), NotificationEventDatabase::class.java)
+                    .allowMainThreadQueries()
                     .build()
             notificationEventDao = database.notificationEventDao()
         }
@@ -53,7 +57,7 @@ class NotificationEventDatabaseTest {
 
     @Test
     fun getEarliestEvents() {
-        val actualEvents = notificationEventDao.getEarliestEvents(3).map { it.speedRunEvent }
+        val actualEvents = notificationEventDao.getEarliestEventsLiveData(3).valueNow()?.map { it.speedRunEvent }
         val expectedEvents = testNotificationsList.take(3).map { it.speedRunEvent }
         assertThat(actualEvents, equalTo(expectedEvents))
     }
@@ -61,7 +65,7 @@ class NotificationEventDatabaseTest {
     @Test
     fun getEvent() {
         val expectedEvent = testNotificationsList[2].speedRunEvent
-        val actualEvent = notificationEventDao.getEvent(expectedEvent)?.speedRunEvent
+        val actualEvent = notificationEventDao.getEventLiveData(expectedEvent).valueNow()?.speedRunEvent
 
         assertThat(actualEvent, equalTo(expectedEvent))
     }
@@ -70,7 +74,7 @@ class NotificationEventDatabaseTest {
     fun getEventById() {
         val id = notificationEventDao.insert(NotificationEvent(speedRunEvent = testExtraSpeedRunEvent))
 
-        val actualEvent = notificationEventDao.getEvent(id.toInt())
+        val actualEvent = notificationEventDao.getEventLiveData(id.toInt()).valueNow()
         val expectedEvent = NotificationEvent(id.toInt(), testExtraSpeedRunEvent)
 
         assertThat(actualEvent, equalTo(expectedEvent))
@@ -79,7 +83,7 @@ class NotificationEventDatabaseTest {
     @Test
     fun getAll() {
         val expectedEvents = testNotificationsList.map { it.speedRunEvent }
-        val actualEvents = notificationEventDao.getAll().map { it.speedRunEvent }
+        val actualEvents = notificationEventDao.getAllLiveData().valueNow()?.map { it.speedRunEvent }
 
         assertThat(actualEvents, equalTo(expectedEvents))
     }
@@ -88,7 +92,7 @@ class NotificationEventDatabaseTest {
     fun insert() {
         val id = notificationEventDao.insert(NotificationEvent(speedRunEvent = testExtraSpeedRunEvent))
 
-        val actualEvent = notificationEventDao.getEvent(testExtraSpeedRunEvent)
+        val actualEvent = notificationEventDao.getEventLiveData(testExtraSpeedRunEvent).valueNow()
         val expectedEvent = NotificationEvent(id.toInt(), testExtraSpeedRunEvent)
 
         assertThat(actualEvent, equalTo(expectedEvent))
@@ -96,10 +100,10 @@ class NotificationEventDatabaseTest {
 
     @Test
     fun delete() {
-        val deletedNotification = notificationEventDao.getEvent(testNotificationsList[2].speedRunEvent)!!
+        val deletedNotification = notificationEventDao.getEventLiveData(testNotificationsList[2].speedRunEvent).valueNow()!!
         notificationEventDao.delete(deletedNotification)
 
-        val actualEvent = notificationEventDao.getEvent(deletedNotification.speedRunEvent)
+        val actualEvent = notificationEventDao.getEventLiveData(deletedNotification.speedRunEvent).valueNow()
         val expectedEvent = nullValue()
 
         assertThat(actualEvent, expectedEvent)
@@ -111,9 +115,20 @@ class NotificationEventDatabaseTest {
 
         notificationEventDao.deletePastEvents(currentTime)
 
-        val actualEvents = notificationEventDao.getAll().map { it.speedRunEvent }
+        val actualEvents = notificationEventDao.getAllLiveData().valueNow()?.map { it.speedRunEvent }
         val expectedEvents = testNotificationsList.filter { it.speedRunEvent.startTime >= currentTime }.map { it.speedRunEvent }
 
         assertThat(actualEvents, equalTo(expectedEvents))
     }
+}
+
+fun <T> LiveData<T>.valueNow(): T? {
+    var value: T? = null
+    this.observeForever(object : Observer<T> {
+        override fun onChanged(t: T?) {
+            value = t
+            removeObserver(this)
+        }
+    })
+    return value
 }

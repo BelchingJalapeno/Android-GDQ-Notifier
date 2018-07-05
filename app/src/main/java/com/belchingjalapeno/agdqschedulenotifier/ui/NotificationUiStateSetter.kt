@@ -1,19 +1,12 @@
 package com.belchingjalapeno.agdqschedulenotifier.ui
 
 import android.graphics.Color
-import androidx.core.content.ContextCompat
-import android.view.View
 import android.widget.ImageView
-import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
+import androidx.core.content.ContextCompat
 import com.belchingjalapeno.agdqschedulenotifier.R
-import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
 
 class NotificationUiStateSetter {
-    fun setViewState(notificationQueue: NotificationQueue, parentView: View, speedRunEvent: SpeedRunEvent, animationTime: Long = 200) {
-        val notificationToggleView = parentView.findViewById<ImageView>(R.id.notification_toggle_button)!!
-
-        val notificationEnabled = notificationQueue.isQueued(speedRunEvent)
-
+    fun setViewState(notificationEnabled: Boolean, notificationToggleView: ImageView, animationTime: Long = 200) {
         setNotificationIconState(notificationToggleView, notificationEnabled, animationTime)
     }
 
