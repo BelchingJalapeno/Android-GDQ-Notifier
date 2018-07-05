@@ -15,7 +15,7 @@ abstract class NotificationEventDatabase : RoomDatabase() {
         fun getDatabase(context: Context): NotificationEventDatabase {
             if (database == null) {
                 database = Room.databaseBuilder(context.applicationContext, NotificationEventDatabase::class.java, "Notification Database")
-                        .allowMainThreadQueries()//todo remove this after refactoring
+//                        .allowMainThreadQueries()//todo remove this after refactoring
                         .build()
             }
             return database!!

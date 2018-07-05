@@ -44,9 +44,11 @@ class MainActivity : AppCompatActivity() {
         notificationQueue = NotificationQueue(this)
         speedRunEventLoader = SpeedRunEventLoader(this)
 
-        val events = speedRunEventLoader.getEvents()
+        val events = speedRunEventLoader.getEvents().toMutableList()
 
-        setupTabs(events)
+        events.add(SpeedRunEvent(System.currentTimeMillis() + 30 * 1000, "", "", "0:00:00", "", "", "0:00:00"))
+
+        setupTabs(events.toTypedArray())
         setSupportActionBar(main_toolbar)
         setupDonateFab()
     }

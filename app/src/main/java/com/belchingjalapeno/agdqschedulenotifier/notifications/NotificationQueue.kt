@@ -5,6 +5,7 @@ import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEvent
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEventDatabase
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.getEvent
+import java.util.concurrent.Executors
 
 class NotificationQueue(context: Context) {
 
@@ -13,12 +14,20 @@ class NotificationQueue(context: Context) {
 
     private val alarmManagerNotifier = AlarmManagerNotifier(context.applicationContext)
 
+    private val cache = NotificationCache.getNotificationCache(context)
+
+    private val backgroundExecutor = Executors.newSingleThreadExecutor()
+
+    init {
+        backgroundExecutor.submit { cache.update() }
+    }
+
     fun isQueued(event: SpeedRunEvent): Boolean {
         if ((event.startTime) < System.currentTimeMillis()) {
             removeEvent(event)
         }
         setNearestAlarm()
-        return eventsDao.getEvent(event) != null
+        return cache.isQueued(event)
     }
 
     fun removeFromQueue(event: SpeedRunEvent) {
@@ -28,41 +37,57 @@ class NotificationQueue(context: Context) {
     }
 
     fun addToQueue(event: SpeedRunEvent) {
-        eventsDao.insert(NotificationEvent(0, event))
+        backgroundExecutor.submit {
+            eventsDao.insert(NotificationEvent(0, event))
 
-        setNearestAlarm()
+            setNearestAlarm()
+
+            cache.update()
+        }
     }
 
     fun clearAll() {
-        val earliestEvents = eventsDao.getEarliestEvents(1)
-        if (!earliestEvents.isEmpty()) {
-            alarmManagerNotifier.cancelAlarm(earliestEvents[0].id)
-        }
+        backgroundExecutor.submit {
+            val earliestEvents = eventsDao.getEarliestEvents(1)
+            if (!earliestEvents.isEmpty()) {
+                alarmManagerNotifier.cancelAlarm(earliestEvents[0].id)
+            }
 
-        eventsDao.getAll()
-                .forEach {
-                    eventsDao.delete(it)
-                }
+            eventsDao.getAll()
+                    .forEach {
+                        eventsDao.delete(it)
+                    }
+
+            cache.update()
+        }
     }
 
     fun size(): Int {
-        return eventsDao.getAll().size
+        return cache.size
     }
 
     private fun removeEvent(event: SpeedRunEvent) {
-        val notificationEvent = eventsDao.getEvent(event)
-        if (notificationEvent != null) {
-            eventsDao.delete(notificationEvent)
+        backgroundExecutor.submit {
+            val notificationEvent = eventsDao.getEvent(event)
+            if (notificationEvent != null) {
+                eventsDao.delete(notificationEvent)
+            }
+
+            cache.update()
         }
     }
 
     private fun setNearestAlarm() {
-        eventsDao.deletePastEvents(System.currentTimeMillis())
+        backgroundExecutor.submit {
+            eventsDao.deletePastEvents(System.currentTimeMillis())
 
-        val earliestEvents = eventsDao.getEarliestEvents(1)
-        if (earliestEvents.isNotEmpty()) {
-            val notificationEvent = earliestEvents[0]
-            alarmManagerNotifier.setAlarm(notificationEvent.id, notificationEvent.speedRunEvent.startTime)
+            val earliestEvents = eventsDao.getEarliestEvents(1)
+            if (earliestEvents.isNotEmpty()) {
+                val notificationEvent = earliestEvents[0]
+                alarmManagerNotifier.setAlarm(notificationEvent.id, notificationEvent.speedRunEvent.startTime)
+            }
+
+            cache.update()
         }
     }
 }

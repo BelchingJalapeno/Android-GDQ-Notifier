@@ -21,24 +21,35 @@ class AlarmNotificationReceiver : BroadcastReceiver() {
         val notificationCreator = NotificationCreator(context)
         val alarmManagerNotifier = AlarmManagerNotifier(context)
 
-        val currentEvent = eventDao.getEvent(eventId)
-        if (currentEvent == null) {
+        val pendingIntent = goAsync()
+
+        Thread({
+
+            val currentEvent = eventDao.getEvent(eventId)
+            if (currentEvent == null) {
+                eventDao.deletePastEvents(System.currentTimeMillis())
+                setNextAlarm(eventDao, alarmManagerNotifier)
+
+                pendingIntent.finish()
+
+                return@Thread
+            }
+            eventDao.delete(currentEvent)
             eventDao.deletePastEvents(System.currentTimeMillis())
+
+            val events = eventDao.getEarliestEvents(3)
+
+            val nextEvent = getEventOrNull(events, 0)
+            val nextNextEvent = getEventOrNull(events, 1)
+            val nextNextNextEvent = getEventOrNull(events, 2)
+            notificationCreator.showNotification(currentEvent, nextEvent, nextNextEvent, nextNextNextEvent)
+
+            //set alarm for next event
             setNextAlarm(eventDao, alarmManagerNotifier)
-            return
-        }
-        eventDao.delete(currentEvent)
-        eventDao.deletePastEvents(System.currentTimeMillis())
 
-        val events = eventDao.getEarliestEvents(3)
-
-        val nextEvent = getEventOrNull(events, 0)
-        val nextNextEvent = getEventOrNull(events, 1)
-        val nextNextNextEvent = getEventOrNull(events, 2)
-        notificationCreator.showNotification(currentEvent, nextEvent, nextNextEvent, nextNextNextEvent)
-
-        //set alarm for next event
-        setNextAlarm(eventDao, alarmManagerNotifier)
+            pendingIntent.finish()
+        }, "AlarmNotificationThread"
+        ).start()
     }
 
     private fun setNextAlarm(eventDao: NotificationEventDao, alarmManagerNotifier: AlarmManagerNotifier) {

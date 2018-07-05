@@ -13,20 +13,30 @@ class BootAlarmStarterReceiver : BroadcastReceiver() {
             return
         }
 
-        val database = NotificationEventDatabase.getDatabase(context)
-        val notificationEventDao = database.notificationEventDao()
+        val pendingIntent = goAsync()
 
-        notificationEventDao.deletePastEvents(System.currentTimeMillis())
+        Thread({
 
-        val events = notificationEventDao.getEarliestEvents(1)
+            val database = NotificationEventDatabase.getDatabase(context)
+            val notificationEventDao = database.notificationEventDao()
 
-        if (events.isEmpty()) {
-            return
-        }
+            notificationEventDao.deletePastEvents(System.currentTimeMillis())
 
-        val event = events[0]
-        val alarmManagerNotifier = AlarmManagerNotifier(context)
+            val events = notificationEventDao.getEarliestEvents(1)
 
-        alarmManagerNotifier.setAlarm(event.id, event.speedRunEvent.startTime)
+            if (events.isEmpty()) {
+                pendingIntent.finish()
+                return@Thread
+            }
+
+            val event = events[0]
+            val alarmManagerNotifier = AlarmManagerNotifier(context)
+
+            alarmManagerNotifier.setAlarm(event.id, event.speedRunEvent.startTime)
+
+            pendingIntent.finish()
+        },
+                "BootAlarmStarterThread")
+                .start()
     }
 }
