@@ -6,16 +6,16 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentPagerAdapter
-import androidx.appcompat.app.AlertDialog
-import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import androidx.appcompat.widget.SearchView
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebView
 import android.widget.FrameLayout
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.belchingjalapeno.agdqschedulenotifier.notifications.NotificationQueue
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.BufferedReader
@@ -45,8 +45,6 @@ class MainActivity : AppCompatActivity() {
         speedRunEventLoader = SpeedRunEventLoader(this)
 
         val events = speedRunEventLoader.getEvents().toMutableList()
-
-        events.add(SpeedRunEvent(System.currentTimeMillis() + 30 * 1000, "", "", "0:00:00", "", "", "0:00:00"))
 
         setupTabs(events.toTypedArray())
         setSupportActionBar(main_toolbar)
@@ -208,7 +206,7 @@ class MainActivity : AppCompatActivity() {
         if (eventsByDay.isEmpty()) {
             return 0
         }
-        val currentTime = System.currentTimeMillis()
+        val currentTime = TimeFormatter.getCurrentTime()
         val day1 = eventsByDay[0]
         //if it isnt even the first day yet, return first day index
         if (day1[0].startTime > currentTime) {

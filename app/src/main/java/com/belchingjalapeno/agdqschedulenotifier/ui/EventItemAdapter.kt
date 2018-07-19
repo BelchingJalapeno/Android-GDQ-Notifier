@@ -59,7 +59,7 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>,
         viewHolder.apply {
             notificationQueuedLiveData?.removeObservers(fragment)
             notificationQueuedLiveData = notificationQueue.isQueued(item)
-            val currentTime = System.currentTimeMillis()
+            val currentTime = TimeFormatter.getCurrentTime()
             val targetTime = item.startTime
             val timeDifference = timeFormatter.getTimeDiff(currentTime, targetTime)
             //show more precise time as we get closer to the event
@@ -182,7 +182,7 @@ class EventItemAdapter(private val events: Array<SpeedRunEvent>,
     }
 
     private fun setBackgroundColorState(v: View?, event: SpeedRunEvent) {
-        if (timeFormatter.getTimeDiff(System.currentTimeMillis(), event.startTime) <= 0) {
+        if (timeFormatter.getTimeDiff(TimeFormatter.getCurrentTime(), event.startTime) <= 0) {
             v?.setBackgroundColor(oldEventBackgroundColor)
         } else {
             v?.setBackgroundColor(futureEventBackgroundColor)

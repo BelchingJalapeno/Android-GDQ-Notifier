@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import com.belchingjalapeno.agdqschedulenotifier.TimeFormatter
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEvent
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEventDao
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEventDatabase
@@ -27,7 +28,7 @@ class AlarmNotificationReceiver : BroadcastReceiver() {
 
             val currentEvent = eventDao.getEvent(eventId)
             if (currentEvent == null) {
-                eventDao.deletePastEvents(System.currentTimeMillis())
+                eventDao.deletePastEvents(TimeFormatter.getCurrentTime())
                 setNextAlarm(eventDao, alarmManagerNotifier)
 
                 pendingIntent.finish()
@@ -35,7 +36,7 @@ class AlarmNotificationReceiver : BroadcastReceiver() {
                 return@Thread
             }
             eventDao.delete(currentEvent)
-            eventDao.deletePastEvents(System.currentTimeMillis())
+            eventDao.deletePastEvents(TimeFormatter.getCurrentTime())
 
             val events = eventDao.getEarliestEvents(3)
 
@@ -53,7 +54,7 @@ class AlarmNotificationReceiver : BroadcastReceiver() {
     }
 
     private fun setNextAlarm(eventDao: NotificationEventDao, alarmManagerNotifier: AlarmManagerNotifier) {
-        eventDao.deletePastEvents(System.currentTimeMillis())
+        eventDao.deletePastEvents(TimeFormatter.getCurrentTime())
         val earliestEvents = eventDao.getEarliestEvents(1)
         if (earliestEvents.isNotEmpty()) {
             val event = earliestEvents[0]

@@ -3,6 +3,7 @@ package com.belchingjalapeno.agdqschedulenotifier.notifications
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import com.belchingjalapeno.agdqschedulenotifier.TimeFormatter
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEventDatabase
 
 class BootAlarmStarterReceiver : BroadcastReceiver() {
@@ -20,7 +21,7 @@ class BootAlarmStarterReceiver : BroadcastReceiver() {
             val database = NotificationEventDatabase.getDatabase(context)
             val notificationEventDao = database.notificationEventDao()
 
-            notificationEventDao.deletePastEvents(System.currentTimeMillis())
+            notificationEventDao.deletePastEvents(TimeFormatter.getCurrentTime())
 
             val events = notificationEventDao.getEarliestEvents(1)
 

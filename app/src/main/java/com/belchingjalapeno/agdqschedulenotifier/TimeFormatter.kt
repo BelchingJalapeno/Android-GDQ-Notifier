@@ -38,7 +38,7 @@ class TimeFormatter {
 
     fun getRelativeTimeFromMilliseconds(time: Long): String {
         val targetDate = Date(time)
-        val today = Date(System.currentTimeMillis())
+        val today = Date(TimeFormatter.getCurrentTime())
 
         val targetCalender = Calendar.getInstance(TimeZone.getDefault())
         targetCalender.time = targetDate
@@ -146,5 +146,14 @@ class TimeFormatter {
             string += "ago "
         }
         return string.trim()
+    }
+
+    companion object {
+        /**
+         * gets the current time in milliseconds, helpful for testing things
+         */
+        fun getCurrentTime(): Long {
+            return System.currentTimeMillis()
+        }
     }
 }

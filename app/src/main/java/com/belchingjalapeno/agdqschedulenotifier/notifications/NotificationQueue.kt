@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.Transformations
 import com.belchingjalapeno.agdqschedulenotifier.SpeedRunEvent
+import com.belchingjalapeno.agdqschedulenotifier.TimeFormatter
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEvent
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.NotificationEventDatabase
 import com.belchingjalapeno.agdqschedulenotifier.notifications.database.getEvent
@@ -25,7 +26,7 @@ class NotificationQueue(context: Context) {
     }
 
     fun isQueued(event: SpeedRunEvent): LiveData<Boolean> {
-        if ((event.startTime) < System.currentTimeMillis()) {
+        if ((event.startTime) < TimeFormatter.getCurrentTime()) {
             removeEvent(event)
         }
         setNearestAlarm()
@@ -75,7 +76,7 @@ class NotificationQueue(context: Context) {
 
     private fun setNearestAlarm() {
         backgroundExecutor.submit {
-            eventsDao.deletePastEvents(System.currentTimeMillis())
+            eventsDao.deletePastEvents(TimeFormatter.getCurrentTime())
 
             val earliestEvents = eventsDao.getEarliestEvents(1)
             if (earliestEvents.isNotEmpty()) {
