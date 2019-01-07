@@ -11,17 +11,16 @@
 
     <TextView
         android:id="@+id/gameNameView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toStartOf="@+id/notification_toggle_button"
-        app:layout_constrainedHeight="true"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constrainedHeight="false"
+        app:layout_constrainedWidth="true"
         app:layout_constraintStart_toEndOf="@+id/expandImageView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constrainedWidth="true"
         tools:text="The Legend of Zelda: Majora's Mask 3D" />
 
     <TextView
